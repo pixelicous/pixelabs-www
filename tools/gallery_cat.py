@@ -68,7 +68,7 @@ for portfolio_root in portfolio_paths:
             portfolio_dir_root_path = os.path.basename(os.path.dirname(portfolio_dirname))
             new_paths_created = ", ".join(new_paths_created)
             if len(new_paths_created) != 0:
-                print(f"# Created {new_paths_created} directories for {portfolio_dir_root_path}/{os.path.basename(portfolio_dirname)}")
+                log.info(f"Created {new_paths_created} directories for {portfolio_dir_root_path}/{os.path.basename(portfolio_dirname)}")
         else:
             log.debug(f"Ignoring: {portfolio_dirname}")
         
