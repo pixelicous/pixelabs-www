@@ -1,0 +1,29 @@
+---
+---
+
+// Set values before bootstrap
+@import "custom/variables.scss";
+
+// Import bootstrap (overriden variables in bootstrap main style scss)
+@import 'bootstrap/bootstrap';
+
+
+// Code
+@import 'other/includes/solarized_dark';
+
+// Global
+@import 'custom/includes/general';
+
+// Sections
+@import 'custom/includes/navbar';
+@import 'custom/includes/footer';
+
+// Pages
+@import 'custom/includes/home';
+@import 'custom/includes/forms';
+@import 'custom/includes/social';
+@import 'custom/includes/gallery';
+@import 'custom/includes/posts';
+@import 'custom/includes/post';
+@import 'custom/includes/pagination';
+@import 'custom/includes/blog_archive';

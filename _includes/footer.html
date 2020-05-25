@@ -1,0 +1,73 @@
+{% if page.url != "/about/" %}
+  <footer class="footer">
+{% elsif page.url == "/about/" %}
+  <footer class="bg-transparent footer text-white">
+{% endif %}
+    <div class="container-fluid">
+      <div class="row">
+          <p><small>
+            <!-- {% if site.social_icons_enabled %}
+              {% include social.html %}
+              {% endif %} -->
+              
+              Copyright &copy; {{ site.time | date: '%Y' }} Pixelabs, All work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" class="text-decoration-none">cc by-nc-nd 4.0</a> license.</small></p>
+      </div>
+  </div>
+</footer>
+
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- JS -->
+<script>
+  $('.nav-item').click(function() {
+      $('.nav-item').removeClass('active');
+      $(this).addClass('active');
+  })
+</script>
+
+
+
+<script src="{{ 'assets/js/darkmode.js' | relative_url }}"></script>
+<script src="https://kit.fontawesome.com/df5d77d287.js" crossorigin="anonymous"></script>
+<!-- <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script> -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="{{ 'assets/js/baguetteBox.min.js' | relative_url }}" async></script>
+
+<script src="{{ 'assets/js/main.js' | relative_url }}"></script>
+{% if page.url contains "/portfolio/" %}
+<script>
+  // Load baguette after document has loaded
+  window.addEventListener('load', function() {
+    baguetteBox.run('.photo_gallery', {
+      fullScreen: false,
+      preload: 2,
+      bodyClass: 'duotone-wrap.img',
+      //animation: 'fadeIn',
+      overlayBackgroundColor: 'rgba(255, 255, 255 , 0.8)',
+      //onChange: meow(),
+    });
+  });
+  </script>
+
+{% endif %}
+
+{% if page.url contains "/portfolio/photography/" %}
+  <script>
+  // Jquery toggling for photo data
+    $(document).ready(function(){
+      $("#photo_detailed_view").click(function(){
+        $(".photo_exif_data").toggle();
+      });
+      $("#photo_histogram_view").click(function(){
+        $(".photo_histogram_data").toggle();
+      });
+    });
+  </script>
+{% endif %}

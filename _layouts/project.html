@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  <body id="page-top">
+    {% include navbar.html %}
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Project Item Heading -->
+        <h1 class="my-4">{{page.title}}
+        <small{>{{page.description}}</small>
+        </h1>
+  
+        <!-- Project Item Row -->
+        <div class="row bg-white rounded p-3 shadow-sm">
+            <div class="col-md-6">
+              <div class="">
+                <img class="img-fluid rounded" src="/assets{{page.permalink}}md/{{page.project_image}}" alt="project cover">
+              </div>
+            </div>
+
+            {{content}}
+
+    </div>
+    <!-- /.container -->
+    {% include footer.html %}
+  </body>
+</html>
