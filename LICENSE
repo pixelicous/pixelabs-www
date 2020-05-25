@@ -1,0 +1,13 @@
+Creative Commons Legal Code
+MIT License
+
+Copyright (c) 2020 Pixelabs
+The content of this repository and website is protected by the two different license documents described below
+
+Creative Common Attribution-NonCommercial-NoDerivs (CC BY-NC-ND) license:
+Any media (photograph, image, art, creation and so forth) presented on the website and as a resource in this GitHub repository.
+
+MIT License:
+Any code material related to building the website.
+Such as: Jekyll files, Frontmatter, HTML, Python, Ruby
+* All other PyPi and/or rbenv packages/gems I have used are of course licensed on their own terms.

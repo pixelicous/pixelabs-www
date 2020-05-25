@@ -1,0 +1,42 @@
+<!-- Fixed navbar -->
+<header>
+  <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light" id="main-nav">
+    <a class="navbar-brand" href="{{ '/' | relative_url }}">PIXELABS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Portfolio
+          </a> 
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ 'portfolio/photography/'  | relative_url}}">Photography</a>
+            <a class="dropdown-item" href="{{ 'portfolio/crafts/'  | relative_url}}">Crafts</a>
+            <a class="dropdown-item" href="{{ 'portfolio/digital/'  | relative_url}}">Digital</a>
+            <!--<div class="dropdown-divider"></div>-->
+          </div>
+        </li>
+        <li class="nav-item {% if page.url == "/shop.html" %}active{% endif %}">
+          <a class="nav-link" href="{{ 'shop/'  | relative_url}}">Shop</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Blog
+          </a>
+          <div class="dropdown-menu  {% if page.url == "/blog.html" %}active{% endif %}" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ 'blog/'  | relative_url }}">Front page</a>
+            <a class="dropdown-item" href="{{ 'archive/'  | relative_url}}">Archive</a>
+          </div>
+        </li>
+        <li class="nav-item {% if page.url == "/about.html" %}active{% endif %}">
+          <a class="nav-link" href="{{ 'about/'  | relative_url}}">About</a>
+        </li>
+        <!--<div class="text-right">
+          <a href="http://twitch.tv/{{ site.twitch_username}}"><img class="blacky" src="http://streambadge.com/twitch/light/{{ site.twitch_username}}.png" width="200" height="50" alt="{{ site.twitch_username}}'s Streambadge"></a>
+        </div>-->
+      </ul>
+    </div>
+  </nav>
+</header>

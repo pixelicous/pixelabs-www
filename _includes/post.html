@@ -1,0 +1,9 @@
+<div id="post" class="container">
+        <p class="lead text-info">
+          {{ page.date | date: "%b %-d, %Y" }}
+        </p>
+        <h1>{{ page.title }}</h1>
+        <article>
+          {{ content }}
+        </article>
+  </div>

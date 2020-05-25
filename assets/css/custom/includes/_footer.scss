@@ -1,0 +1,19 @@
+
+.footer {
+    position: absolute  ;
+    bottom: 0;
+    width: 100%;
+    line-height: 50px; // fixed footer size
+    min-height: 50px; // fixed footer size
+    background-color: #f5f5f5;
+    padding-left: 10px;
+    @media screen and (max-width: 992px) {
+      p {
+        font-size: small;
+      }
+    }
+}
+
+.footer p {  // Selects text inside a <p> tag that is inside a .footer <div>
+  margin-bottom: 0; // removes default <p> tag margin from the bottom
+}

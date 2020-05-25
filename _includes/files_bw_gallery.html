@@ -1,0 +1,63 @@
+<!-- <p class="text-small float-right"><small>License:</small> <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img src="https://licensebuttons.net/l/by-nc-nd/4.0/80x15.png" alt="License: CC BY-NC-ND 4.0"></a></p>
+[![License: CC BY-NC-ND 4.0](https://licensebuttons.net/l/by-nc-nd/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/) -->
+
+<div class="row  text-left">
+<label class="custom-switch col-lg-5 col-12">
+  <input id="photo_detailed_view" type="checkbox" name="photo_detailed_view" class="custom-switch-input">
+  <span class="custom-switch-indicator"></span>
+  <span class="custom-switch-description">Show photographs EXIF metadata</span>
+</label>
+<label class="custom-switch col-lg-5 col-12">
+  <input id="photo_histogram_view" type="checkbox" name="photo_histogram_view" class="custom-switch-input">
+  <span class="custom-switch-indicator"></span>
+  <span class="custom-switch-description">Show photographs color histogram</span>
+</label>
+<label class="custom-switch col-lg-5 col-12">
+  <input id="pschedelic_gallery" type="checkbox" name="pschedelic_gallery" class="custom-switch-input">
+  <span class="custom-switch-indicator"></span>
+  <span class="custom-switch-description">Psychedelic Gallery</span>
+</label>
+</div>
+<div class="row photo_gallery">
+  {% assign target_path = page.permalink | append: 'sm' %}
+  {% assign fullsize_path = page.permalink | prepend: '/assets' | append: 'lg/' %}
+  {% for file in site.static_files %}
+  {% if file.path contains target_path %}
+  {% if file.basename != 'header' and file.basename != 'HEADER'  %}
+  {% if file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.JPG' or file.extname == '.JPEG' or file.extname == '.png' or file.extname == '.PNG' %}
+  {% assign filenameparts = file.path | split: "/" %}{% assign filename = filenameparts | last | replace: file.extname,"" %}
+  {% assign photo_exif_data = site.data.photography[page.short_name][filename] %}
+  {% assign fullsize_photo = fullsize_path | append: file.name %}
+            <div class="col-lg-3 col-6" data-duotheme="blackWhite" id="color-gallery">
+              <!-- item -->
+              <figure class="rounded caption-1 gallery-ds">
+                <div class="img-bw">
+                  <a href="{{ fullsize_photo }}" class="duotone-wrap stretched-link" data-caption="Filename: {{filename}}, Year: {{ photo_exif_data.Year }}<br>Camera: {{ photo_exif_data.Camera }}, Model: {{ photo_exif_data.Model }}">
+                    <img src="{{ file.path | relative_url }}" alt="{{ filename }}" class="img-fluid img-center rounded">
+                  </a>
+                  <figcaption class="px-5 py-4 text-right text-light">
+                    <!-- <h2 class="h5 font-weight-bold mb-0">{{ filename }}</h2> -->
+                    <p class="text-small">{{ filename }}</p>
+                  </figcaption>
+                  <div class="photo_exif_data row" style="display:none">
+                    {% for eif_data in photo_exif_data %}
+                    <div class="col-6">
+                      <p class="text-small text-black"><small>{{eif_data[0]}}</small></p>
+                    </div>
+                    <div class="col-6">
+                      <p class="text-small text-primary"><small>{{eif_data[1]}}</small></p>
+                    </div>
+                    {% endfor %}
+                  </div>
+                </div>
+                <div class="photo_histogram_data" style="display:none">
+                  <img src="/assets{{page.permalink}}histogram/{{filename}}.png" alt="{{ filename }} Color Histogram" class="img-fluid img-center rounded">
+                </div>
+              </figure>
+            </div>
+        {% endif %}
+        {% endif %}
+    {% endif %}
+  {% endfor %}
+</div>
+

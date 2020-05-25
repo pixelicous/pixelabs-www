@@ -1,0 +1,137 @@
+<header class="homewall">
+  <div class="container d-flex h-100 align-items-center justify-content-center">
+      <div class="text-center">
+        <h1 class="mx-auto my-0 text-uppercase display-1">PIXELABS</h1>
+        <h2 class="text-white mx-auto" style="filter: drop-shadow(0 0 1rem black);">Art, Tech, Coding, Music, Surfing</h2>
+      </div>
+      <div class="down-arrow d-flex justify-content-center">
+        <a class="mx-2" href="#about"><i class="fas fa-angle-double-down"></i></a>
+      </div>
+  </div>
+</header>
+<!-- About-->
+<section class="about-section text-center bg-white" id="about">
+<div class="container bg-white">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+            <!--If there is a piece of art you'd like to be created and you think I might be the person for it, please contact me! -->
+            <h2 class="text-black mb-4">Welcome to my personal homepage!</h2>
+            <p class="text-black-50  text-justify">Hi! My name is Pixi, I've brought together into one place my portfolio and random stuff related to my hobbies.
+            My portfolio is a collection of art projects, digital illustrations, crafts, electronic installations, custom made accessories and more. 
+            I write posts for my <a href="{{ 'blog/' | relative_url }}" target="_blank">blog</a> with topics ranging from technology to surfing. Some can get technical while others are complete one liner "oh sh*t! look at that!".</p>
+        </div>
+    </div>
+    <img class="img-fluid" src="{{ 'assets/img/home/about.jpg' | relative_url }}" alt="about background" />
+</div>
+</section>
+<!-- Projects-->
+<section class="content bg-light pb-md-5 pb-3" id="portfolio">
+  <div class="container">
+    <div class="content-section-heading text-center pt-md-5 pt-3">
+      <h3 class="text-secondary mb-0"><i class="fas fa-palette"></i></h3>
+      <h3 class="mb-5">Quick links & Recent content</h3>
+    </div>
+    <div class="row no-gutters">
+      <div class="col-md-6">
+        <a class="portfolio-item" href="https://soundcloud.com/{{ site.soundcloud_username }}/h39m04" target="_blank">
+          <span class="caption-orange">
+            <span class="caption-content">
+              <h2>Recent Music Mix</h2>
+              <p class="mb-0">Direct link to latest mix on my SoundCloud account</p>
+            </span>
+          </span>
+          <img class="img-fluid" src="{{ 'assets/img/home/project1.jpg' | relative_url }}" alt="quicklink 1">
+        </a>
+      </div>
+      <div class="col-md-6">
+        <a class="portfolio-item" href="{{ 'portfolio/crafts/beachbunny/' | relative_url}}">
+          <span class="caption-black">
+            <span class="caption-content">
+              <h2>Mandala Stickers</h2>
+              <p class="mb-0">A set of matching Mandala stickers from my shop!</p>
+            </span>
+          </span>
+          <img class="img-fluid" src="{{ 'assets/img/home/project2.jpg' | relative_url }}" alt="quicklink 2">
+        </a>
+      </div>
+      <div class="col-md-6">
+        <a class="portfolio-item" href="{{ 'portfolio/crafts/burngoggles/' | relative_url}}">
+          <span class="caption-black">
+            <span class="caption-content">
+              <h2>Burning Man Goggles</h2>
+              <p class="mb-0">Gifts I have created to my friends for the Burning Man event!</p>
+            </span>
+          </span>
+          <img class="img-fluid" src="{{ 'assets/img/home/project3.jpg' | relative_url }}" alt="quicklink 3">
+        </a>
+      </div>
+      <div class="col-md-6">
+        <a class="portfolio-item" href="{{ 'portfolio/crafts/beachbunny/' | relative_url}}">
+          <span class="caption-orange">
+            <span class="caption-content">
+              <h2>Beach Bunny</h2>
+              <p class="mb-0">A custom vinyl figure I painted by a friend's request.</p>
+            </span>
+          </span>
+          <img class="img-fluid" src="{{ 'assets/img/home/project4.jpg' | relative_url }}" alt="quicklink 4">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Signup-->
+<section class="signup-section" id="signup">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-10 col-lg-8 mx-auto text-center">
+              <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+              <h2 class="text-white mb-5">Subscribe to receive blog notifications!</h2>
+              <form class="form-inline d-flex"><input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="email" placeholder="Enter email address..." /><button class="btn btn-primary mx-auto" type="submit">Subscribe</button></form>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- Contact-->
+<section class="contact-section bg-black">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-4 mb-3 mb-md-0">
+              <div class="card py-4 h-100">
+                  <div class="card-body text-center">
+                      <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                      <h4 class="text-uppercase m-0">Location</h4>
+                      <hr class="my-4" />
+                      <div class="small text-black-50">Tel Aviv, Israel</div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4 mb-3 mb-md-0">
+              <div class="card py-4 h-100">
+                  <div class="card-body text-center">
+                      <i class="fas fa-envelope text-primary mb-2"></i>
+                      <h4 class="text-uppercase m-0">Email</h4>
+                      <hr class="my-4" />
+                      <div class="small text-black-50"><a href="mailto:inquiry@pixelabs.net?subject=General info or commission request&amp;body=Hi,\nI'd like to contact you about some media on your site.">inquiry@pixelabs.net</a></div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4 mb-3 mb-md-0">
+              <div class="card py-4 h-100">
+                  <div class="card-body text-center">
+                      <i class="fab fa-linkedin text-primary mb-2"></i>
+                      <h4 class="text-uppercase m-0">LinkedIn</h4>
+                      <hr class="my-4" />
+                      <div class="small text-black-50"><a href="https://linkedin.com/in/netzerom/" target="_blank">External Link</a></div>
+                      <div class="small text-gray-light"><small>(Log in first)</small></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="social d-flex justify-content-center">
+          <a class="mx-2" href="https://github.com/{{ site.github_username }}"><i class="fab fa-github"></i></a>
+          <a class="mx-2" href="https://www.twitch.tv/{{ site.twitch_username }}"><i class="fab fa-twitch"></i></a>
+          <a class="mx-2" href="https://www.soundcloud.com/{{ site.soundcloud_username }}"><i class="fab fa-soundcloud"></i></a>
+          <a class="mx-2" href="https://open.spotify.com/user/{{ site.spotify_username }}?si=Yo5YMk8mRlShH3kG4OpzDQ"><i class="fab fa-spotify"></i></a>
+      </div>
+  </div>
+</section>
