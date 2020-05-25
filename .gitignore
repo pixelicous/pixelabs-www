@@ -12,9 +12,14 @@ vendor/bundle
 venv/
 
 
-# Ignore portfolio base files
-assets/portfolio/**/*/sm
-assets/portfolio/**/*/md
+# Keep assets tidy - ignore gallery cat crawler folders
+# Portfolio resized photos, Photography Histogram & Exifdata
+_data/
+assets/portfolio/**/sm
+assets/portfolio/**/sm
+assets/portfolio/**/md
+assets/portfolio/**/lg
+assets/portfolio/**/histogram
 
 # Locally built site
 site/

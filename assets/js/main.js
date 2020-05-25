@@ -1,78 +1,74 @@
 
-function colorful_full_screen() {
+
+function colorful_full_screen(currentIndex) {
 
   // var psychedelic_enabled = document.getElementById("pschedelic_gallery")
 
   // if ( psychedelic_enabled.checked) {
 
-    var photo = document.getElementsByTagName('img');
-  
-    const COLORS = [
-      'purple',
-      'green',
-      'red',
-    ];
-  
-    var duotoneColor = COLORS[Math.floor(Math.random() * COLORS.length)]
-    var duotheme = photo.dataset.duotheme;
-    photo.dataset.duotheme = duotoneColor;
-  // }
+    var photo = document.querySelectorAll('[id^=fullsize_gallery]');
+    console.log(photo)
+      const COLORS = [
+        'purple',
+        'green',
+        'red',
+        'blue',
+        'vintage',
+      ];
+      var duotoneColor = COLORS[Math.floor(Math.random() * COLORS.length)];
+      photo[0].setAttribute('data-duotheme', duotoneColor);
+    //}
 }
 
-$( document ).ready(function() {
+jQuery(document).ready(function() {
   "use strict"; // Start of use strict
 
   document.getElementById("pschedelic_gallery").onclick = function () {
+    // query html galleries for this id, color effects will be enabled on those photos
     var photos = document.querySelectorAll('[id^=color-gallery]');
+    if ( this.checked ) {
+      window.fullsize_class_name = "fullsize_colorful"
+    }
+    else {
+      window.fullsize_class_name = "baguetteBox-open"
+    }
 
-    for(var i in photos) {
-      
+    // reset baguettebox to reset bodyclass - todo: simplify bodyclass variable refresh
+    baguetteBox.run('.photo_gallery', {
+      fullScreen: false,
+      preload: 2,
+      bodyClass: fullsize_class_name,
+      //animation: 'fadeIn',
+      overlayBackgroundColor: 'rgba(255, 255, 255 , 0.8)',
+      //onChange: colorful_full_screen,
+    });
+
+
+    for (let i = 0; i < photos.length; i++) {
+      var photo_object = photos[i];
+
+      // if psy input button is checked (detected above)
       if ( this.checked ) {
         const COLORS = [
           'purple',
           'green',
           'red',
         ];
+        
+        // get random color from list
         var duotoneColor = COLORS[Math.floor(Math.random() * COLORS.length)]
       }
       else {
+        // specific bw dataset if not psy gallery not requested
         var duotoneColor = 'blackWhite'
       }
 
-      var duotheme = photos[i].dataset.duotheme;
-      photos[i].dataset.duotheme = duotoneColor;
+      // todo: fix console errors
+      photo_object.setAttribute('data-duotheme', duotoneColor);
+      console.log(photo_object)
   }
   }
 
-  // Change gallery thumbnails to colorful randomness in case IDed that way
-
-  // var fruitCount = plant.getAttribute('data-fruit'); // fruitCount = '12'
-
-  // $('#color-gallery').each(function() {
-  //   var number = this.id.split('_').pop();
-  //   var randomColor = COLORS[Math.floor(Math.random() * COLORS.length)];
-  //   this.duotone-theme = randomColor;
-  // });
-
-
-
-  $(window).scroll(function() {
-    var height = $(this).scrollTop();
-    if (height > 100) {
-        $('.scroll-to-top').fadeIn();
-    } else {
-        $('.scroll-to-top').fadeOut();
-    }
-  });
-
-    // Collapse Navbar
-    var navbarCollapse = function () {
-      if ($("#mainNav").offset().top > 100) {
-          $("#mainNav").addClass("navbar-shrink");
-      } else {
-          $("#mainNav").removeClass("navbar-shrink");
-      }
-  };
 
   //var colors = ['red', 'blue', 'green', 'gray', 'black', 'yellow'];
 
@@ -80,12 +76,8 @@ $( document ).ready(function() {
      
   // });
 
-  // Collapse now if page is not at top
-  navbarCollapse();
-  // Collapse the navbar when page is scrolled
-  $(window).scroll(navbarCollapse);
   
-})(jQuery);
+});
 
 // $(pschedelic_gallery).click(function() {
   

@@ -42,7 +42,7 @@
         -moz-drop-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
         -webkit-filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.6)); 
       }
-      #baguetteBox-overlay .full-image figcaption {
+      #baguetteBox-overlay .full-image figcaption {        
         z-index: 9999;
         display: block;
         position: absolute;

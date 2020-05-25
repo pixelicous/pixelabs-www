@@ -21,16 +21,6 @@
   <i class="fas fa-angle-up"></i>
 </a>
 
-<!-- JS -->
-<script>
-  $('.nav-item').click(function() {
-      $('.nav-item').removeClass('active');
-      $(this).addClass('active');
-  })
-</script>
-
-
-
 <script src="{{ 'assets/js/darkmode.js' | relative_url }}"></script>
 <script src="https://kit.fontawesome.com/df5d77d287.js" crossorigin="anonymous"></script>
 <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script> -->
@@ -38,20 +28,25 @@
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-<script src="{{ 'assets/js/baguetteBox.min.js' | relative_url }}" async></script>
-
 <script src="{{ 'assets/js/main.js' | relative_url }}"></script>
+
+<script src="{{ 'assets/js/baguetteBox.js' | relative_url }}" async></script>
+<!-- <script src="{{ 'assets/js/baguetteBox.min.js' | relative_url }}" async></script> -->
+
+
 {% if page.url contains "/portfolio/" %}
 <script>
-  // Load baguette after document has loaded
-  window.addEventListener('load', function() {
+  // Load baguette after document has 
+  var fullsize_class_name = "baguetteBox-open"
+
+  $(document).ready(function(){
     baguetteBox.run('.photo_gallery', {
       fullScreen: false,
       preload: 2,
-      bodyClass: 'duotone-wrap.img',
+      bodyClass: fullsize_class_name,
       //animation: 'fadeIn',
       overlayBackgroundColor: 'rgba(255, 255, 255 , 0.8)',
-      //onChange: meow(),
+      //onChange: colorful_full_screen,
     });
   });
   </script>
