@@ -1,4 +1,19 @@
+function return_random_color() {
+  const COLORS = [
+    'purple',
+    'green',
+    'red',
+    'blue',
+    'vintage',
+  ];
 
+  do {
+    var duotoneColor = COLORS[Math.floor(Math.random() * COLORS.length)];
+  }
+  while (duotoneColor == window.last_color)
+  window.last_color = duotoneColor;
+  return duotoneColor
+}
 
 function colorful_full_screen(currentIndex) {
 
@@ -7,16 +22,7 @@ function colorful_full_screen(currentIndex) {
   // if ( psychedelic_enabled.checked) {
 
     var photo = document.querySelectorAll('[id^=fullsize_gallery]');
-    console.log(photo)
-      const COLORS = [
-        'purple',
-        'green',
-        'red',
-        'blue',
-        'vintage',
-      ];
-      var duotoneColor = COLORS[Math.floor(Math.random() * COLORS.length)];
-      photo[0].setAttribute('data-duotheme', duotoneColor);
+      photo[0].setAttribute('data-duotheme', return_random_color());
     //}
 }
 
@@ -49,14 +55,8 @@ jQuery(document).ready(function() {
 
       // if psy input button is checked (detected above)
       if ( this.checked ) {
-        const COLORS = [
-          'purple',
-          'green',
-          'red',
-        ];
-        
         // get random color from list
-        var duotoneColor = COLORS[Math.floor(Math.random() * COLORS.length)]
+        var duotoneColor = return_random_color()
       }
       else {
         // specific bw dataset if not psy gallery not requested
@@ -65,31 +65,7 @@ jQuery(document).ready(function() {
 
       // todo: fix console errors
       photo_object.setAttribute('data-duotheme', duotoneColor);
-      console.log(photo_object)
   }
   }
-
-
-  //var colors = ['red', 'blue', 'green', 'gray', 'black', 'yellow'];
-
-  // $(document).ready(function(){
-     
-  // });
-
   
 });
-
-// $(pschedelic_gallery).click(function() {
-  
-//   "use strict"; // Start of use strict
-
-// var photos = document.querySelectorAll('[id^=color-gallery]');
-// var randomColor = 'gold';
-
-// for(var i in photos){
-//   var randomColor = COLORS[Math.floor(Math.random() * COLORS.length)]
-//   var duotheme = photos[i].dataset.duotheme;
-//   photos[i].dataset.duotheme = randomColor;
-// }
-
-// })(jQuery);
