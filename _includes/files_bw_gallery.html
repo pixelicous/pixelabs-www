@@ -1,7 +1,7 @@
 <!-- <p class="text-small float-right"><small>License:</small> <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img src="https://licensebuttons.net/l/by-nc-nd/4.0/80x15.png" alt="License: CC BY-NC-ND 4.0"></a></p>
 [![License: CC BY-NC-ND 4.0](https://licensebuttons.net/l/by-nc-nd/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/) -->
 
-<div class="row  text-left">
+<div class="row text-left py-1 pl-0">
 <label class="custom-switch col-lg-5 col-12">
   <input id="photo_detailed_view" type="checkbox" name="photo_detailed_view" class="custom-switch-input">
   <span class="custom-switch-indicator"></span>
@@ -41,7 +41,7 @@
                   </figcaption>
                   <div class="photo_exif_data row" style="display:none">
                     {% for eif_data in photo_exif_data %}
-                    <div class="col-6">
+                    <div class="col-5">
                       <p class="text-small text-black"><small>{{eif_data[0]}}</small></p>
                     </div>
                     <div class="col-6">

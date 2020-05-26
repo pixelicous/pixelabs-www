@@ -21,12 +21,7 @@ function return_random_color() {
 
 function colorful_full_screen() {
     var photo = document.querySelectorAll('[id^=fullsize_gallery]');
-      photo[0].setAttribute('data-duotheme', return_random_color());
-}
-
-function colorful_full_screen() {
-  var photo = document.querySelectorAll('[id^=fullsize_gallery]');
-  photo[0].setAttribute('data-duotheme', return_random_color());
+    photo[0].setAttribute('data-duotheme', return_random_color());
 }
 
 jQuery(document).ready(function() {
