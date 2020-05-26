@@ -15,10 +15,6 @@ function return_random_color() {
   return duotoneColor
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> release
 function colorful_full_screen(currentIndex) {
 
   // var psychedelic_enabled = document.getElementById("pschedelic_gallery")
@@ -26,20 +22,7 @@ function colorful_full_screen(currentIndex) {
   // if ( psychedelic_enabled.checked) {
 
     var photo = document.querySelectorAll('[id^=fullsize_gallery]');
-<<<<<<< HEAD
       photo[0].setAttribute('data-duotheme', return_random_color());
-=======
-    console.log(photo)
-      const COLORS = [
-        'purple',
-        'green',
-        'red',
-        'blue',
-        'vintage',
-      ];
-      var duotoneColor = COLORS[Math.floor(Math.random() * COLORS.length)];
-      photo[0].setAttribute('data-duotheme', duotoneColor);
->>>>>>> release
     //}
 }
 
