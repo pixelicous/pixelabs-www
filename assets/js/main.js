@@ -7,44 +7,30 @@ function return_random_color() {
     'vintage',
   ];
 
+  // Make sure color changes between photo switch
   do {
     var duotoneColor = COLORS[Math.floor(Math.random() * COLORS.length)];
   }
-  while (duotoneColor == window.last_color)
-  window.last_color = duotoneColor;
+  while (duotoneColor == window.duo_last_color)
+
+  // Save duotone_last_color_globally
+  window.duo_last_color = duotoneColor;
+
   return duotoneColor
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> release
-function colorful_full_screen(currentIndex) {
-
-  // var psychedelic_enabled = document.getElementById("pschedelic_gallery")
-
-  // if ( psychedelic_enabled.checked) {
-
+function colorful_full_screen() {
     var photo = document.querySelectorAll('[id^=fullsize_gallery]');
-<<<<<<< HEAD
       photo[0].setAttribute('data-duotheme', return_random_color());
-=======
-    console.log(photo)
-      const COLORS = [
-        'purple',
-        'green',
-        'red',
-        'blue',
-        'vintage',
-      ];
-      var duotoneColor = COLORS[Math.floor(Math.random() * COLORS.length)];
-      photo[0].setAttribute('data-duotheme', duotoneColor);
->>>>>>> release
-    //}
+}
+
+function colorful_full_screen() {
+  var photo = document.querySelectorAll('[id^=fullsize_gallery]');
+  photo[0].setAttribute('data-duotheme', return_random_color());
 }
 
 jQuery(document).ready(function() {
-  "use strict"; // Start of use strict
+  "use strict"; 
 
   document.getElementById("pschedelic_gallery").onclick = function () {
     // query html galleries for this id, color effects will be enabled on those photos
