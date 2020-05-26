@@ -299,16 +299,11 @@ polyline, line {
 
 
 // Duotone fullscreen
+
+// baguette is using this class if psy gallery is turned on
+// if this class is used, then the full-image class are overwritten below with duotone classes
+// 
 .fullsize_colorful {
-  
-  :root {
-    --base:              #c3023c;
-    --bg-blend:          lighten;
-    --fg-blend:          soft-light;
-    --foreground:        #17c7c1;
-    --opacity:           1;
-    --spacing:           3px;
-  }
   
   .full-image {
     background-color:    var(--base);
