@@ -80,19 +80,19 @@
 
 @media screen and (max-width: 768px) {
   .homewall {
-    padding                 :   5px 0px;
+    padding                 :   15px 0px;
     h1 {
     width: 70%;
     height: auto;
     min-height: 15rem;
     padding                 :   20px 0px;
     border-style                :   solid;
-    border-width                :   5px;
+    border-width                :   10px;
     border-color                :   #F7F7F7;
     // -webkit-border-radius       :   3px;
     // -moz-border-radius          :   3px;
     // border-radius               :   3px;
-    font-weight: 200;
+    font-weight: 300;
     letter-spacing: 20px;
     font-size: 150px;
     line-height: 120px;
@@ -106,7 +106,7 @@
         text-shadow: 0 0 7px $gray-600;
         font-family: $font-roboto-condens;
         letter-spacing: 0.4rem;
-        font-weight: 300;
+        font-weight: 200;
         max-width: 70%;
         font-size: 1rem;
         line-height: 1.2rem;
@@ -119,7 +119,7 @@
     h1 {
     padding                 :   20px 20px;
     border-style                :   solid;
-    border-width                :   2px;
+    border-width                :   12px;
     border-color                :   #F7F7F7;
     font-size: 4rem;
     line-height: 4rem;
@@ -417,9 +417,10 @@
       background: fade-out($black, 0.9);
       border-radius: 100%;
       line-height: 3rem;
-      color: $primary;
+      color: $white;
       &:hover {
-          color: fade-out($white, 0.5);
+        background: fade-out($black, 1);
+          color: fade-out($white, 0.2);
       }
       &:active {
           color: $black;
@@ -427,7 +428,7 @@
   }
   @media screen and (max-width: 768px) {
     //padding-bottom: -20px;
-    margin-bottom: -20px;
+    margin-bottom: -40px;
     a {
       background: none;
       font-size: small;
