@@ -35,10 +35,6 @@
                   <a href="{{ fullsize_photo }}" class="duotone-wrap stretched-link" data-caption="Filename: {{filename}}, Year: {{ photo_exif_data.Year }}<br>Camera: {{ photo_exif_data.Camera }}, Model: {{ photo_exif_data.Model }}">
                     <img src="{{ file.path | relative_url }}" alt="{{ filename }}" class="img-fluid img-center rounded">
                   </a>
-                  <figcaption class="px-5 py-4 text-right text-light">
-                    <!-- <h2 class="h5 font-weight-bold mb-0">{{ filename }}</h2> -->
-                    <p class="text-small">{{ filename }}</p>
-                  </figcaption>
                   <div class="photo_exif_data row" style="display:none">
                     {% for eif_data in photo_exif_data %}
                     <div class="col-5">

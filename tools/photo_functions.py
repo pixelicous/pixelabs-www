@@ -162,9 +162,8 @@ def export_photo_exif_data(img, full_path, overwrite=True):
                         log.warning(f"Error dumping yaml for {yaml_file_path}")
             else:
                 log.debug(f"Yaml file exists and overwrite is set to false")
-
-    except AttributeError:
-        pass  
+    except AttributeError as e:
+        log.debug(f"Error getting exif data {e}")        
 
 def export_photo_histogram(full_path, overwrite=False):
     filename = os.path.splitext(os.path.basename(full_path))[0]
