@@ -27,6 +27,16 @@ function colorful_full_screen() {
 jQuery(document).ready(function() {
   "use strict"; 
 
+  // Scroll to top appearance
+  $(window).scroll(function() {
+    var scrollDistance = $(this).scrollTop();
+    if (scrollDistance > 100) {
+      $('.scroll-to-top').fadeIn();
+    } else {
+      $('.scroll-to-top').fadeOut();
+    }
+  });
+
   document.getElementById("pschedelic_gallery").onclick = function () {
     // query html galleries for this id, color effects will be enabled on those photos
     var photos = document.querySelectorAll('[id^=color-gallery]');
