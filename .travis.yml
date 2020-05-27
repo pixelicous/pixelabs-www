@@ -51,6 +51,6 @@ jobs:
 notifications:
   slack:
     secure: a+IAHGUDs/EIkqa90LKL/KsS2g6I+IEc4HYM9s8wUAKrBkhsnneSVxzBxfxx0GWM25+WWxvvkcj3N4hJRJ5kmoggtYkNpeyHISWfIooVA5+VOuSbpimOe27xkfaxWZJDk6bG9gHd/j3gNQooLdVlliEBMFBj33rMitl1xmRdiMFw9KMvriR0UpMT0q56pRv7TYm9IBHZ/1MEauUpYrpKkYH18PLibrPlYTCi1AOHGPk0sb/SLTpsv0QS1MEkoLgjAQ/05ceH+EZPxlK1GHSLPtO7+3hnNxkGIRVNWqIsJFn5pZXqnQUlr81Wv+MlOAZF66c025Mn+eY42eJWzAnTh1wwBQ4sQaBPXM2skjvf/Dti9z5tC0R6ov2i2EJy6DYg7mVMods4Qgfhk28ZbtNE9HLfWZU+qRY+98tMy2BzEVhJriC1yJpGBcfyQ9YkuvNPEWDqbN3wgzI4PedOh6wVphJZ43ILF5fsK3m/5u5q5uR7J0r2RGP6EYdgaAXJjtoqMEhXleg6R9+nJHwTYVXCgNUMUPfqwA9+qwiHtLyGEOJzvzs0DCdgLZ9jtXR2SR0rAygmQr7Iiu618HasQBQvZ4TTEtFac01VkRjzT4+j/bNvu44FkG8PVuOukOdUA0XNS3zMeFjBc/BB4bSFMB6E42VoBOhC2sFO7PA3GG08LvY=
-      on_failure: always
-      on_success: change
+    on_failure: always
+    on_success: change
   email: false
