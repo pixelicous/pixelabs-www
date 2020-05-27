@@ -23,7 +23,6 @@ addons:
   apt:
     packages:
     - libcurl4-openssl-dev
-
 jobs:
   include:
   - stage: Gallery Cat crawl gallery
@@ -52,7 +51,7 @@ jobs:
 notifications:
   slack:
     rooms:
-      secure: kT+G4Rm6rOwVH0E67okXc1t3fxAofwxjHFjL698tMFAN0XbPPv5j87y29XMyc1fg38pjf43avKo/Nxf0Gzsr1I874uLaio92E3gowy7S7ToEsDGygwBAchNl5xSCZCAbmhq6evbFp/Y6UD7nzoTlO2QCZg0QkLMEGmSSl9DEWrxGS22zsyDRf2PaEfb9Rf5TFfcEQiT9+UA3lB6BujS6Jyr7T0Bjk2FD4MRMkentClLxX9IdPdwbYySamvfrUimNlcGVH4I8kpjBhf9G3s4T4I9HR4x9Jfj3TJ6//cP6qpoxI85DXLKlMZg0VoyZQUBjVJmW3ybTqAWkauvfBrBn7PC/ofCAh9OhJ3i6bu25JTJfyNFwJtII8Yl7UoA8pw4FaxOS4RkaKAl0kIAMZwah2P50yO0Q3VhR2aBLDU0mYAalO0wgb0v0qPJtSxvGmjnmyjyoKTQ1/m+H/H7ORarm9UNa7K6Ccw0g0SQ8sNrrUyb00EI+mFBUFsqCrZdQMZ0BK9KSvFvrREltf9N3CBIK0Do5ZVEqfkYfyM5U8wHR44v93GtQdwtklSHbrEoB7nrB8owcm71FMYXgZmVvyelE272jrF/RUL2LEO+vx4rP9VTvmbwNWsd7CaiD4KW/5U3QHjhdZg4Y31gg+ZW++zrZK9f6hNARV5rGzEYeDjV+c/g=
-    on_failure: always
-    on_success: always
+      secure: rfbMJcGdTOjQftJvNeLRc+FYVF8P7k30ewDoSrJoc0SXRxz29yFt9eZd+7Q8LjqIZf2cvzvR2SC+kkK+fRsi4jrAiAM21o6Hw5GSriXVq/THJBGQQamWcfpEAJbo5Z2XKq6KHrS89A3xldnU0Go/AhcNLa0XpxZnsOPigjIljbZH6bjOihH4uhRyWqJGgcRgGJldyH7qOSqNXycAuvTStxfvBXr1ktQFepPYndztwIO5m/OTwgMm78CKQjOnX7gB0RI+t8q7m36P2ajabqbahJZZL7R9DxYgS8aVR2E9cN15SECrXSUUTk5cGpLTAe/muVjSs3V/rPclhYyCr5mDEG21XYJv4pD06XKY5193m2an5+cXiAaJKH2temh5SCUjb9heinix9fJovjU/x001B3QkQBT/bRfEP3BWBrQ9dDRqQcUE49vMU5uHQgSiqY+WPAlYjJfeP4FRAtD5jViSV7Bb9FbEXbIx7rFVxbgIW7AJLvS3KTcHMcodUFYW701fK/v6gEZbANTBe6xFAV/RJFgcwJskOcpdu8R8KGuyKRANzVSlteDBIx5F3hG5cy4CyERx5uSl5AAX6/X6xZZr/c+BqwsfRmQrOOGczG7skNgodBh+rGHuEcgiZFvjYLAUBckiHC7ciY8iuaMNTefy+6vrAJVYJZxuJ1TkwpIG21o=
+      on_success: always
+      on_failure: always
   email: false
