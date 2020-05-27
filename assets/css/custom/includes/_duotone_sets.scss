@@ -1,0 +1,53 @@
+// DuoTone galleries
+
+[data-duotheme="police"] {
+    --base:              #f700b6;
+    --bg-blend:          multiply;
+    --fg-blend:          difference;
+    --foreground:        #070db0;
+  }
+  
+  [data-duotheme="vintage"] {
+    --base:              #00f5f7;
+    --bg-blend:          multiply;
+    --fg-blend:          lighten;
+    --foreground:        #6f000e;
+  }
+  
+  [data-duotheme="red"] {
+    --base:              #f7392b;
+    --bg-blend:          multiply;
+    --fg-blend:          lighten;
+    --foreground:        #16006f;
+  }
+  
+  [data-duotheme="blackWhite"] {
+    --base:              #000000;
+    --bg-blend:          screen;
+    --fg-blend:          color-dodge;
+    --foreground:        #1d1d37;
+    --opacity:           0.7;
+  }
+  
+  [data-duotheme="blue"] {
+    --base:              #00ffcc;
+    --bg-blend:          multiply;
+    --fg-blend:          lighten;
+    --foreground:        #200075;
+  }
+  
+  
+  [data-duotheme="green"] {
+    --base:              #3af739;
+    --bg-blend:          multiply;
+    --fg-blend:          lighten;
+    --foreground:        #16006f;
+    }
+  
+  
+  [data-duotheme="purple"] {
+    --base:              #e9f700;
+    --bg-blend:          multiply;
+    --fg-blend:          lighten;
+    --foreground:        #6a0475;
+  }
