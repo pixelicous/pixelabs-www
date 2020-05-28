@@ -247,15 +247,8 @@ polyline, line {
 // if this class is used, then the full-image class are overwritten below with duotone classes
 // 
 .fullsize_colorful {
-  padding: 0px 0px 0px 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-
   .full-image {
     background-color:    var(--base);
-    display:             flex;
-    overflow:            hidden;
-    padding:             var(--spacing);
     position:            relative;
     -moz-border-radius: 4px;
     border-radius: 4px;
@@ -263,24 +256,14 @@ polyline, line {
   
   .full-image img {
     filter:              grayscale(100%) contrast(1) blur(var(--blur));
-    max-width:           100%;
     mix-blend-mode:      var(--bg-blend);
-    object-fit:          cover;
     opacity:             var(--opacity);
-    width:               100%;
   }
   
   
   .full-image::before {
     background-color:    var(--foreground);
-    bottom:              0;
-    content:             '';
-    left:                0;
     mix-blend-mode:      var(--fg-blend);
-    right:               0;
-    top:                 0;
-    width:               100%;
-    z-index:             1;
   }
 } 
 
