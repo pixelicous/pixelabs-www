@@ -156,7 +156,9 @@
       to bottom,
       $white 0%,
       #{fade-out($white, 0.1)} 75%,
-      #{fade-out($white, 0.2)} 100%
+      #{fade-out($white, 0.8)} 95%,
+      #{fade-out($gray-200, 0.9)} 97%,
+      $gray-200 100%
   );
   p {
       margin-bottom: 5rem;
@@ -341,8 +343,9 @@
   padding: 10rem 0;
   background: linear-gradient(
           to bottom,
-          #{fade-out($black, 0.9)} 0%,
-          #{fade-out($black, 0.5)} 75%,
+          $primary 0%,
+          #{fade-out($primary, 0.9)} 3%,
+          #{fade-out($black, 0.5)} 60%,
           $black 100%
       ),
       url("../img/home/homepage_bottom.jpg");
