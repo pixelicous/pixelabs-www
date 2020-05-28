@@ -37,28 +37,11 @@ body {
       padding-bottom: 0px; }
 }
 
-// @media (min-width: 740px) {
-//   html,
-//   body,
-//   .view {
-//     height: 1000px;
-//   }
-// }
-
-// @media (min-width: 800px) and (max-width: 850px) {
-//   html,
-//   body,
-//   .view {
-//     height: 650px;
-//   }
-// }
-
-
 code {
   font-size: 80%;
 }
 
-
+// Turn images to small glyphs when not using an Icon Set
 .icon-black {
   filter: brightness(0);
   width: 50px;
