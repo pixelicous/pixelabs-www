@@ -9,13 +9,13 @@
 
         <!-- Project Item Heading -->
         <h1 class="my-4">{{page.title}}
-        <small{>{{page.description}}</small>
-        </h1>
+        <small>{{page.description}}</small></h1>
+        
   
         <!-- Project Item Row -->
         <div class="row bg-white rounded p-3 shadow-sm m-0">
-            <div class="col-md-6">
-              <img class="img-fluid rounded" src="/assets{{page.permalink}}md/{{page.project_image}}" alt="project cover">
+            <div class="col-md-6 my-3">
+              <img class="img-fluid rounded" src="/assets{{page.permalink}}/{{page.project_image}}" alt="project cover">
             </div>
 
             {{content}}
