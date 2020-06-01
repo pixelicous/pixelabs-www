@@ -1,5 +1,5 @@
 <h3 class="my-4">Process photos</h3>
-<div class="row align-items-top photo_gallery">
+<div class="row photo_gallery">
     {% assign target_path = include.folder | append: 'thumb' %}
     {% for file in site.static_files %}
     {% if file.path contains target_path %}
@@ -10,16 +10,19 @@
                 {% assign sm_size_path = page.permalink | prepend: '/assets' | append: 'sm/' | append: file.name %}
                 {% assign md_size_path = page.permalink | prepend: '/assets' | append: 'md/' | append: file.name %}
                 {% assign lg_size_path = page.permalink | prepend: '/assets' | append: 'lg/' | append: file.name %}
-                    <div class="col-md-3 col-6 mb-4 gallery-ds">
-                        <div class="p-1 bg-white rounded">
-                            <a href="{{ thumb_size_path }}"
-                                data-at-576="{{sm_size_path}}"
-                                data-at-768="{{md_size_path}}"
-                                data-at-1200="{{lg_size_path}}">
-                                <img class="img-fluid rounded" src="{{ file.path | relative_url }}" alt="{{ filename }}">
-                            </a>
-                        </div>
+                    <div class="col-md-3 col-6 gallery-ds" data-duotheme="blackWhite" id="color-gallery">
+                        <figure class="rounded caption-1 gallery-ds">
+                            <div class="gallery-photo">
+                                <a href="{{ thumb_size_path }}"
+                                    data-at-576="{{sm_size_path}}"
+                                    data-at-768="{{md_size_path}}"
+                                    data-at-1200="{{lg_size_path}}">
+                                    <img class="img-fluid img-center rounded " src="{{ file.path | relative_url }}" alt="{{ filename }}">
+                                </a>
+                            </div>
+                        </figure>
                     </div>
+
              {% endif %}
              {% endif %}
         {% endif %}
