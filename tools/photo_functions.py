@@ -11,7 +11,8 @@ log.propagate = True
 YAML_DATA_FILES_PATH = "./_data/photography"
 
 PHOTO_SIZES = {
-        "sm": { "width": "300", "height": "900" },
+        "thumb": { "width": "300", "height": "200" },
+        "sm": { "width": "450", "height": "300" },
         "md": { "width": "900", "height": "600" },
         "lg": { "width": "1800", "height": "1200" }
         }
