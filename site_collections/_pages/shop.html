@@ -4,26 +4,27 @@ title: Shop
 permalink: /shop/
 ---
 <!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-    <div class="col-12">
-        <h1 class="pl-0 display-4 mb-4">My shop - Wavesix</h1>
-        <p class="lead">Thanks for being interested at looking at what I have to offer :)</p>
-        <p class="text-dark">My shop offers goods under the brand name "Wavesix" and is currently hosted externally.<br>I am using a few online platforms currently, you can find the links below.</p>
-        <p class="text-primary"><small>Links are opened in a new window</small></p>
+<div class="jumbotron justify-content-center">
+    <div class="row justify-content-center mt-0 pt-0">
+        <div class="col-md-4 col-10 mb-3 mt-0 pt-0">
+            <img src="{{ 'assets/img/wavesix_logo.png' | relative_url }}" class="img-fluid">
+        </div>
     </div>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-4">
-                <a class="btn btn-lg btn-outline-dark" href="https://gumroad.com/wavesix" role="button" target="_blank"><i class="fas fa-store fa-2x" style="vertical-align:middle; line-height: inherit;"></i> Main store &raquo;</a></button>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p class="text-primary lead text-center">Thanks for being interested at looking at what I have to offer :)</p>
+                    <p class="text-dark text-justify">My shop offers goods under the brand name <strong>Wavesix</strong>. The shop is currently hosted externally, mostly for keeping checkout secured as possible. I am using a few online platforms currently, you can find the links below.</p>
+                </div>
             </div>
-            <div class="col-4">
-                <button class="btn btn-lg btn-outline-dark" href="https://{{ site.redbubble_username }}.redbubble.com/" role="button" disabled><i class="fas fa-registered fa-2x" style="vertical-align:middle; line-height: inherit;"></i>  RedBubble &raquo;</a>
-            </div>
-            <!--
-            <div class="col-4">
-                <a class="btn btn-lg btn-outline-dark" href="https://shopifylink/" role="button" disabled><i class="fab fa-shopify fa-2x"></i> Shopify &raquo;</a>
-            </div>
-            -->
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-3 col-8 text-center m-md-0 m-2">
+            <a class="btn btn-lg btn-outline-dark" href="https://gumroad.com/wavesix" role="button" target="_blank"><i class="fas fa-store fa-2x" style="vertical-align:middle; line-height: inherit;"></i> Main Shop &raquo;</a>
+        </div>
+        <div class="col-md-3 col-8 text-center m-md-0 m-2">
+            <button class="btn btn-lg btn-outline-dark" href="https://{{ site.redbubble_username }}.redbubble.com/" role="button" disabled><i class="fas fa-registered fa-2x" style="vertical-align:middle; line-height: inherit;"></i>  RedBubble &raquo;</button>
+        </div>
+        <div class="col-12 text-center mt-4">
+            <p class="text-muted"><small>Links are opened in a new window</small></p>
         </div>
     </div>
 </div>
