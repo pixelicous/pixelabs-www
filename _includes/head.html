@@ -15,5 +15,8 @@
 
 <link rel="stylesheet" href="{{ 'assets/css/baguetteBox/baguetteBox.css' | relative_url }}">
 
+{% if page.url contains "/shop/" %}
+  <script src="https://gumroad.com/js/gumroad.js"></script>
+{% endif %}
 
 {% seo %}
