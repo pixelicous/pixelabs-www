@@ -10,3 +10,23 @@
     color: $info;
   }
 }
+
+
+@media screen and (max-width: 768px) {
+    .shop {
+
+        h1{
+           font-family: $font-roboto;
+           font-size: 4rem;
+           line-height: 4rem;
+           font-weight: 300;
+         }
+        h5{
+           font-family: $font-roboto;
+           font-weight: 400;
+           color: $info;
+           font-size: 1.1rem;
+           line-height: 1.3rem;
+         }
+    }
+}       
