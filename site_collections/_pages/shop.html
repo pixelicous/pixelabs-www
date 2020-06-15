@@ -23,7 +23,7 @@ permalink: /shop/
             {% for shop in shops %}
             <div class="col-md-3 col-6 my-3">
                 <div class="gallery-item">
-                    <img src="/assets/img{{shop.permalink}}{{shop.header_image}}" alt="photo gallery item" class="w-100 rounded">
+                    <img src="/assets/img{{shop.permalink}}{{shop.header_image}}" title="{{shop.title}}" alt="{{shop.title}}" class="w-100 rounded">
                     <figcaption>
                         <h2 class="h5 font-weight-bold font-italic">{{shop.title}}</h2>
                     </figcaption>

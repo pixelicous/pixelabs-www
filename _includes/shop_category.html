@@ -7,7 +7,7 @@
     {% assign photo_path = page.permalink | prepend: '/assets/img' | append: product.id %}
     <div class="col-md-4 col-6 my-3">
       <div class="gallery-item">
-        <img src="{{ photo_path }}.jpg" alt="photo gallery item" class="img-fluid">
+        <img src="{{ photo_path }}.jpg" title="{{product.title}}" alt="{{product.description}}" class="img-fluid">
         <figcaption>
           <h5>{{product.title}}</h5>
           <h6>{{product.description}}</h6>
