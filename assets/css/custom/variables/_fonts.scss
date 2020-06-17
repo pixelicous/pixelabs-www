@@ -16,3 +16,13 @@ $font-roboto: 'Roboto', sans-serif;
 $font-roboto-condens: 'Roboto Condensed', sans-serif;
 
 $font-roboto-slab: 'Roboto Slab', serif;
+
+.text-roboto-300 {
+    font-family: $font-roboto;
+    font-weight: 300;
+}
+
+.text-roboto-400 {
+    font-family: $font-roboto;
+    font-weight: 400;
+}
