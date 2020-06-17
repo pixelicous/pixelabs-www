@@ -20,8 +20,9 @@ permalink: /shop/
             </div>
         </div>
         <div class="row justify-content-center shop">
-            <div class="col-lg-8">
-                <h6 class="lead text-center"><a type="button" class="btn btn-light btn-lg" data-toggle="modal" data-target="#modalShipment" class="text-decoration-none text-muted"><small>Shipping Rates & Delivery Times Details</small></a></h6>
+            <div class="col-lg-8 d-flex">
+                <h6 class="lead text-center m-2"><a type="button" class="btn btn-light btn-lg" data-toggle="modal" data-target="#modalShipment" class="text-decoration-none text-muted"><small><i class="fas fa-shipping-fast" style="vertical-align:middle;"></i> Shipping Rates & Delivery Times Details</small></a></h6>
+                <h6 class="lead text-center m-2"><a type="button" class="btn btn-light btn-lg" href="https://gumroad.com/{{ site.gumroad_username }}" target="_blank" class="text-decoration-none text-muted"><small><i class="fas fa-external-link-alt" style="vertical-align:middle;"></i> Show shop in brand external site.</small></a></h6>
            
                 <div class="modal fade" id="modalShipment" tabindex="-1" role="dialog" aria-labelledby="modalShippingDelivery" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -73,8 +74,7 @@ permalink: /shop/
                         </div>
                       </div>
                     </div>
-                  </div>
-           
+                </div>
             </div>
         </div>
         <div class="row justify-content-center mb-5">
@@ -90,7 +90,7 @@ permalink: /shop/
             </div>
             {% endfor %}
         </div>
-        <div class="row justify-content-center mt-5">
+        <div class="row justify-content-center mt-5">            
             <div class="col-md-3 col-8 text-center m-md-0 m-2">
                 <button class="btn btn-lg btn-outline-dark" href="https://{{ site.redbubble_username }}.redbubble.com/" role="button" disabled><i class="fas fa-registered fa-2x" style="vertical-align:middle;"></i>  RedBubble &raquo;</button>
             </div>
