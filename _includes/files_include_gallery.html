@@ -17,8 +17,9 @@
                                 <a href="{{ thumb_size_path }}"
                                     data-at-576="{{sm_size_path}}"
                                     data-at-768="{{md_size_path}}"
-                                    data-at-1200="{{lg_size_path}}">
-                                    <img class="img-center rounded " src="{{ file.path | relative_url }}" alt="{{ filename }}">
+                                    data-at-1200="{{lg_size_path}}"
+                                    class="duotone-wrap stretched-link">
+                                    <img src="{{ file.path | relative_url }}" alt="{{ filename }}" class="img-fluid rounded">
                                 </a>
                             </div>
                         </figure>
