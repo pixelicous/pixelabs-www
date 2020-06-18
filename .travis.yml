@@ -30,7 +30,7 @@ jobs:
     before_install:
     - sudo apt update
     - python3 -m pip install --upgrade pip
-    - python3 -m pip install -r requirements.txt --cache-dir HOME/.cache/pip
+    - python3 -m pip install -r requirements.txt --cache-dir $HOME/.cache/pip
     script: python ./tools/gallery_cat.py
   - stage: HTML Proofing, Site build, deploy to master
     before_install:
