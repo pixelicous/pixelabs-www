@@ -209,6 +209,7 @@ def export_photo_exif_data(img, full_path, overwrite):
     except AttributeError as e:
         log.debug(f"Error getting exif data {e}")        
 
+
 def export_photo_histogram(full_path, histo_path, overwrite):
     filename = os.path.splitext(os.path.basename(full_path))[0]
     file_path = os.path.dirname(full_path)
