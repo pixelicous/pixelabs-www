@@ -7,7 +7,7 @@ from PIL import Image
 
 
 # Logger
-LOG_LEVEL = os.environ.get("GALLERY_RUNNER_LOG_LEVEL", default="DEBUG").upper()
+LOG_LEVEL = os.environ.get("GALLERY_RUNNER_LOG_LEVEL", default="INFO").upper()
 LOG_NUM_LEVEL = getattr(logging, LOG_LEVEL, None)
 
 if not isinstance(LOG_NUM_LEVEL, int):
@@ -43,8 +43,10 @@ EXTRA_FOLDERS = ['histogram']
 #os.chdir(root_path)
 #print(clean_resized_folders(GALLERY_ROOT_PATH))
 #os.chdir(root_path)
-print(f"histo {ENABLE_PHOTO_HISTOGRAM_CREATE}")
-print(f"histo {ENABLE_PHOTO_RESIZE}")
+log.debug(f"Histogram enabled: {ENABLE_PHOTO_HISTOGRAM_CREATE}")
+log.debug(f"resize enabled: {ENABLE_PHOTO_RESIZE}")
+log.debug(f"Histogram overwrite yaml: {YAML_OVERWRITE}")
+log.debug(f"Histogram overwrite resize: {RESIZE_OVERWRITE}")
 # Find all main portfolio paths under assets
 portfolio_paths = [f.path for f in os.scandir(GALLERY_ROOT_PATH) if f.is_dir()]
 

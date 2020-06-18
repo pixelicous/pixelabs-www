@@ -7,7 +7,7 @@ cache:
   bundler: true
   directories:
   - "$HOME/.cache/pip"
-  - assets/portfolio
+  - assets/portfolio/media/
   - _data/
 branches:
   only:
@@ -16,6 +16,8 @@ env:
   global:
   - PATH=/opt/python/3.7.1/bin:$PATH
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+  - PHOTO_RESIZE=false
+  - PHOTO_HISTORGRAM=false
   - YAML_OVERWRITE=true
   - RESIZE_OVERWRITE=false
   - HISTOGRAM_OVERWRITE=false
