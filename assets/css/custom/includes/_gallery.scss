@@ -23,12 +23,12 @@ polyline, line {
   transform: translateY(-50%);
 }
 
-
-.gallery-thumbnail {
-  max-height: 200px;
-  min-height: 150px;
-  object-fit: cover;
-}
+// cleanup:
+// .gallery-thumbnail {
+//   max-height: 200px;
+//   min-height: 150px;
+//   object-fit: cover;
+// }
 
 .gallery-item {
   background-color: white;
@@ -76,6 +76,7 @@ polyline, line {
   filter: drop-shadow(0px 0px 8px #c5b8a4);
 }
 
+
 .gallery-photo {
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -83,18 +84,33 @@ polyline, line {
   padding: 5px 5px 5px 5px;
   overflow: hidden; 
   display: inline-block;
+  img { // With w-100 in html used following section to fix vertical images problems in gallery
+    max-width: 300px; 
+    max-height: 120px;
+    @media screen and (max-width: 768px) { // enforce same size height on mobile
+      max-height: 90px;
+    }
+    height: auto;
+  }
   a {
     //filter: grayscale(100%);
     transition: all .3s;
   }
   a:hover {
-    filter: grayscale(0);
+    //filter: grayscale(0);   // enable for additional blinky effect on hover in galleries
     //  transform:scale(1.2);
     //  -ms-transform:scale(1.2); /* IE 9 */
     //  -moz-transform:scale(1.2); /* Firefox */
     //  -webkit-transform:scale(1.2); /* Safari and Chrome */
     //  -o-transform:scale(1.2); /* Opera */
   }
+  .photo_histogram_data {
+    img { 
+      max-width: 100%;
+      max-height: none;
+    }
+  }
+
 }
 
 
@@ -123,18 +139,23 @@ polyline, line {
 }
 
 
-.duotone-wrap::before:hover {
-  background-color:    var(--base);
-}
+// .duotone-wrap::before:hover {
+//   background-color:    var(--foreground);
+// }
 
 .duotone-wrap:hover {
-  background-color:    var(--foreground);
+  background-color:    var(--base);
 
   img {
     filter:              grayscale(100%) contrast(1) blur(var(--blur));
-    mix-blend-mode:      color-dodge;
-    opacity:             0.3;
+    mix-blend-mode:      difference;
+    opacity:             1;
   }
+  // img {
+  //   filter:              grayscale(100%) contrast(1) blur(var(--blur));
+  //   mix-blend-mode:      difference;
+  //   opacity:             0.8;
+  // }
 }
 
 .duotone-wrap img {
