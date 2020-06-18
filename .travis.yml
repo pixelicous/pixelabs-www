@@ -8,6 +8,7 @@ cache:
   directories:
   - "$HOME/.cache/pip"
   - assets/portfolio
+  - _data/
 branches:
   only:
   - release
