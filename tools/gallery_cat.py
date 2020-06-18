@@ -28,12 +28,12 @@ console.setFormatter(formatter)
 log.addHandler(console)
 
 # Overwrite variables
-ENABLE_PHOTO_RESIZE = True #os.environ.get(f"GALLERY_RUNNER_PHOTO_RESIZE", default=True)
-ENABLE_PHOTO_HISTOGRAM_CREATE = False #os.environ.get(f"GALLERY_RUNNER_PHOTO_HISTORGRAM", default=True)
-YAML_OVERWRITE = False #os.environ.get(f"GALLERY_RUNNER_OVERWRITE_YAML", default=False)
-RESIZE_OVERWRITE = True #os.environ.get(f"GALLERY_RUNNER_OVERWRITE_RESIZE", default=False)
-HISTOGRAM_OVERWRITE = False #os.environ.get(f"GALLERY_RUNNER_OVERWRITE_HISTOGRAM", default=False)
-ENABLE_PHOTO_ORIGINALS_CLEANUP = False #os.environ.get(f"GALLERY_RUNNER_CLEAN_ORIGINALS", default=False)
+ENABLE_PHOTO_RESIZE = bool(os.environ.get(f"GALLERY_RUNNER_PHOTO_RESIZE", default=True))
+ENABLE_PHOTO_HISTOGRAM_CREATE = bool(os.environ.get(f"GALLERY_RUNNER_PHOTO_HISTORGRAM", default=True))
+YAML_OVERWRITE = bool(os.environ.get(f"GALLERY_RUNNER_OVERWRITE_YAML", default=False))
+RESIZE_OVERWRITE = bool(os.environ.get(f"GALLERY_RUNNER_OVERWRITE_RESIZE", default=False))
+HISTOGRAM_OVERWRITE = bool(os.environ.get(f"GALLERY_RUNNER_OVERWRITE_HISTOGRAM", default=False))
+ENABLE_PHOTO_ORIGINALS_CLEANUP = bool(os.environ.get(f"GALLERY_RUNNER_CLEAN_ORIGINALS", default=False))
 # Root location to run
 GALLERY_ROOT_PATH = "./assets/portfolio"
 SIZES_STRING_LIST = ', '.join([size for size in PHOTO_SIZES])
