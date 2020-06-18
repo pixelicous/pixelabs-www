@@ -78,7 +78,7 @@ for portfolio_root in portfolio_paths:
                 log.info(f"Created {new_paths_created} directories for {portfolio_dir_root_path}/{os.path.basename(portfolio_dirname)}")
         else:
             log.debug(f"Ignoring: {portfolio_dirname}")
-        
+         
 log.info(f"#2 Resizing images and saving in {SIZES_STRING_LIST} directories")
 # Resize images into relevant size folders
 for root, dirs, files in os.walk(GALLERY_ROOT_PATH):
