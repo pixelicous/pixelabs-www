@@ -234,7 +234,7 @@ def export_nice_histogram(full_path, photo_histogram_file):
     histo = plot.xlabel('Intensity')
     histo = plot.ylabel('Pixels #')
     histo = plot.legend(['Total', 'Red Channel', 'Green Channel', 'Blue Channel'])
-    plot.savefig(photo_histogram_file, bbox_inches='tight', dpi=75, transparent=True)
+    plot.savefig(photo_histogram_file, bbox_inches='tight', dpi=75, transparent=False)
 
 
 
@@ -254,5 +254,5 @@ def export_photo_histogram_simple(full_path):
             plot.fill_between(histr, facecolor=col)
             plot.xlim([0,256])
         
-        plot.savefig(photo_histogram_file, bbox_inches='tight', dpi=75, transparent=True)
+        plot.savefig(photo_histogram_file, bbox_inches='tight', dpi=75, transparent=False)
         plot.close(photo_histogram_file)

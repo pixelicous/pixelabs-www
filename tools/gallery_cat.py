@@ -122,7 +122,8 @@ for root, dirs, files in os.walk(GALLERY_ROOT_PATH):
                     if ENABLE_PHOTO_HISTOGRAM_CREATE:
                         log.info(f"Photography file: {full_path} - Exporting image data and histogram")
                         export_photo_exif_data(img, full_path, YAML_OVERWRITE)
-                        export_photo_histogram(full_path, HISTOGRAM_OVERWRITE)
+                        histo_path = os.path.join(directory_path, 'thumb', filename)
+                        export_photo_histogram(histo_path, HISTOGRAM_OVERWRITE)
                         
                 if ENABLE_PHOTO_RESIZE:
                     log.info(f"Legitimate for resizing: {full_path}")
