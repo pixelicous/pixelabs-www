@@ -69,7 +69,7 @@ def clean_resized_folders(folder):
     except Exception as e:
         return f"Error cleaning resized photos folders {e}"
 
-def resize_image(root, full_path, alignment, overwrite=False):
+def resize_image(root, full_path, alignment, overwrite=0):
         
     filename = os.path.basename(full_path)
     with open(full_path, 'r+b') as f:
@@ -191,7 +191,7 @@ def export_photo_exif_data(img, full_path, overwrite=True):
         if overwrite:
             with open(yaml_file_path, 'w') as yml_file:
                 try:
-                    data = yaml.dump(data_dump, yml_file, default_flow_style=False)
+                    data = yaml.dump(data_dump, yml_file, default_flow_style=0)
                     log.debug(f"Dumping yaml for {yaml_file_path}")
                 except yaml.YAMLError as e:
                     log.warning(f"Error dumping yaml for {yaml_file_path}")
@@ -200,7 +200,7 @@ def export_photo_exif_data(img, full_path, overwrite=True):
             if not os.path.isfile(yaml_file_path):
                 with open(yaml_file_path, 'w') as yml_file:
                     try:
-                        data = yaml.dump(data_dump, yml_file, default_flow_style=False)
+                        data = yaml.dump(data_dump, yml_file, default_flow_style=0)
                         log.debug(f"Dumping yaml for {yaml_file_path}")
                     except yaml.YAMLError as e:
                         log.warning(f"Error dumping yaml for {yaml_file_path}")
@@ -209,7 +209,7 @@ def export_photo_exif_data(img, full_path, overwrite=True):
     except AttributeError as e:
         log.debug(f"Error getting exif data {e}")        
 
-def export_photo_histogram(full_path, overwrite=False):
+def export_photo_histogram(full_path, overwrite=0):
     filename = os.path.splitext(os.path.basename(full_path))[0]
     file_path = os.path.dirname(full_path)
     photo_histogram_file = f"{file_path}/histogram/{filename}.png"
