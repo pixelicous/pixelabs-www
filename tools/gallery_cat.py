@@ -121,8 +121,8 @@ for root, dirs, files in os.walk(GALLERY_ROOT_PATH):
                             pass     
                     if ENABLE_PHOTO_HISTOGRAM_CREATE:
                         log.info(f"Photography file: {full_path} - Exporting image data and histogram")
-                        export_photo_exif_data(img, full_path, YAML_OVERWRITE)
-                        export_photo_histogram(full_path, HISTOGRAM_OVERWRITE)
+                        #export_photo_exif_data(img, full_path, YAML_OVERWRITE)
+                        #export_photo_histogram(full_path, HISTOGRAM_OVERWRITE)
                         
                 log.info(f"Legitimate for resizing: {full_path}")
                 log.debug(f"Original size {img.size}")
