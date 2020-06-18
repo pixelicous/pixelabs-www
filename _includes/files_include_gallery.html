@@ -1,6 +1,7 @@
 <h3 class="my-4">Process photos</h3>
 <div class="row photo_gallery">
     {%- assign target_path = include.folder | append: 'thumb' -%}
+
     {%- for file in site.static_files -%}
     {%- if file.path contains target_path -%}
             {%- if file.basename != 'header' and file.basename != 'HEADER'  -%}
@@ -10,14 +11,14 @@
                 {%- assign sm_size_path = page.permalink | prepend: '/assets' | append: 'sm/' | append: file.name -%}
                 {%- assign md_size_path = page.permalink | prepend: '/assets' | append: 'md/' | append: file.name -%}
                 {%- assign lg_size_path = page.permalink | prepend: '/assets' | append: 'lg/' | append: file.name -%}
-                    <div class="col-md-3 col-6 gallery-ds" data-duotheme="blackWhite" id="color-gallery">
+                    <div class="col-md-3 col-6" data-duotheme="blackWhite" id="color-gallery">
                         <figure class="rounded caption-1 gallery-ds">
-                            <div class="gallery-photo">
+                            <div class="gallery-photo w-100">
                                 <a href="{{ thumb_size_path }}"
                                     data-at-576="{{sm_size_path}}"
                                     data-at-768="{{md_size_path}}"
                                     data-at-1200="{{lg_size_path}}">
-                                    <img class="img-fluid img-center rounded " src="{{ file.path | relative_url }}" alt="{{ filename }}">
+                                    <img class="img-center rounded " src="{{ file.path | relative_url }}" alt="{{ filename }}">
                                 </a>
                             </div>
                         </figure>

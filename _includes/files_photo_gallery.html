@@ -35,25 +35,25 @@
             <div class="col-lg-3 col-6" data-duotheme="blackWhite" id="color-gallery">
               <!-- item -->
               <figure class="rounded caption-1 gallery-ds">
-                <div class="gallery-photo">
+                <div class="gallery-photo w-100">
                   <a href="{{ thumb_size_path }}"
                     data-at-576="{{sm_size_path}}"
                     data-at-768="{{md_size_path}}"
                     data-at-1200="{{lg_size_path}}"
                     class="duotone-wrap stretched-link"
                     data-caption="Filename: {{filename}}, Year: {{ photo_exif_data.Year }}<br>Camera: {{ photo_exif_data.Camera }}, Model: {{ photo_exif_data.Model }}">
-                    <img src="{{ file.path | relative_url }}" alt="{{ filename }}" class="img-fluid img-center rounded">
+                    <img src="{{ file.path | relative_url }}" alt="{{ filename }}" class="img-center rounded">
                   </a>
-                  <div class="photo_exif_data row" style="display:none">
-                    {%- for eif_data in photo_exif_data -%}
-                    <div class="col-5">
-                      <p class="text-small text-black"><small>{{eif_data[0]}}</small></p>
-                    </div>
-                    <div class="col-6">
-                      <p class="text-small text-primary"><small>{{eif_data[1]}}</small></p>
-                    </div>
-                    {%- endfor -%}
+                </div>
+                <div class="photo_exif_data row" style="display:none">
+                  {%- for eif_data in photo_exif_data -%}
+                  <div class="col-5">
+                    <p class="text-small text-black my-0 py-0"><small>{{eif_data[0]}}</small></p>
                   </div>
+                  <div class="col-6">
+                    <p class="text-small text-primary my-0 py-0"><small>{{eif_data[1]}}</small></p>
+                  </div>
+                  {%- endfor -%}
                 </div>
                 <div class="photo_histogram_data" style="display:none">
                   <img src="/assets{{page.permalink}}histogram/{{filename}}.png" alt="{{ filename }} Color Histogram" class="img-fluid img-center rounded">
