@@ -4,10 +4,10 @@ title: Crafts
 permalink: /portfolio/crafts/
 ---
 
-{% assign galleries = site.pages | where: "layout", "project" %}
+{%- assign galleries = site.pages | where: "layout", "project" -%}
 
 <div class="row justify-content-center">
-{% for gallery in galleries %}
+{%- for gallery in galleries -%}
     <div class="col-md-4 col-6 my-3">
       <div class="gallery-item">
         <img src="/assets{{gallery.permalink}}{{gallery.header_image}}" alt="project item" class="w-100 rounded">
@@ -18,5 +18,5 @@ permalink: /portfolio/crafts/
       </div>
       <a href="{{ gallery.url }}" class="stretched-link"></a>
     </div>
-{% endfor %}
+{%- endfor -%}
 </div>

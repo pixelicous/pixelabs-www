@@ -5,8 +5,8 @@ permalink: /photography/textures/
 gallery: files_gallery.html
 ---
 
-{% capture render_folder %}
+{%- capture render_folder -%}
   {{ site.photography_path }}/textures
-{% endcapture %}
+{%- endcapture -%}
 
-{% include {{ page.gallery }} folder="/assets/portfolio/photography/textures" %}
+{%- include {{ page.gallery }} folder="/assets/portfolio/photography/textures" -%}

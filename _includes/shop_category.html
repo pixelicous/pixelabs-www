@@ -3,16 +3,17 @@
 <div class="shop">
   <h1 class="text-black m-4 text-center display-3">{{page.title}}</h1>
   <div class="row photo_gallery">
-  {% for product in page.products %}
-    {% assign photo_path = page.permalink | prepend: '/assets/img' | append: product.id %}
+  {%- for product in page.products -%}
+    {%- assign photo_path = page.permalink | prepend: '/assets/img' | append: product.id -%}
     <div class="col-md-4 col-6 my-3">
       <div class="gallery-item">
-        <img src="{{ photo_path }}.jpg" alt="photo gallery item" class="img-fluid">
+        <img src="{{ photo_path }}.jpg" title="{{product.title}}" alt="{{product.description}}" class="img-fluid">
         <figcaption>
           <h5>{{product.title}}</h5>
+          <h6>{{product.description}}</h6>
         </figcaption>
       </div>
       <a href="https://gum.co/{{ product.id }}" class="stretched-link" target="_blank"></a>
     </div>
-  {% endfor %}
+  {%- endfor -%}
 </div>

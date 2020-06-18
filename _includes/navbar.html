@@ -17,19 +17,19 @@
             <a class="dropdown-item" href="{{ 'portfolio/digital/'  | relative_url}}">Digital</a>
           </div>
         </li>
-        <li class="nav-item {% if page.url == "/shop.html" %}active{% endif %}">
+        <li class="nav-item {%- if page.url == "/shop.html" -%}active{%- endif -%}">
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Shop
           </a> 
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            {% assign shops = site.pages | where: "layout", "shop" %}
+            {%- assign shops = site.pages | where: "layout", "shop" -%}
               <a class="dropdown-item" href="{{ 'shop/'  | relative_url}}"><strong>Shop Front</strong></a>
               <div class="dropdown-divider"></div>
-            {% for shop in shops %}
+            {%- for shop in shops -%}
               <a class="dropdown-item" href="{{ shop.permalink  | relative_url}}">{{shop.title}}</a>
-            {% endfor %}
+            {%- endfor -%}
           </div>
         </li>
 
@@ -42,13 +42,13 @@
           <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Blog
           </a>
-          <div class="dropdown-menu  {% if page.url == "/blog.html" %}active{% endif %}" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu  {%- if page.url == "/blog.html" -%}active{%- endif -%}" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="{{ 'blog/'  | relative_url }}"><strong>Home</strong></a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{{ 'archive/'  | relative_url}}">Archive</a>
           </div>
         </li>
-        <li class="nav-item {% if page.url == "/about.html" %}active{% endif %}">
+        <li class="nav-item {%- if page.url == "/about.html" -%}active{%- endif -%}">
           <a class="nav-link" href="{{ 'about/'  | relative_url}}">About</a>
         </li>
         <!--<div class="text-right">

@@ -8,6 +8,7 @@ cache:
   directories:
   - "$HOME/.cache/pip"
   - assets/portfolio
+  - _data/
 branches:
   only:
   - release
@@ -45,7 +46,7 @@ jobs:
       name: PixelBot
       skip_cleanup: true
       token: "$GITHUB_TOKEN"
-      keep_history: true
+      keep_history: false
       on:
         branch: release
 notifications:

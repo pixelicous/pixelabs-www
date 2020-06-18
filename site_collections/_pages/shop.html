@@ -4,35 +4,93 @@ title: Shop
 permalink: /shop/
 ---
 
-{% assign shops = site.pages | where: "layout", "shop" %}
+{%- assign shops = site.pages | where: "layout", "shop" -%}
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron justify-content-center">
     <div class="row justify-content-center mt-0 pt-0">
         <div class="col-md-4 col-10 mb-3 mt-0 pt-0">
-            <img src="{{ 'assets/img/wavesix_logo.png' | relative_url }}" class="img-fluid" alt="wavesix logo">
+            <img src="{{ 'assets/img/shop_logo.png' | relative_url }}" class="img-fluid" alt="wavesix logo">
         </div>
     </div>
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <p class="text-primary lead text-center">Original tangible and digital goods created by me</p>
-                <p class="text-dark text-justify"><strong>Thank you</strong> for being interested at looking at what I have to offer, my shop offers goods under the brand name <strong>Wavesix</strong>. Aside from my shop you can also find my products in external online platforms, links below.</p>
+                <p class="text-primary lead text-center">Authentic tangible and digital goods created by me, inspired by Life.</p>
+                <p class="text-dark text-justify">My shop offers goods under the brand name <strong>WAVESIX</strong>. Aside from my shop you can also find my products in external online platforms, links below.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center shop">
+            <div class="col-lg-8 d-flex">
+                <h6 class="lead text-center m-2"><a type="button" class="btn btn-light btn-lg" data-toggle="modal" data-target="#modalShipment" class="text-decoration-none text-muted"><small><i class="fas fa-shipping-fast" style="vertical-align:middle;"></i> Shipping Rates & Delivery Times Details</small></a></h6>
+                <h6 class="lead text-center m-2"><a type="button" class="btn btn-light btn-lg" href="https://gumroad.com/{{ site.gumroad_username }}" target="_blank" class="text-decoration-none text-muted"><small><i class="fas fa-external-link-alt" style="vertical-align:middle;"></i> Show shop in brand external site.</small></a></h6>
+           
+                <div class="modal fade" id="modalShipment" tabindex="-1" role="dialog" aria-labelledby="modalShippingDelivery" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="" id="modalShippingDelivery">🚚 Shipping Rates & Delivery Times</h5>
+                          <div class="col-4 mt-1">
+                            <img src="{{ 'assets/img/shop_logo.png' | relative_url }}" class="img-fluid" alt="wavesix logo" style="opacity: 0.5">
+                          </div>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="text-dark text-justify"><strong>Thank you</strong> for looking at what I have to offer.</p>
+                            <div class="rounded p-2" style="background-color: #d9dbe2">
+                                <p class="text-dark text-justify"><strong class="text-primary">Note on COVID-19 impact:</strong> Most products are stored in fulfillment centers in both USA and Europe, 
+                                    but as the impact on manufacturers, retailers and distributors is different between countries and even states, it is hard to make sure delivery will reach you in time. 
+                                    We are using big retailers, but shipment time would still probably suffer, to what extent is not certain, depends at a few factors, including country. As such, please 
+                                    allow adequate time for your package to arrive. 🙏
+                                </p>
+                            </div>
+                            <hr>
+                            <p class="text-dark text-justify"><div class="text-primary text-center">Fulfillment + Shipping = Delivery Time</div></p>
+                            
+                            <p class="text-dark text-justify"><strong>Fulfillment times</strong></p>
+                            <ul>
+                                <li><p class="text-dark text-justify">Apparel: 2 - 7 days</p></li>
+                                <li><p class="text-dark text-justify">Others: 2 - 5 days</p></li>
+                            </ul>
+                            
+                            
+                            <hr>
+                            <p class="text-dark text-justify"><strong>Shipping times</strong></p>
+                            <ul>
+                                <li><p class="text-dark text-justify">United States: 3 - 4 days </p></li>
+                                <li><p class="text-dark text-justify">Canada: 6 - 10 days</p></li>
+                                <li><p class="text-dark text-justify">Europe: 4 - 9 days</p></li>
+                                <li><p class="text-dark text-justify">Australia / New Zealand: 12 - 14 days</p></li>
+                                <li><p class="text-dark text-justify">Anywhere else: 8 - 14</p></li>
+                            </ul>
+                            <hr>
+                            <p class="text-muted text-justify">We rely on our beloved online helpers to manufacture, wrap and deliver the order.</p>
+                            <p class="text-muted text-justify">Late delivery? Problems? Became grumpy with an order? Please let us know, we will do our best to keep you happy.</p>
+                        </div>
+                        <div class="modal-footer">
+                          <!-- <button type="button" class="btn btn-secondary">Contact Us!</button> -->
+                          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row justify-content-center mb-5">
-            {% for shop in shops %}
+            {%- for shop in shops -%}
             <div class="col-md-3 col-6 my-3">
                 <div class="gallery-item">
-                    <img src="/assets/img{{shop.permalink}}{{shop.header_image}}" alt="photo gallery item" class="w-100 rounded">
+                    <img src="/assets/img{{shop.permalink}}{{shop.header_image}}" title="{{shop.title}}" alt="{{shop.title}}" class="w-100 rounded">
                     <figcaption>
                         <h2 class="h5 font-weight-bold font-italic">{{shop.title}}</h2>
                     </figcaption>
                 </div>
                 <a href="{{ shop.url }}" class="stretched-link"></a>
             </div>
-            {% endfor %}
+            {%- endfor -%}
         </div>
-        <div class="row justify-content-center mt-5">
+        <div class="row justify-content-center mt-5">            
             <div class="col-md-3 col-8 text-center m-md-0 m-2">
                 <button class="btn btn-lg btn-outline-dark" href="https://{{ site.redbubble_username }}.redbubble.com/" role="button" disabled><i class="fas fa-registered fa-2x" style="vertical-align:middle;"></i>  RedBubble &raquo;</button>
             </div>

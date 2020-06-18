@@ -17,6 +17,50 @@ PHOTO_SIZES = {
         "lg": { "width": "1800", "height": "1200" }
         }
 
+def sync_removed_photos(photo_size_path, portfolio_dir_root_path):
+
+    import os
+    file_types = ["exe", "jpg", "pdf", "png", "txt"]
+    files_source = [f for f in os.listdir(photo_size_path) if os.path.isfile(os.path.join(photo_size_path,f))]
+    files_target = [f for f in os.listdir(portfolio_dir_root_path) if os.path.isfile(os.path.join(portfolio_dir_root_path,f))]
+    
+    # filter on file type
+    files_source = [f for f in files_source if f.split('.')[-1] in file_types]
+    files_target = [f for f in files_target if f.split('.')[-1] in file_types]
+    
+    for target_file in files_source:
+        for source_file in files_target:
+            found_source = False
+            if target_file.lower() == source_file.lower():
+                found_source = True
+                break
+        if found_source != True:
+            try:
+                file_to_remove = os.path.join(photo_size_path,target_file)
+                log.debug(f"SYNC: {target_file} doesn't exist in source folder.")
+                os.remove(file_to_remove)
+                log.info(f"Deleted {target_file} successfully")
+            except:
+                log.debug(f"SYNC: error deleting {file_to_remove}")
+            
+
+    # print(files_size_path)
+    # for photo_file in files_size_path:
+    #     with open(photo_file, 'r+b') as f:
+    #         with Image.open(f) as image:
+    #             # run on all sizes
+    #             for size in PHOTO_SIZES:
+    #                 resized_photo_path = os.path.join(root, size, filename)
+    #                 # Check if resized photo already 
+    #                 if overwrite:
+    #                     resize_to_size(alignment, image, resized_photo_path, size)
+    #                 elif not overwrite:
+    #                     if not os.path.isfile(resized_photo_path):
+    #                         resize_to_size(alignment, image, resized_photo_path, size)
+    #                         log.debug(f"Resized {resized_photo_path} successfully")
+    #                     else:
+    #                         log.info(f"{size} size exists for photo {filename} and overwrite set to {overwrite}")
+
 def clean_resized_folders(folder):
     try:
         os.system('find {} -name "sm" -type d -exec rm -r "\{\}" \;'.format(folder))

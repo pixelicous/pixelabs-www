@@ -5,10 +5,10 @@ permalink: /portfolio/digital/
 ---
 
 
-{% assign galleries = site.pages | where: "type", "digital" %}
+{%- assign galleries = site.pages | where: "type", "digital" -%}
 
 <div class="row justify-content-center">
-  {% for gallery in galleries %}
+  {%- for gallery in galleries -%}
     <div class="col-md-4 col-6 my-3">
       <div class="gallery-item">
         <img src="/assets{{gallery.permalink}}{{gallery.header_image}}" alt="digital item"  class="w-100 rounded">
@@ -19,6 +19,6 @@ permalink: /portfolio/digital/
       </div>
       <a href="{{ gallery.url }}" class="stretched-link"></a>
     </div>
-    {% endfor %}
+    {%- endfor -%}
 </div>
 

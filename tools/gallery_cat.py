@@ -53,6 +53,8 @@ for portfolio_root in portfolio_paths:
         if portfolio_dirname.name.lower() != '.ds_store':
             new_paths_created = [] # Variable to print out which directories where need to be created
             # Check if various sizes directories exist
+            portfolio_dir_root_path = os.path.basename(os.path.dirname(portfolio_dirname))
+            gallery_path = os.path.join(portfolio_dirname)      
             for photo_size in PHOTO_SIZES:
                 photo_size_path = os.path.join(portfolio_dirname, photo_size)      
                 if not os.path.isdir(photo_size_path):
@@ -63,9 +65,9 @@ for portfolio_root in portfolio_paths:
                     except OSError as e:
                         log.warning(f"Error raised while creating {photo_size_path} : {e}")
                 else:
-                    pass      
-
-            portfolio_dir_root_path = os.path.basename(os.path.dirname(portfolio_dirname))
+                    log.debug(f"Folder {photo_size} already created, skipping")
+                    sync_removed_photos(photo_size_path, gallery_path)
+                    
             new_paths_created = ", ".join(new_paths_created)
             if len(new_paths_created) != 0:
                 log.info(f"Created {new_paths_created} directories for {portfolio_dir_root_path}/{os.path.basename(portfolio_dirname)}")
