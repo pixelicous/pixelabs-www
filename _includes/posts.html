@@ -1,7 +1,7 @@
     <div class="container">
       <div class="row">
         <div class="col">
-          {% for post in paginator.posts %}
+          {%- for post in paginator.posts -%}
             <div>
               <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
               <p class="text-info lead">
@@ -9,14 +9,14 @@
               </p>
   
               <p>
-                {% if post.summary %}
+                {%- if post.summary -%}
                   {{ post.summary }}
-                {% else %}
+                {%- else -%}
                   {{ post.excerpt }}
-                {% endif %}
+                {%- endif -%}
               </p>
             </div>
-          {% endfor %}
+          {%- endfor -%}
         </div>
       </div>
     </div>

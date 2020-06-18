@@ -4,7 +4,7 @@ title: Shop
 permalink: /shop/
 ---
 
-{% assign shops = site.pages | where: "layout", "shop" %}
+{%- assign shops = site.pages | where: "layout", "shop" -%}
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron justify-content-center">
@@ -78,7 +78,7 @@ permalink: /shop/
             </div>
         </div>
         <div class="row justify-content-center mb-5">
-            {% for shop in shops %}
+            {%- for shop in shops -%}
             <div class="col-md-3 col-6 my-3">
                 <div class="gallery-item">
                     <img src="/assets/img{{shop.permalink}}{{shop.header_image}}" title="{{shop.title}}" alt="{{shop.title}}" class="w-100 rounded">
@@ -88,7 +88,7 @@ permalink: /shop/
                 </div>
                 <a href="{{ shop.url }}" class="stretched-link"></a>
             </div>
-            {% endfor %}
+            {%- endfor -%}
         </div>
         <div class="row justify-content-center mt-5">            
             <div class="col-md-3 col-8 text-center m-md-0 m-2">

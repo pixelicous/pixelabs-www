@@ -2,15 +2,16 @@
   <div class="container-fluid">
     <div class="row">
         <p><small>
-          <!-- {% if site.social_icons_enabled %}
-            {% include social.html %}
-            {% endif %} -->
+          <!-- {%- if site.social_icons_enabled -%}
+            {%- include social.html -%}
+            {%- endif -%} -->
             
             Copyright &copy; {{ site.time | date: '%Y' }} Pixelabs, All work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" class="text-decoration-none">cc by-nc-nd 4.0</a> license.</small></p>
     </div>
   </div>
 </footer>
 
+<!-- {%- include links_footer.html -%} -->
 
 <!-- Scroll to Top Button-->
 <a class="scroll-to-top" href="#page-top">
@@ -29,7 +30,7 @@
 <!-- <script src="{{ 'assets/js/baguetteBox.min.js' | relative_url }}" async></script> -->
 
 
-{% if page.url contains "/portfolio/" %}
+{%- if page.url contains "/portfolio/" -%}
 <script>
   // Load baguette after document has 
   var fullsize_class_name = "baguetteBox-open"
@@ -46,9 +47,9 @@
   });
   </script>
 
-{% endif %}
+{%- endif -%}
 
-{% if page.url contains "/portfolio/photography/" %}
+{%- if page.url contains "/portfolio/photography/" -%}
   <script>
   // Jquery toggling for photo data
     $(document).ready(function(){
@@ -60,4 +61,4 @@
       });
     });
   </script>
-{% endif %}
+{%- endif -%}
