@@ -43,7 +43,8 @@ EXTRA_FOLDERS = ['histogram']
 #os.chdir(root_path)
 #print(clean_resized_folders(GALLERY_ROOT_PATH))
 #os.chdir(root_path)
-
+print(f"histo {ENABLE_PHOTO_HISTOGRAM_CREATE}")
+print(f"histo {ENABLE_PHOTO_RESIZE}")
 # Find all main portfolio paths under assets
 portfolio_paths = [f.path for f in os.scandir(GALLERY_ROOT_PATH) if f.is_dir()]
 
