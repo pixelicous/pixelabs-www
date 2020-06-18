@@ -23,11 +23,11 @@ def sync_removed_photos(photo_size_path, portfolio_dir_root_path):
     file_types = ["exe", "jpg", "pdf", "png", "txt"]
     files_source = [f for f in os.listdir(photo_size_path) if os.path.isfile(os.path.join(photo_size_path,f))]
     files_target = [f for f in os.listdir(portfolio_dir_root_path) if os.path.isfile(os.path.join(portfolio_dir_root_path,f))]
-    
     # filter on file type
     files_source = [f for f in files_source if f.split('.')[-1] in file_types]
     files_target = [f for f in files_target if f.split('.')[-1] in file_types]
-    
+    print(files_source)
+    print(files_target)
     for target_file in files_source:
         for source_file in files_target:
             found_source = False
@@ -36,6 +36,7 @@ def sync_removed_photos(photo_size_path, portfolio_dir_root_path):
                 break
         if found_source != True:
             try:
+                log.info(f"{target_file} not found")
                 file_to_remove = os.path.join(photo_size_path,target_file)
                 log.debug(f"SYNC: {target_file} doesn't exist in source folder.")
                 os.remove(file_to_remove)
