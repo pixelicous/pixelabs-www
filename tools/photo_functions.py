@@ -69,7 +69,7 @@ def clean_resized_folders(folder):
     except Exception as e:
         return f"Error cleaning resized photos folders {e}"
 
-def resize_image(root, full_path, alignment, overwrite=0):
+def resize_image(root, full_path, alignment, overwrite):
         
     filename = os.path.basename(full_path)
     with open(full_path, 'r+b') as f:
@@ -120,7 +120,7 @@ def filter_unwanted_images(filename):
     
     return image_filtered
 
-def export_photo_exif_data(img, full_path, overwrite=True):
+def export_photo_exif_data(img, full_path, overwrite):
     filename = os.path.splitext(os.path.basename(full_path))[0]
     file_path = os.path.dirname(full_path)
     file_dir_name = os.path.basename(file_path)
@@ -209,7 +209,7 @@ def export_photo_exif_data(img, full_path, overwrite=True):
     except AttributeError as e:
         log.debug(f"Error getting exif data {e}")        
 
-def export_photo_histogram(full_path, overwrite=0):
+def export_photo_histogram(full_path, overwrite):
     filename = os.path.splitext(os.path.basename(full_path))[0]
     file_path = os.path.dirname(full_path)
     photo_histogram_file = f"{file_path}/histogram/{filename}.png"

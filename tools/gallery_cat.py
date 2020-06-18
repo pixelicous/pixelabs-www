@@ -28,12 +28,12 @@ console.setFormatter(formatter)
 log.addHandler(console)
 
 # Overwrite variables
-ENABLE_PHOTO_RESIZE = os.environ.get(f"GALLERY_RUNNER_PHOTO_RESIZE", default=1)
-ENABLE_PHOTO_HISTOGRAM_CREATE = os.environ.get(f"GALLERY_RUNNER_PHOTO_HISTORGRAM", default=1)
-YAML_OVERWRITE = os.environ.get(f"GALLERY_RUNNER_OVERWRITE_YAML", default=0)
-RESIZE_OVERWRITE = os.environ.get(f"GALLERY_RUNNER_OVERWRITE_RESIZE", default=0)
-HISTOGRAM_OVERWRITE = os.environ.get(f"GALLERY_RUNNER_OVERWRITE_HISTOGRAM", default=0)
-ENABLE_PHOTO_ORIGINALS_CLEANUP = os.environ.get(f"GALLERY_RUNNER_CLEAN_ORIGINALS", default=0)
+ENABLE_PHOTO_RESIZE = True #os.environ.get(f"GALLERY_RUNNER_PHOTO_RESIZE", default=True)
+ENABLE_PHOTO_HISTOGRAM_CREATE = False #os.environ.get(f"GALLERY_RUNNER_PHOTO_HISTORGRAM", default=True)
+YAML_OVERWRITE = False #os.environ.get(f"GALLERY_RUNNER_OVERWRITE_YAML", default=False)
+RESIZE_OVERWRITE = True #os.environ.get(f"GALLERY_RUNNER_OVERWRITE_RESIZE", default=False)
+HISTOGRAM_OVERWRITE = False #os.environ.get(f"GALLERY_RUNNER_OVERWRITE_HISTOGRAM", default=False)
+ENABLE_PHOTO_ORIGINALS_CLEANUP = False #os.environ.get(f"GALLERY_RUNNER_CLEAN_ORIGINALS", default=False)
 # Root location to run
 GALLERY_ROOT_PATH = "./assets/portfolio"
 SIZES_STRING_LIST = ', '.join([size for size in PHOTO_SIZES])
@@ -119,16 +119,16 @@ for root, dirs, files in os.walk(GALLERY_ROOT_PATH):
                                 log.critical(f"Error raised while creating {extra_folder_path} : {e}")
                         else:
                             pass     
-                    if ENABLE_PHOTO_HISTOGRAM_CREATE == 1:
+                    if ENABLE_PHOTO_HISTOGRAM_CREATE:
                         log.info(f"Photography file: {full_path} - Exporting image data and histogram")
                         export_photo_exif_data(img, full_path, YAML_OVERWRITE)
                         export_photo_histogram(full_path, HISTOGRAM_OVERWRITE)
                         
-                if ENABLE_PHOTO_RESIZE == 1:
+                if ENABLE_PHOTO_RESIZE:
                     log.info(f"Legitimate for resizing: {full_path}")
                     log.debug(f"Original size {img.size}")
                     resize_image(root, full_path, image_alignment, RESIZE_OVERWRITE)
-                if ENABLE_PHOTO_ORIGINALS_CLEANUP == 1:
+                if ENABLE_PHOTO_ORIGINALS_CLEANUP:
                     log.info(f"Cleaning up originals before caching: {full_path}")
                     os.remove(full_path)
             else:
