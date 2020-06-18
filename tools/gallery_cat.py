@@ -107,6 +107,10 @@ for root, dirs, files in os.walk(GALLERY_ROOT_PATH):
             # Don't get information for an histogram photo
             if 'histogram' not in filename and 'histogram' not in full_path: 
                 # Only generate information for photographs
+                if ENABLE_PHOTO_RESIZE:
+                    log.info(f"Legitimate for resizing: {full_path}")
+                    log.debug(f"Original size {img.size}")
+                    resize_image(root, full_path, image_alignment, RESIZE_OVERWRITE)
                 if "photography" in full_path:
                     # Generate other folders not related to sizes (not to mix up lists)
                     for extra_folder in EXTRA_FOLDERS:
@@ -122,13 +126,9 @@ for root, dirs, files in os.walk(GALLERY_ROOT_PATH):
                     if ENABLE_PHOTO_HISTOGRAM_CREATE:
                         log.info(f"Photography file: {full_path} - Exporting image data and histogram")
                         export_photo_exif_data(img, full_path, YAML_OVERWRITE)
-                        histo_path = os.path.join(directory_path, 'md', filename)
+                        histo_path = os.path.join(directory_path, 'thumb', filename)
                         export_photo_histogram(full_path, histo_path, HISTOGRAM_OVERWRITE)
                         
-                if ENABLE_PHOTO_RESIZE:
-                    log.info(f"Legitimate for resizing: {full_path}")
-                    log.debug(f"Original size {img.size}")
-                    resize_image(root, full_path, image_alignment, RESIZE_OVERWRITE)
                 if ENABLE_PHOTO_ORIGINALS_CLEANUP:
                     log.info(f"Cleaning up originals before caching: {full_path}")
                     os.remove(full_path)
