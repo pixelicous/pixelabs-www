@@ -26,8 +26,6 @@ def sync_removed_photos(photo_size_path, portfolio_dir_root_path):
     # filter on file type
     files_source = [f for f in files_source if f.split('.')[-1] in file_types]
     files_target = [f for f in files_target if f.split('.')[-1] in file_types]
-    print(files_source)
-    print(files_target)
     for target_file in files_source:
         for source_file in files_target:
             found_source = False
