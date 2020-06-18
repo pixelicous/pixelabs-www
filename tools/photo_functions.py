@@ -209,17 +209,17 @@ def export_photo_exif_data(img, full_path, overwrite):
     except AttributeError as e:
         log.debug(f"Error getting exif data {e}")        
 
-def export_photo_histogram(full_path, overwrite):
+def export_photo_histogram(full_path, histo_path, overwrite):
     filename = os.path.splitext(os.path.basename(full_path))[0]
     file_path = os.path.dirname(full_path)
     photo_histogram_file = f"{file_path}/histogram/{filename}.png"
     if overwrite:
         if 'histogram' not in filename:
-            export_nice_histogram(full_path, photo_histogram_file)
+            export_nice_histogram(histo_path, photo_histogram_file)
             log.info(f"Outputing Histogram: {filename}")
     elif not overwrite:
         if not os.path.isfile(photo_histogram_file):
-            export_nice_histogram(full_path, photo_histogram_file)
+            export_nice_histogram(histo_path, photo_histogram_file)
             log.info(f"Outputted Histogram: {filename}")
         else:
             log.debug(f"Histogram file exists and overwrite is set to false")
