@@ -33,7 +33,7 @@
   // Load baguette after document has 
   var fullsize_class_name = "baguetteBox-open"
 
-  $(document).ready(function(){
+  $(window).on("load", function(){
     baguetteBox.run('.photo_gallery', {
       fullScreen: false,
       preload: 2,
