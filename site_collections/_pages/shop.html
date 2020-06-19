@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Shop
-permalink: /shop/
+permalink: /shop/front/
 ---
 
 {%- assign shops = site.pages | where: "layout", "shop" -%}
@@ -11,7 +11,7 @@ permalink: /shop/
     <div class="row justify-content-center mt-0 pt-0">
         <div class="col-md-4 col-10 mb-3 mt-0 pt-0">
             <img src="{{ 'assets/img/shop_logo.png' | relative_url }}" class="img-fluid" alt="wavesix logo">
-        </div>
+        </div> 
     </div>
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -19,27 +19,46 @@ permalink: /shop/
                 <p class="text-dark text-justify">My shop offers goods under the brand name <strong>WAVESIX</strong>. Aside from my shop you can also find my products in external online platforms, links below.</p>
             </div>
         </div>
+        <div class="row justify-content-center mb-5">
+            {%- for shop in shops -%}
+            <div class="col-md-3 col-6 my-3">
+                <div class="gallery-item">
+                    <img src="/assets/img{{shop.permalink}}{{shop.header_image}}" title="{{shop.title}}" alt="{{shop.title}}" class="w-100 rounded">
+                    <figcaption>
+                        <h2 class="h5 font-weight-bold font-italic">{{shop.title}}</h2>
+                    </figcaption>
+                </div>
+                <a href="{{ shop.url }}" class="stretched-link"></a>
+            </div>
+            {%- endfor -%}
+        </div>
         <div class="row justify-content-center shop">
             <div class="col-lg-8 d-flex">
-                <h6 class="lead text-center m-2"><a type="button" class="btn btn-light btn-lg" data-toggle="modal" data-target="#modalShipment" class="text-decoration-none text-muted"><small><i class="fas fa-shipping-fast" style="vertical-align:middle;"></i> Shipping Rates & Delivery Times Details</small></a></h6>
-                <h6 class="lead text-center m-2"><a type="button" class="btn btn-light btn-lg" href="https://gumroad.com/{{ site.gumroad_username }}" target="_blank" class="text-decoration-none text-muted"><small><i class="fas fa-external-link-alt" style="vertical-align:middle;"></i> Show shop in brand external site.</small></a></h6>
-           
+                <h6 class="lead text-center m-2"><a type="button" class="btn btn-light btn-lg" data-toggle="modal" data-target="#modalShipment" class="text-decoration-none text-muted"><small><i class="fas fa-shipping-fast" style="vertical-align:middle;"></i> Shipping times & rates</small></a></h6>
+                <h6 class="lead text-center m-2"><a type="button" class="btn btn-light btn-lg" href="https://gumroad.com/{{ site.gumroad_username }}" target="_blank" class="text-decoration-none text-muted"><small><i class="fas fa-external-link-alt" style="vertical-align:middle;"></i> External brand shop</small></a></h6>
+                <h6 class="lead text-center m-2">
+                    <a id="obftx" type="button" class="obftx btn btn-light btn-lg" class="text-decoration-none text-muted" href="please_enable_browser_javascript_to_see_real_mail_address"
+                    onmouseclick="this.href=this.href.replace('@','.')" target="_blank">
+                    <small><i class="far fa-comments" style="vertical-align:middle;"></i> Feedback & issues</small>
+                    </a>
+                </h6>
+
                 <div class="modal fade" id="modalShipment" tabindex="-1" role="dialog" aria-labelledby="modalShippingDelivery" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
+                    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="" id="modalShippingDelivery">🚚 Shipping Rates & Delivery Times</h5>
-                          <div class="col-4 mt-1">
+                          <h5 class="" id="modalShippingDelivery"><i class="fas fa-shipping-fast" style="vertical-align:middle;"></i> Shipping Rates & Delivery Times</h5>
+                          <!-- <div class="col-4 mt-1">
                             <img src="{{ 'assets/img/shop_logo.png' | relative_url }}" class="img-fluid" alt="wavesix logo" style="opacity: 0.5">
-                          </div>
+                          </div> -->
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body m-2 p-2">
                             <p class="text-dark text-justify"><strong>Thank you</strong> for looking at what I have to offer.</p>
-                            <div class="rounded p-2" style="background-color: #d9dbe2">
-                                <p class="text-dark text-justify"><strong class="text-primary">Note on COVID-19 impact:</strong> Most products are stored in fulfillment centers in both USA and Europe, 
+                            <div class="rounded m-3 p-2" style="background-color: #d9dbe2">
+                                <p class="text-dark text-justify"><strong class="text-primary"><i class="fas fa-head-side-mask" style="vertical-align:middle;"></i> COVID-19 note:</strong> Most products are stored in fulfillment centers in both USA and Europe, 
                                     but as the impact on manufacturers, retailers and distributors is different between countries and even states, it is hard to make sure delivery will reach you in time. 
                                     We are using big retailers, but shipment time would still probably suffer, to what extent is not certain, depends at a few factors, including country. As such, please 
                                     allow adequate time for your package to arrive. 🙏
@@ -65,30 +84,87 @@ permalink: /shop/
                                 <li><p class="text-dark text-justify">Anywhere else: 8 - 14</p></li>
                             </ul>
                             <hr>
+                            <p class="text-dark text-justify"><div class="text-primary text-center">Shipping Rates</div></p>
+                            <p class="text-muted text-justify">Shipping cost will be added automatically at checkout. The shipping rate is calculated based on item and destination, using the Standard shipping method.<br>The prices are grouped by product category, so all items within a single category have the same shipping fee. Several items of the same category delivered in the same order will have an additional, lower fee.<br><strong>For example -</strong> the shipping rate for a t-shirt is 4$. Every additional t-shirt or item from the same category in that order adds 1.3$ to the shipping cost.</p>
+                            <p class="text-muted text-justify"><small>* Our prices do not include any additional cost/tax you might have at the destination address' country.</small><br>
+                            <small>* Some larger variants such as sizes 2XL or bigger bags can be up to $1.50 extra per item. Additional details will be writte in the item description.</small></p>
+                            <table class="table w-100">
+                                <thead>
+                                  <tr>
+                                    <th scope="col" rowspan="2" class="w-100"><img src="{{ 'assets/img/shop_logo.png' | relative_url }}" class="img-fluid" alt="wavesix logo" style="opacity: 0.5"></th>
+                                    <th scope="col" colspan="2" class="text-center text-primary">USA</th>
+                                    <th scope="col" colspan="2" class="text-center text-primary">Europe</th>
+                                    <th scope="col" colspan="2" class="text-center text-primary">Canada</th>
+                                    <th scope="col" colspan="2" class="text-center text-primary">AUS/NZ</th>
+                                    <th scope="col" colspan="2" class="text-center text-primary">Anywhere</th>
+                                  </tr>
+                                  <tr>
+                                    <th scope="col"><small>1<sup>st</sup> item</small></th>
+                                    <th scope="col"><span class="text-muted"><small>2<sup>nd</sup> item</small></span></th>
+                                    <th scope="col"><small>1<sup>st</sup> item</small></th>
+                                    <th scope="col"><span class="text-muted"><small>2<sup>nd</sup> item</small></span></th>
+                                    <th scope="col"><small>1<sup>st</sup> item</small></th>
+                                    <th scope="col"><span class="text-muted"><small>2<sup>nd</sup> item</small></span></th>
+                                    <th scope="col"><small>1<sup>st</sup> item</small></th>
+                                    <th scope="col"><span class="text-muted"><small>2<sup>nd</sup> item</small></span></th>
+                                    <th scope="col"><small>1<sup>st</sup> item</small></th>
+                                    <th scope="col"><span class="text-muted"><small>2<sup>nd</sup> item</small></span></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row" class="text-left">Shirts, tanks, totes, flipflops, phone cases</th>
+                                    <td>$4</td>
+                                    <td class="text-muted">$1.3</td>
+                                    <td>$4.4</td>
+                                    <td class="text-muted">$1.1</td>
+                                    <td>$6.5</td>
+                                    <td class="text-muted">$1.3</td>
+                                    <td>$7</td>
+                                    <td class="text-muted">$1.3</td>
+                                    <td>$6</td>
+                                    <td class="text-muted">$1.3</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row" class="text-left">Hoodies/jackets, posters, laptop cases</th>
+                                    <td>$6.5</td>
+                                    <td class="text-muted">$2</td>
+                                    <td>$6.1</td>
+                                    <td class="text-muted">$2.2</td>
+                                    <td>$10</td>
+                                    <td class="text-muted">$2</td>
+                                    <td>$11</td>
+                                    <td class="text-muted">$2</td>
+                                    <td>$10</td>
+                                    <td class="text-muted">$2</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row" class="text-left">Towels, mugs & backpacks</th>
+                                    <td>$9.6</td>
+                                    <td class="text-muted">$4</td>
+                                    <td>$6.4</td>
+                                    <td class="text-muted">$3.6</td>
+                                    <td>$10.3</td>
+                                    <td class="text-muted">$5.7</td>
+                                    <td>$12.5</td>
+                                    <td class="text-muted">$4.3</td>
+                                    <td>$10.3</td>
+                                    <td class="text-muted">$4</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            <hr>
                             <p class="text-muted text-justify">We rely on our beloved online helpers to manufacture, wrap and deliver the order.</p>
                             <p class="text-muted text-justify">Late delivery? Problems? Became grumpy with an order? Please let us know, we will do our best to keep you happy.</p>
                         </div>
                         <div class="modal-footer">
                           <!-- <button type="button" class="btn btn-secondary">Contact Us!</button> -->
-                          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                          <button type="button" class="flex-fill btn btn-primary" data-dismiss="modal">Close</button>
                         </div>
                       </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row justify-content-center mb-5">
-            {%- for shop in shops -%}
-            <div class="col-md-3 col-6 my-3">
-                <div class="gallery-item">
-                    <img src="/assets/img{{shop.permalink}}{{shop.header_image}}" title="{{shop.title}}" alt="{{shop.title}}" class="w-100 rounded">
-                    <figcaption>
-                        <h2 class="h5 font-weight-bold font-italic">{{shop.title}}</h2>
-                    </figcaption>
-                </div>
-                <a href="{{ shop.url }}" class="stretched-link"></a>
-            </div>
-            {%- endfor -%}
         </div>
         <div class="row justify-content-center mt-5">            
             <div class="col-md-3 col-8 text-center m-md-0 m-2">

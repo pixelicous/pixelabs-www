@@ -25,7 +25,7 @@
           </a> 
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             {%- assign shops = site.pages | where: "layout", "shop" -%}
-              <a class="dropdown-item" href="{{ 'shop/'  | relative_url}}"><strong>Shop Front</strong></a>
+              <a class="dropdown-item" href="{{ 'shop/front/'  | relative_url}}"><strong>Shop Front</strong></a>
               <div class="dropdown-divider"></div>
             {%- for shop in shops -%}
               <a class="dropdown-item" href="{{ shop.permalink  | relative_url}}">{{shop.title}}</a>
