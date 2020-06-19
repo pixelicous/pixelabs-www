@@ -129,7 +129,7 @@ for root, dirs, files in os.walk(GALLERY_ROOT_PATH):
                         export_photo_histogram(full_path, histo_path, HISTOGRAM_OVERWRITE)
                         
                 if ENABLE_PHOTO_ORIGINALS_CLEANUP:
-                     try:
+                    try:
                         file_to_remove = os.path.join(photo_size_path,target_file)
                         log.info(f"Cleaning up originals before caching: {full_path}")
                         os.remove(full_path)
