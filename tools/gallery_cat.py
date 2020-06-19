@@ -5,7 +5,6 @@ import os, logging
 from photo_functions import *
 from PIL import Image
 
-
 # Logger
 LOG_LEVEL = os.environ.get("GALLERY_RUNNER_LOG_LEVEL", default="INFO").upper()
 LOG_NUM_LEVEL = getattr(logging, LOG_LEVEL, None)
