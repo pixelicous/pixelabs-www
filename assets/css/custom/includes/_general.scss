@@ -111,6 +111,11 @@ code {
   }
 }
 
+.disabled-area {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
 /// dark mode
 
 // html, html[data-theme="light"] {
