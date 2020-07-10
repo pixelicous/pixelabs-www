@@ -18,7 +18,8 @@ photography_path: /assets/portfolio/photography
 
 
 # Build settings
-whitelist: [jekyll-analytics]
+whitelist: 
+  - jekyll-analytics
 plugins:
   - jekyll-feed
   - jekyll-paginate-v2
@@ -99,3 +100,4 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+
