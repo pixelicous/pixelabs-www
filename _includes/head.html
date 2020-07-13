@@ -15,9 +15,14 @@
 
 <link rel="stylesheet" href="{{ 'assets/css/baguetteBox/baguetteBox.css' | relative_url }}">
 
-{%- if page.url contains "/shop/" -%}
-  <script src="https://gumroad.com/js/gumroad.js"></script>
-{%- endif -%}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_id }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', '{{ site.google_analytics_id }}');
+</script>
 
-{%- seo -%}
+{% seo %}

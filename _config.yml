@@ -13,25 +13,26 @@ buymecoffee_username: pixelabs
 gumroad_username: pixelabs
 ws_ig_username: thewavesix
 ws_fb_username: thewavesix
+google_analytics_id: UA-164926771-3
 social_icons_enabled: true
 photography_path: /assets/portfolio/photography
 
 
 # Build settings
-whitelist: 
-  - jekyll-analytics
+# whitelist: 
+  # - jekyll-analytics
 plugins:
   - jekyll-feed
   - jekyll-paginate-v2
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-analytics
+  # - jekyll-analytics
 
 # Jekyll Analytics Gem
-jekyll_analytics:
-  GoogleAnalytics:
-    id: UA-164926771-3   
+# jekyll_analytics:
+#   GoogleAnalytics:
+#     id: UA-164926771-3   
 
 # Jekyll 3 Pagination Gem
 pagination:
