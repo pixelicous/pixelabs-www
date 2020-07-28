@@ -12,14 +12,34 @@
 <!-- About-->
 <section class="about-section text-center bg-white" id="about">
 <div class="container">
-    <div class="row">
-      <div class="col-lg-8 mx-auto">
+    <div class="row mb-3">
+      <div class="col-lg-8 mb-4 mx-auto">
             <!--If there is a piece of art you'd like to be created and you think I might be the person for it, please contact me! -->
             <h2 class="text-black mb-4 font-weight-200">Welcome to my personal homepage!</h2>
-            <p class="text-black-50  text-justify">I've brought together into one place my portfolio and random stuff related to my hobbies.
-            My portfolio is a collection of art projects, digital illustrations, crafts, electronic installations, custom made accessories and more. 
-            I write posts for my <a href="{{ 'blog/' | relative_url }}" target="_blank">blog</a> with topics ranging from technology to surfing. Some can get technical while others are complete one liner "oh sh*t! look at that!".</p>
-        </div>
+            <p class="text-black-50 mb-4 text-justify">I've brought together into one place my portfolio and random stuff related to my hobbies.
+            My portfolio is a collection of art projects, digital illustrations, crafts, electronic installations, custom made accessories and more. Browse around, hope you enjoy! Feel free to <a href="https://shop.pixelabs.net/contact-me" target="_blank">drop me a line</a> through my shop!</p>
+      </div>
+      <div class="col-12 mx-auto">
+            <div class="row d-flex justify-content-center">
+              <div class="col-md-3 col-6 mb-2 p-1">
+                <h5>Looking for music?</h5><a href="https://www.soundcloud.com/{{ site.soundcloud_username }}" target="_blank"><i class="fab fa-soundcloud"></i> My mixes & library</a><br><a href="https://open.spotify.com/user/{{ site.spotify_username }}" target="_blank"><i class="fab fa-spotify"></i> My playlists</a><br><a href="https://www.twitch.tv/{{ site.twitch_username }}" target="_blank"><i class="fab fa-twitch"></i> Playing live</a>
+              </div>
+              <div class="col-md-2 col-6 mb-2 p-1">
+                <h5>Where is the art?</h5><a href="{{ 'portfolio/photography/'  | relative_url }}">Photography</a><br>
+                <a href="{{ 'portfolio/crafts/'  | relative_url }}">Projects & Crafts</a><br>
+                <a href="{{ 'portfolio/digital/'  | relative_url }}">Digital</a><br>
+              </div>
+              <div class="col-md-2 col-6 mb-2 p-1">
+                <h5>Got Digital?</h5><a href="{{ 'shop/front/'  | relative_url }}">Buy my packs & assets</a>
+              </div>
+              <div class="col-md-2 col-6 mb-2 p-1">
+                <h5>Reading Material?</h5><a href="{{ 'blog/'  | relative_url }}">Check out my blog</a>
+              </div>
+              <div class="col-md-3 col-6 mb-2 p-1">
+                <h5>Wardrobe refresher?</h5><a href="{{ site.shop_url }}" target="_blank">Buy my designs</a>
+              </div>
+            </div>
+      </div>
     </div>
     <img class="img-fluid" src="{{ 'assets/img/home/about.png' | relative_url }}" alt="about background" />
 </div>
@@ -118,24 +138,23 @@
                   </div>
               </div>
           </div>
-          <!-- <div class="col-md-4 mb-3 mb-md-0">
-              <div class="card py-4 h-100">
-                  <div class="card-body text-center">
-                      <i class="fas fa-envelope text-primary mb-2"></i>
-                      <h4 class="text-uppercase m-0">Email</h4>
-                      <hr class="my-4" />
-                      <div class="small text-black-50"><a href="mailto:some@mail.net?subject=General info or commission request&amp;body=Hi,\nI'd like to contact you about some media on your site.">inquiry@pixelabs.net</a></div>
-                  </div>
-              </div>
-          </div> -->
           <div class="col-md-4 mb-3 mb-md-0">
               <div class="card py-4 h-100">
                   <div class="card-body text-center">
-                      <i class="fab fa-linkedin text-primary mb-2"></i>
-                      <h4 class="text-uppercase m-0">LinkedIn</h4>
+                      <i class="fab fa-instagram text-primary mb-2"></i>
+                      <h4 class="text-uppercase m-0">Instagram</h4>
                       <hr class="my-4" />
-                      <div class="small text-black-50"><a href="https://linkedin.com/in/netzerom/" target="_blank">External Link</a></div>
-                      <div class="small text-gray-light"><small>(Log in first)</small></div>
+                      <a class="stretched-link" href="https://www.instagram.com/{{site.shop_ig_username}}">Follow here!</a>
+                  </div>
+              </div>
+          </div> 
+          <div class="col-md-4 mb-3 mb-md-0">
+              <div class="card py-4 h-100">
+                  <div class="card-body text-center">
+                      <i class="fab fa-facebook text-primary mb-2"></i>
+                      <h4 class="text-uppercase m-0">Facebook</h4>
+                      <hr class="my-4" />
+                      <a class="stretched-link" href="https://www.facebook.com/{{site.shop_fb_username}}" target="_blank">Get updates</a>
                   </div>
               </div>
           </div>
@@ -146,7 +165,7 @@
           <!-- <a class="mx-2" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
           <a class="mx-2" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>-->
           <a class="mx-2" href="https://www.soundcloud.com/{{ site.soundcloud_username }}" target="_blank"><i class="fab fa-soundcloud"></i></a>
-          <a class="mx-2" href="https://open.spotify.com/user/{{ site.spotify_username }}?si=Yo5YMk8mRlShH3kG4OpzDQ" target="_blank"><i class="fab fa-spotify"></i></a>
+          <a class="mx-2" href="https://open.spotify.com/user/{{ site.spotify_username }}" target="_blank"><i class="fab fa-spotify"></i></a>
       </div>
   </div>
 </section>
