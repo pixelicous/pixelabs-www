@@ -150,7 +150,6 @@ def export_photo_exif_data(img, full_path, overwrite):
         data_dump = {}
         # todo: shift left test whether need to recreate file before getting exifdata
         # Strip photo creation time to get year only
-        log.debug(exif.items())
         photo_time = datetime.datetime.strptime(exif["DateTimeOriginal"], '%Y:%m:%d  %H:%M:%S')
         
         photo_fnumber = exif["FNumber"]
