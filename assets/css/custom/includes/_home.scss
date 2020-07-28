@@ -84,9 +84,6 @@
     border-style                :   solid;
     border-width                :   10px;
     border-color                :   #F7F7F7;
-    // -webkit-border-radius       :   3px;
-    // -moz-border-radius          :   3px;
-    // border-radius               :   3px;
     font-weight: 300;
     letter-spacing: 20px;
     font-size: 150px;
@@ -146,7 +143,7 @@
 }
 
 .about-section {
-  padding-top: 10rem;
+  padding-top: 7rem;
   background: linear-gradient(
       to bottom,
       $white 0%,
@@ -161,6 +158,21 @@
 }
 
 // Projects
+.projects-section{
+padding: 10rem 0;
+background: linear-gradient(
+        to bottom,
+        $black 100%,
+        #{fade-out($black, 0.9)} 3%,
+        #{fade-out($white, 0.5)} 60%,
+        $white 100%
+    );
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: scroll;
+background-size: cover;
+}
+
 .portfolio-item {
   display: block;
   position: relative;
@@ -334,6 +346,8 @@
   }
 }
 
+
+
 .subscribe-section {
   padding: 10rem 0;
   background: linear-gradient(
@@ -400,6 +414,54 @@
           }
       }
   }
+}
+
+.services-section {
+  padding: 10rem 0;
+  background: linear-gradient(
+          to bottom,
+          $primary 0%,
+          #{fade-out($primary, 0.9)} 3%,
+          #{fade-out($black, 0.5)} 60%,
+          $black 100%
+      ),
+      url("../img/home/homepage_services.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: $gray-200;
+  hr {
+    border-color: $primary;
+    border-width: 0.25rem;
+    width: 3rem;
+}
+  .my-service {
+    margin-top: 2rem;
+    margin-left: 0;
+    text-align: center;
+    span {
+      display:block;
+      line-height: 7.5rem;
+      color: fade-out($primary, 0.5);
+      
+        /*
+        height: 6rem;
+        width: 6rem;
+        background: fade-out($white, 0.9);
+        border-radius: 100%;
+        &:hover {
+            color: fade-out($primary, 0.5);
+        }
+        &:active {
+           color: $white;
+        }
+        */
+    }
+
+}
 }
 
 .down-arrow {

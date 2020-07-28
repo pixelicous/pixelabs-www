@@ -5,7 +5,7 @@
         <h2 class="text-white mx-auto" style="filter: drop-shadow(0 0 1rem black);">Art, Tech, Coding, Music, Surfing</h2>
       </div>
       <div class="down-arrow d-flex justify-content-center">
-        <a class="mx-2" href="#about"><i class="fas fa-angle-double-down"></i></a>
+        <a href="#about"><i class="fas fa-angle-double-down"></i></a>
       </div>
   </div>
 </header>
@@ -17,12 +17,14 @@
             <!--If there is a piece of art you'd like to be created and you think I might be the person for it, please contact me! -->
             <h2 class="text-black mb-4 font-weight-200">Welcome to my personal homepage!</h2>
             <p class="text-black-50 mb-4 text-justify">I've brought together into one place my portfolio and random stuff related to my hobbies.
-            My portfolio is a collection of art projects, digital illustrations, crafts, electronic installations, custom made accessories and more. Browse around, hope you enjoy! Feel free to <a href="https://shop.pixelabs.net/contact-me" target="_blank">drop me a line</a> through my shop!</p>
+            My portfolio is a collection of art projects, digital illustrations, crafts, electronic installations, custom made accessories and more. Browse around, hope you enjoy!</p>
       </div>
+    </div>
+    <div class="row mb-3">
       <div class="col-12 mx-auto">
             <div class="row d-flex justify-content-center">
               <div class="col-md-3 col-6 mb-2 p-1">
-                <h5>Looking for music?</h5><a href="https://www.soundcloud.com/{{ site.soundcloud_username }}" target="_blank"><i class="fab fa-soundcloud"></i> My mixes & library</a><br><a href="https://open.spotify.com/user/{{ site.spotify_username }}" target="_blank"><i class="fab fa-spotify"></i> My playlists</a><br><a href="https://www.twitch.tv/{{ site.twitch_username }}" target="_blank"><i class="fab fa-twitch"></i> Playing live</a>
+                <h5>Looking for music?</h5><span><a href="https://www.soundcloud.com/{{ site.soundcloud_username }}" target="_blank"><i class="fab fa-soundcloud"></i> My mixes & library</a><br><a href="https://open.spotify.com/user/{{ site.spotify_username }}span target="_blank"><i class="fab fa-spotify"></i> My playlists</a><br><a href="https://www.twitch.tv/{{ site.twitch_username }}" target="_blank"><i class="fab fa-twitch"></i> Playing live</a>
               </div>
               <div class="col-md-2 col-6 mb-2 p-1">
                 <h5>Where is the art?</h5><a href="{{ 'portfolio/photography/'  | relative_url }}">Photography</a><br>
@@ -42,6 +44,58 @@
       </div>
     </div>
     <img class="img-fluid" src="{{ 'assets/img/home/about.png' | relative_url }}" alt="about background" />
+</div>
+</section>
+<section class="services-section text-center bg-black" id="">
+  <div class="container"> 
+    <div class="row mb-0 ">
+        <div class="col-lg-8 mb-4 mx-auto">
+                <!--If there is a piece of art you'd like to be created and you think I might be the person for it, please contact me! -->
+                <h1 class="text-white mb-4 font-weight-200">SERVICES</h1>
+                <hr />
+        </div>
+        <div class="row justify-content-center">
+            <div class="my-service col-md-3 col-4 mx-auto">
+              <h5>LOGO</h5>
+              <span><i class="fas fa-draw-polygon fa-3x"></i></span>
+            </div>
+            <div class="my-service col-md-3 col-4 mx-auto">
+              <h5>DIGITAL ART</h5>
+              <span><i class="fas fa-paint-brush fa-3x"></i></span>
+            </div>
+            <div class="my-service col-md-3 col-4 mx-auto">
+              <h5>POSTERS</h5>
+              <span><i class="fas fa-paint-roller fa-3x"></i></span>
+            </div>
+            <div class="my-service col-md-3 col-4 mx-auto">
+              <h5>PHOTO RETOUCH</h5>
+              <span><i class="fas fa-fill-drip fa-3x"></i></span>
+            </div>
+            <div class="my-service col-md-3 col-4 mx-auto">
+              <h5>CLOUD
+                <br>ARCHITECTURE</h5>
+              <span><i class="fas fa-project-diagram fa-3x"></i></span>
+            </div>
+            <div class="my-service col-md-3 col-4 mx-auto">
+              <h5>WEB<br>SECURITY</h5>
+              <span><i class="fas fa-user-secret fa-3x"></i></span>
+            </div>
+            <div class="my-service col-md-3 col-4 mx-auto">
+              <h5>SYSTEMS<br>CONSULTING</h5>
+              <span><i class="fas fa-user-tie fa-3x"></i></span>
+            </div>
+            <div class="my-service col-md-3 col-4 mx-auto">
+              <h5>ECOMMERCE<br>SOLUTIONS</h5>
+              <span><i class="fas fa-store-alt fa-3x"></i></span>
+            </div>
+          </div>
+          <div class="col-lg-8 mx-auto">
+          <hr />
+          <!--If there is a piece of art you'd like to be created and you think I might be the person for it, please contact me! -->
+          <h4><a href="mailto:home-inquiry@pixelabs.net?subject=Pixelabs visitor question&amp;body=Hey man!"  class="text-decoration-none text-white mb-4" target="_blank"><i class="fas fa-envelope-open-text pr-2"></i> CONTACT ME</a></h4>
+        </div>
+     </div>
+    </div>
 </div>
 </section>
 <!-- Projects-->
@@ -128,7 +182,7 @@
 <section class="contact-section bg-black">
   <div class="container">
       <div class="row justify-content-center">
-          <div class="col-md-4 mb-3 mb-md-0">
+          <div class="col-md-3 m-3 mx-auto">
               <div class="card py-4 h-100">
                   <div class="card-body text-center">
                       <i class="fas fa-map-marked-alt text-primary mb-2"></i>
@@ -138,34 +192,47 @@
                   </div>
               </div>
           </div>
-          <div class="col-md-4 mb-3 mb-md-0">
+          <div class="col-md-3 m-3 mx-auto">
+            <div class="card py-4 h-100">
+                <div class="card-body text-center">
+                      <i class="fas fa-envelope text-primary mb-2"></i>
+                      <h4 class="text-uppercase m-0">Email</h4>
+                      <hr class="my-4" />
+                      <div class="small text-black-50">Hit me up!</div>
+                      <a class="stretched-link text-black-50" href="mailto:home-inquiry@pixelabs.net?subject=Pixelabs visitor question&amp;body=Hey man!" target="_blank"></a>
+                    </div>
+                  </div>
+              </div> 
+          <div class="col-md-3 m-3 mx-auto">
               <div class="card py-4 h-100">
                   <div class="card-body text-center">
                       <i class="fab fa-instagram text-primary mb-2"></i>
                       <h4 class="text-uppercase m-0">Instagram</h4>
                       <hr class="my-4" />
-                      <a class="stretched-link" href="https://www.instagram.com/{{site.shop_ig_username}}">Follow here!</a>
+                      <div class="small text-black-50">Follow here!</div>
+                      <a class="stretched-link text-black-50" href="https://www.instagram.com/{{site.shop_ig_username}}" target="_blank"></a>
                   </div>
               </div>
           </div> 
-          <div class="col-md-4 mb-3 mb-md-0">
+          <div class="col-md-3 m-3 mx-auto">
               <div class="card py-4 h-100">
                   <div class="card-body text-center">
                       <i class="fab fa-facebook text-primary mb-2"></i>
                       <h4 class="text-uppercase m-0">Facebook</h4>
                       <hr class="my-4" />
-                      <a class="stretched-link" href="https://www.facebook.com/{{site.shop_fb_username}}" target="_blank">Get updates</a>
+                      <div class="small text-black-50">Get updates!</div>
+                      <a class="stretched-link text-black-50" href="https://www.facebook.com/{{site.shop_fb_username}}" target="_blank"></a>
                   </div>
               </div>
           </div>
       </div>
       <div class="social d-flex justify-content-center">
-          <a class="mx-2" href="https://github.com/{{ site.github_username }}" target="_blank"><i class="fab fa-github"></i></a>
-          <a class="mx-2" href="https://www.twitch.tv/{{ site.twitch_username }}" target="_blank"><i class="fab fa-twitch"></i></a>
-          <!-- <a class="mx-2" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a class="mx-2" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>-->
-          <a class="mx-2" href="https://www.soundcloud.com/{{ site.soundcloud_username }}" target="_blank"><i class="fab fa-soundcloud"></i></a>
-          <a class="mx-2" href="https://open.spotify.com/user/{{ site.spotify_username }}" target="_blank"><i class="fab fa-spotify"></i></a>
+          <a href="https://github.com/{{ site.github_username }}" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.twitch.tv/{{ site.twitch_username }}" target="_blank"><i class="fab fa-twitch"></i></a>
+          <!-- <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>-->
+          <span><i class="fab fa-soundcloud"></i></span>
+          <a href="https://open.spotify.com/user/{{ site.spotify_username }}" target="_blank"><i class="fab fa-spotify"></i></a>
       </div>
   </div>
 </section>
