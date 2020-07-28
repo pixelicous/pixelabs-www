@@ -1,7 +1,7 @@
     <div class="container">
       <div class="row">
         <div class="col">
-          {%- for post in paginator.posts -%}
+          {%- for post in paginator.posts reversed -%}
             <div>
               <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
               <p class="text-info lead">
