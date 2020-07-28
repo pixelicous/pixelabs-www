@@ -254,10 +254,10 @@ def export_photo_histogram(full_path, histo_path, overwrite):
 def export_nice_histogram(full_path, photo_histogram_file):
     image = io.imread(full_path)
 
-    histo = plot.hist(image.ravel(), bins = 256, color = 'orange', )
-    histo = plot.hist(image[:, :, 0].ravel(), bins = 256, color = 'red', alpha = 0.5)
-    histo = plot.hist(image[:, :, 1].ravel(), bins = 256, color = 'green', alpha = 0.5)
-    histo = plot.hist(image[:, :, 2].ravel(), bins = 256, color = 'blue', alpha = 0.5)
+    histo = plot.hist(image.ravel(), bins = 256, color = 'orange',histtype='step')
+    histo = plot.hist(image[:, :, 0].ravel(), bins = 256, color = 'red', alpha = 0.5,histtype='step')
+    histo = plot.hist(image[:, :, 1].ravel(), bins = 256, color = 'green', alpha = 0.5,histtype='step')
+    histo = plot.hist(image[:, :, 2].ravel(), bins = 256, color = 'blue', alpha = 0.5,histtype='step')
     histo = plot.xlabel('Intensity')
     histo = plot.ylabel('Pixels #')
     histo = plot.legend(['Total', 'Red Channel', 'Green Channel', 'Blue Channel'])
