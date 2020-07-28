@@ -143,7 +143,7 @@
 }
 
 .about-section {
-  padding-top: 7rem;
+  padding-top: 6rem;
   background: linear-gradient(
       to bottom,
       $white 0%,
@@ -349,12 +349,12 @@ background-size: cover;
 
 
 .subscribe-section {
-  padding: 10rem 0;
+  padding: 6rem 0;
   background: linear-gradient(
           to bottom,
           $primary 0%,
           #{fade-out($primary, 0.9)} 3%,
-          #{fade-out($black, 0.5)} 60%,
+          #{fade-out($black, 0.2)} 88%,
           $black 100%
       ),
       url("../img/home/homepage_bottom.jpg");
@@ -377,7 +377,7 @@ background-size: cover;
 }
 
 .contact-section {
-  padding-top: 5rem;
+  padding-top: 2.5rem;
   padding-bottom: 5rem;
   background: $black;
   .card {
@@ -394,11 +394,13 @@ background-size: cover;
           border-width: 0.25rem;
           width: 3rem;
       }
+     
   }
 
   .social {
       margin-top: 5rem;
       a {
+          margin: 0 0.2rem 0 0.2rem;
           text-align: center;
           height: 3rem;
           width: 3rem;
