@@ -1,7 +1,5 @@
 import os, logging, yaml, datetime, cv2
-from resizeimage import resizeimage
-import numpy as np
-from PIL import Image, ExifTags
+from PIL import Image
 from matplotlib import pyplot as plot
 from skimage import io
 
@@ -121,6 +119,7 @@ def filter_unwanted_images(filename):
     return image_filtered
 
 def export_photo_exif_data(img, full_path, overwrite):
+    import exifread
     filename = os.path.splitext(os.path.basename(full_path))[0]
     file_path = os.path.dirname(full_path)
     file_dir_name = os.path.basename(file_path)
@@ -141,38 +140,65 @@ def export_photo_exif_data(img, full_path, overwrite):
         log.debug(f"Yaml path exists: {yaml_root_path}")
 
     try:
-        exif = {
-                    ExifTags.TAGS[k]: v
-                    for k, v in img._getexif().items()
-                    if k in ExifTags.TAGS
-                }   
+
+        with open(full_path, 'rb') as f:
+            exif = exifread.process_file(f)
+
+        exif = {str(k).replace("EXIF ",""):str(v) for (k,v) in sorted(exif.items()) if k not in ['JPEGThumbnail', 'TIFFThumbnail', 'Filename']}
+
         
         data_dump = {}
         # todo: shift left test whether need to recreate file before getting exifdata
         # Strip photo creation time to get year only
+        log.debug(exif.items())
         photo_time = datetime.datetime.strptime(exif["DateTimeOriginal"], '%Y:%m:%d  %H:%M:%S')
-        try:
-            data_dump["Shutter Speed"] = exif["ShutterSpeedValue"]
-        except KeyError:
-            pass
+        
+        photo_fnumber = exif["FNumber"]
+        if "/" in photo_fnumber:
+            aperature_nums = [int(value) for value in photo_fnumber.split("/")]
+            aperature = aperature_nums[0]/aperature_nums[1]
+        else:
+            aperature = photo_fnumber
+            
         try:
             data_dump["Year"] = photo_time.year
         except KeyError as e:
             log.debug(f"No exif key {e}")
         try:
-            data_dump["Aperture"] = exif["ApertureValue"]
+            data_dump["Aperature"] = "f/{}".format(aperature)
         except KeyError as e:
             log.debug(f"No exif key {e}")
         try:
-            data_dump["Brightness"] = exif["BrightnessValue"]
+            data_dump["Shutter Speed"] = exif["ExposureTime"]
+        except KeyError:
+            pass
+        try:
+            data_dump["ISO"] = exif["ISOSpeedRatings"]
         except KeyError as e:
             log.debug(f"No exif key {e}")
         try:
-            data_dump["Camera"] = exif["Make"]
+            data_dump["White Balance"] = exif["WhiteBalance"]
         except KeyError as e:
             log.debug(f"No exif key {e}")
         try:
-            data_dump["Model"] = exif["Model"]
+            data_dump["Gain Control"] = exif["GainControl"]
+        except KeyError as e:
+            log.debug(f"No exif key {e}")
+        try:
+            if exif["ExposureProgram"] != "Unidentified":
+                data_dump["Exposure"] = exif["ExposureProgram"]
+        except KeyError as e:
+            log.debug(f"No exif key {e}")
+        try:
+            data_dump["AF Points Number"] = exif["MakerNote NumAFPoints"]
+        except KeyError as e:
+            log.debug(f"No exif key {e}")
+        try:
+            data_dump["Camera"] = exif["Image Make"]
+        except KeyError as e:
+            log.debug(f"No exif key {e}")
+        try:
+            data_dump["Model"] = exif["Image Model"]
         except KeyError as e:
             log.debug(f"No exif key {e}")
         try:
@@ -180,11 +206,11 @@ def export_photo_exif_data(img, full_path, overwrite):
         except KeyError as e:
             log.debug(f"No exif key {e}")
         try:
-            data_dump["Metering Mode"] = exif["MeteringMode"]
+            data_dump["Metering"] = exif["MeteringMode"]
         except KeyError as e:
             log.debug(f"No exif key {e}")
         try:
-            data_dump["Lens Specification"] = exif["LensSpecification"]
+            data_dump["Lens Model"] = exif["LensModel"]
         except KeyError as e:
             log.debug(f"No exif key {e}")
 
@@ -208,6 +234,7 @@ def export_photo_exif_data(img, full_path, overwrite):
                 log.debug(f"Yaml file exists and overwrite is set to false")
     except AttributeError as e:
         log.debug(f"Error getting exif data {e}")        
+
 
 
 def export_photo_histogram(full_path, histo_path, overwrite):
