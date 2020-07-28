@@ -254,7 +254,6 @@ def export_photo_histogram(full_path, histo_path, overwrite):
 def export_nice_histogram(full_path, photo_histogram_file):
     image = io.imread(full_path)
 
-    histo = plot.hist(image.flatten(), bins = 256, color = 'orange')
     histo = plot.hist(image.flatten(), bins = 256, color = 'red', alpha = 0.5)
     histo = plot.hist(image.flatten(), bins = 256, color = 'green', alpha = 0.5)
     histo = plot.hist(image.flatten(), bins = 256, color = 'blue', alpha = 0.5)
