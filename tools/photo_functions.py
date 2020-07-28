@@ -261,6 +261,7 @@ def export_nice_histogram(full_path, photo_histogram_file):
     histo = plot.ylabel('Pixels #')
     histo = plot.legend(['Total', 'Red Channel', 'Green Channel', 'Blue Channel'])
     plot.savefig(photo_histogram_file, bbox_inches='tight', dpi=75, transparent=False)
+    plot.close(photo_histogram_file)
 
 
 
