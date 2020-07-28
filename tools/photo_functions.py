@@ -150,20 +150,20 @@ def export_photo_exif_data(img, full_path, overwrite):
         data_dump = {}
         # todo: shift left test whether need to recreate file before getting exifdata
         # Strip photo creation time to get year only
-        photo_time = datetime.datetime.strptime(exif["DateTimeOriginal"], '%Y:%m:%d  %H:%M:%S')
         
-        photo_fnumber = exif["FNumber"]
-        if "/" in photo_fnumber:
-            aperature_nums = [int(value) for value in photo_fnumber.split("/")]
-            aperature = aperature_nums[0]/aperature_nums[1]
-        else:
-            aperature = photo_fnumber
-            
         try:
+            photo_time = datetime.datetime.strptime(exif["DateTimeOriginal"], '%Y:%m:%d  %H:%M:%S')
             data_dump["Year"] = photo_time.year
         except KeyError as e:
             log.debug(f"No exif key {e}")
+
         try:
+            photo_fnumber = exif["FNumber"]
+            if "/" in photo_fnumber:
+                aperature_nums = [int(value) for value in photo_fnumber.split("/")]
+                aperature = aperature_nums[0]/aperature_nums[1]
+            else:
+                aperature = photo_fnumber
             data_dump["Aperature"] = "f/{}".format(aperature)
         except KeyError as e:
             log.debug(f"No exif key {e}")
