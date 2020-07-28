@@ -159,12 +159,11 @@
 
 // Projects
 .projects-section{
-padding: 10rem 0;
 background: linear-gradient(
         to bottom,
-        $black 100%,
-        #{fade-out($black, 0.9)} 3%,
-        #{fade-out($white, 0.5)} 60%,
+        $black 0%,
+        #{fade-out($black, 1.0)} 3%,
+        #{fade-out($white, 0.2)} 60%,
         $white 100%
     );
 background-position: center;
