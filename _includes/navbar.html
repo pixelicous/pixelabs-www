@@ -8,10 +8,10 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolioMan" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Portfolio
           </a> 
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
             <a class="dropdown-item" href="{{ 'portfolio/photography/'  | relative_url}}">Photography</a>
             <a class="dropdown-item" href="{{ 'portfolio/crafts/'  | relative_url}}">Crafts</a>
             <a class="dropdown-item" href="{{ 'portfolio/digital/'  | relative_url}}">Digital</a>
@@ -20,7 +20,7 @@
         <li class="nav-item {%- if page.url == "/shop.html" -%}active{%- endif -%}">
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownShop" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Shop
           </a> 
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -39,7 +39,7 @@
 
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Blog
           </a>
           <div class="dropdown-menu  {%- if page.url == "/blog.html" -%}active{%- endif -%}" aria-labelledby="navbarDropdown">
