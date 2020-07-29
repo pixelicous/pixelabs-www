@@ -189,7 +189,7 @@ def export_photo_exif_data(img, full_path, overwrite):
         except KeyError as e:
             log.debug(f"No exif key {e}")
         try:
-            data_dump["AF Points Number"] = exif["MakerNote NumAFPoints"]
+            data_dump["AF Points"] = exif["MakerNote NumAFPoints"]
         except KeyError as e:
             log.debug(f"No exif key {e}")
         try:

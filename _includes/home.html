@@ -42,7 +42,7 @@
             </div>
       </div>
     </div>
-    <img class="img-fluid" src="{{ 'assets/img/home/about.png' | relative_url }}" alt="about background" />
+    <img class="img-fluid" src="{{ 'assets/img/home/about.png' | relative_url }}" alt="Custom Cat Toy Background" />
 </div>
 </section>
 <section class="services-section text-center bg-black" id="services">
@@ -97,7 +97,7 @@
     <div class="row">
       <div class="col-lg-8 mx-auto">
           <hr />
-          <h4><a href="mailto:home-inquiry@pixelabs.net?subject=Pixelabs&nbsp;visitor&nbsp;question&amp;body=Hey man!"  class="text-decoration-none text-white mb-4" target="_blank"><i class="fas fa-envelope-open-text pr-2"></i> CONTACT ME</a></h4>
+          <h4><a href="{{site.mail_url}}"  class="text-decoration-none text-white mb-4" target="_blank"><i class="fas fa-envelope-open-text pr-2"></i> CONTACT ME</a></h4>
       </div>
     </div>
   </div>
@@ -118,7 +118,7 @@
               <div class="mb-0">Direct link to latest mix on my SoundCloud account</div>
             </div>
           </div>
-          <img class="img-fluid" src="{{ 'assets/img/home/project1.jpg' | relative_url }}" alt="quicklink 1">
+          <img class="img-fluid" src="{{ 'assets/img/home/project1.jpg' | relative_url }}" alt="Recent Music Mix">
         </a>
       </div>
       <div class="col-md-6">
@@ -129,7 +129,7 @@
               <p class="mb-0">Digital stickers</p>
             </div>
           </div>
-          <img class="img-fluid" src="{{ 'assets/img/home/project2.jpg' | relative_url }}" alt="quicklink 2">
+          <img class="img-fluid" src="{{ 'assets/img/home/project2.jpg' | relative_url }}" alt="Sticker Projects">
         </a>
       </div>
       <div class="col-md-6">
@@ -140,7 +140,7 @@
               <p class="mb-0">All sorts of light enabled electronics I crafted for the Burning Man event!</p>
             </div>
           </div>
-          <img class="img-fluid" src="{{ 'assets/img/home/project3.jpg' | relative_url }}" alt="quicklink 3">
+          <img class="img-fluid" src="{{ 'assets/img/home/project3.jpg' | relative_url }}" alt="Burning Man Electronics">
         </a>
       </div>
       <div class="col-md-6">
@@ -151,7 +151,7 @@
               <p class="mb-0">A custom vinyl figure I painted by a friend's request.</p>
             </div>
           </div>
-          <img class="img-fluid" src="{{ 'assets/img/home/project4.jpg' | relative_url }}" alt="quicklink 4">
+          <img class="img-fluid" src="{{ 'assets/img/home/project4.jpg' | relative_url }}" alt="Beach Bunny Vinyl">
         </a>
       </div>
     </div>
@@ -200,7 +200,7 @@
                 <h4 class="text-uppercase m-0">Email</h4>
                 <hr class="my-4" />
                 <div class="small text-black-50">Hit me up!</div>
-                <a class="stretched-link text-black-50" href="mailto:home-inquiry@pixelabs.net?subject=Pixelabs&nbsp;visitor&nbsp;question&amp;body=Hey man!" target="_blank"></a>
+                <a class="stretched-link text-black-50" href="{{site.mail_url}}" target="_blank"></a>
             </div>
         </div> 
         <div class="card col-lg-2 col-5 mx-md-auto mx-2 py-4 h-100 my-2">
@@ -209,7 +209,7 @@
                   <h4 class="text-uppercase m-0">LinkedIn</h4>
                 <hr class="my-4" />
                 <div class="small text-black-50">Tech Details</div>
-                <a class="stretched-link text-black-50" href="https://linkedin.com/in/netzerom/" target="_blank"></a>
+                <a class="stretched-link text-black-50" href="https://linkedin.com/in/{{site.linkedin_username}}/" target="_blank"></a>
             </div>
         </div>
           <div class="card col-lg-2 col-5 mx-md-auto mx-2 py-4 h-100 my-2">
@@ -232,7 +232,6 @@
           </div>
       </div>
       <div class="social d-flex justify-content-center">
-          <a href="https://github.com/{{ site.github_username }}" target="_blank"><i class="fab fa-github"></i></a>
           <a href="https://www.twitch.tv/{{ site.twitch_username }}" target="_blank"><i class="fab fa-twitch"></i></a>
           <a href="https://www.soundcloud.com/{{ site.soundcloud_username }}" target="_blank"><i class="fab fa-soundcloud"></i></a>
           <a href="https://open.spotify.com/user/{{ site.spotify_username }}" target="_blank"><i class="fab fa-spotify"></i></a>
