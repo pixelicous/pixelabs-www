@@ -54,12 +54,8 @@
       text-shadow: 0 0 3px $white;
   }
   @include media-breakpoint-up(md) {
-    height: 100vh;
-    padding: 0;
-    h1 {
-        font-size: 4rem;
-        line-height: 4rem;
-    }
+     height: 100vh;
+      padding: 0;
   }
   @include media-breakpoint-up(lg) {
       height: 100vh;
@@ -103,7 +99,7 @@
   }
 }
 
-@media (min-width: 380px) and (max-width: 768px) {
+@media (min-width: 380px) and (max-width: 576px) {
   .homewall {
     padding                 :   15px 0px;
     h1 {
@@ -132,21 +128,24 @@
 }
 
 
-@media (min-width: 768px) and (max-width: 1025px) {
+@media (min-width: 576px) and (max-width: 1025px) {
   .homewall {
+    height: 100vh;
+    padding: 0;
     h1 {
     padding                 :   1rem 1rem;
     border-width                :   10px;
-    font-size: 8rem;
-    line-height: 8rem;
+    font-size: 6rem;
+    line-height: 6rem;
     letter-spacing: 0.8rem;
   }
 
     h2 {
       margin-top: 1rem;
       font-family: $font-roboto-condens;
-      font-size: 1.2rem;
-      line-height: 2rem;
+      font-size: 1rem;
+      letter-spacing: 0.8rem;
+      line-height: 1.2rem;
     }
   }
 }
@@ -513,11 +512,30 @@ background-size: cover;
 
 .down-arrow {
   bottom: 0;
-  margin-bottom: 5rem;
+  //margin-bottom: 5rem;
   width: 100%;
   text-align: center;
   position: absolute;
-  a {
+
+  background: none;
+  font-size: large;
+  text-align: center;
+  height: 6rem;
+  width: 6rem;
+  line-height: 6rem;
+  color: fade-out($black, 0.8);
+  &:active {
+      color: $black;
+  }
+    
+  @media screen and (max-width: 414px) {
+    margin-bottom: 5px;
+  }
+  @media (min-width: 414px) and (max-width: 768px) {
+    margin-bottom: 2rem;
+  }
+  @media (min-width: 768px) {
+    a {
       text-align: center;
       height: 3rem;
       width: 3rem;
@@ -529,20 +547,6 @@ background-size: cover;
         background: fade-out($black, 1);
           color: fade-out($white, 0.2);
       }
-      &:active {
-          color: $black;
-      }
-  }
-  @media screen and (max-width: 768px) {
-    margin-bottom: -4rem;
-    a {
-      background: none;
-      font-size: large;
-      text-align: center;
-      height: 6rem;
-      width: 6rem;
-      line-height: 6rem;
-      color: fade-out($black, 0.8);
       &:active {
           color: $black;
       }
