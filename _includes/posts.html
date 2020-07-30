@@ -2,19 +2,41 @@
       <div class="row">
         <div class="col">
           {%- for post in paginator.posts reversed -%}
-            <div>
-              <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
-              <p class="text-info lead">
-                {{ post.date | date: "%b %-d, %Y" }}
-              </p>
-  
-              <p>
-                {%- if post.summary -%}
-                  {{ post.summary }}
-                {%- else -%}
-                  {{ post.excerpt }}
-                {%- endif -%}
-              </p>
+            <div class="card mb-5 rounded border-gray-">
+              <div class="card-body">
+                <div class="row">
+
+                  <div class="card-title col-md-9 col-7 mb-0"> 
+                    <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+                    <p class="text-info lead">
+                      {{ post.date | date: "%b %-d, %Y" }}
+                    </p>
+                  </div>
+                  {%- if post.tags.size > 0 -%}
+                    <div class="card-title col-md-3 col-5 text-right"> 
+                      <p><small class="text-muted">.&nbsp;{%- for tag in post.tags -%}
+                        {{ tag }} &nbsp;.&nbsp;
+                        {%- endfor -%}</small> <i class="fas fa-tags"></i>
+                      </p>
+                    </div>
+                  {%- endif -%}
+                </div>
+                
+                <div class="col-12"> 
+                  <p>
+                    {%- if post.summary -%}
+                      {{ post.summary }}
+                    {%- else -%}
+                      {{ post.excerpt }}
+                    {%- endif -%}
+                  </p>
+                 </div>
+              </div>
+              {%- if post.excerpt -%}
+              <div class="card-footer">
+                <a href="{{ post.url | prepend: site.baseurl }}" class="float-right">Read more..</a>
+              </div>
+              {%- endif -%}
             </div>
           {%- endfor -%}
         </div>

@@ -51,7 +51,7 @@
       font-weight: 300;
       font-size: 2.0rem;
       line-height: 2rem;
-      text-shadow: 0 0 7px $gray-600;
+      text-shadow: 0 0 3px $white;
   }
   @include media-breakpoint-up(md) {
     h1 {
@@ -77,29 +77,27 @@
   .homewall {
     padding                 :   15px 0px;
     h1 {
-    width: 70%;
-    height: auto;
-    min-height: 15rem;
-    padding                 :   20px 0px;
-    border-style                :   solid;
-    border-width                :   10px;
-    border-color                :   #F7F7F7;
-    font-weight: 300;
-    letter-spacing: 20px;
-    font-size: 150px;
-    line-height: 120px;
-    word-break: break-all;
-    text-justify: inter-word;
-    margin: 0 auto;
+      width: 70%;
+      height: auto;
+      min-height: 15rem;
+      padding                 :   20px 0px;
+      border-style                :   solid;
+      border-width                :   10px;
+      border-color                :   #F7F7F7;
+      font-weight: 300;
+      letter-spacing: 25px;
+      font-size: 150px;
+      line-height: 120px;
+      word-break: break-all;
+      text-justify: inter-word;
+      margin: 0 auto;
   }
 
     h2 {
         margin-top: 1.5rem;
-        text-shadow: 0 0 7px $gray-600;
         font-family: $font-roboto-condens;
         letter-spacing: 0.4rem;
         font-weight: 200;
-        max-width: 70%;
         font-size: 1rem;
         line-height: 1.2rem;
     }
@@ -109,12 +107,13 @@
 @media (min-width: 768px) and (max-width: 992px) {
   .homewall {
     h1 {
-    padding                 :   20px 20px;
+    padding                 :   10px 0px;
     border-style                :   solid;
     border-width                :   12px;
     border-color                :   #F7F7F7;
-    font-size: 4rem;
-    line-height: 4rem;
+    font-size: 8rem;
+    line-height: 8rem;
+    letter-spacing: 0.8rem;
   }
 
     h2 {
@@ -130,20 +129,20 @@
   .homewall {
     height: 100vh;
     padding: 0;
-  }
-  .homewall h1 {
+  h1 {
     font-size: 14rem;
     line-height: 14rem;
     letter-spacing: 0.8rem;
   }
-  .homewall h2 {
+  h2 {
     max-width: 70rem;
     font-size: 1.25rem;
   }
 }
+}
 
 .about-section {
-  padding-top: 6rem;
+  padding-top: 4rem;
   background: linear-gradient(
       to bottom,
       $white 0%,
@@ -489,17 +488,15 @@ background-size: cover;
       }
   }
   @media screen and (max-width: 768px) {
-    //padding-bottom: -20px;
-    margin-bottom: -40px;
+    margin-bottom: -60px;
     a {
       background: none;
-      font-size: small;
+      font-size: large;
       text-align: center;
-      height: 3rem;
-      width: 3rem;
-      line-height: 3rem;
-      color: fade-out($black, 0.7);
-
+      height: 6rem;
+      width: 6rem;
+      line-height: 6rem;
+      color: fade-out($black, 0.8);
       &:active {
           color: $black;
       }

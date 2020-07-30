@@ -87,7 +87,7 @@ code {
 }
 
 .about_banner {
-  width: 100%;
+  color: #253d2d;
   min-height: 35rem;
   background: linear-gradient(
     to bottom,
@@ -96,14 +96,18 @@ code {
     $white 100%
   ),
   url("../img/me.jpeg");
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  //background-attachment: fixed; // Don't scroll with rest of page
+ 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+  i {
+    vertical-align:middle;
+  }
+  
   @media screen and (max-width: 992px) {
     background-position: 65% 80%;
     font-size: 1.2rem;
