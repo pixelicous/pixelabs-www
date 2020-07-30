@@ -54,6 +54,8 @@
       text-shadow: 0 0 3px $white;
   }
   @include media-breakpoint-up(md) {
+    height: 100vh;
+    padding: 0;
     h1 {
         font-size: 4rem;
         line-height: 4rem;
@@ -73,21 +75,18 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 380px) {
   .homewall {
     padding                 :   15px 0px;
     h1 {
       width: 70%;
-      height: auto;
       min-height: 15rem;
-      padding                 :   20px 0px;
-      border-style                :   solid;
-      border-width                :   10px;
-      border-color                :   #F7F7F7;
+      padding                 :   21px 0px;
+      border-width                :   8px;
       font-weight: 300;
-      letter-spacing: 25px;
-      font-size: 150px;
-      line-height: 120px;
+      letter-spacing: 0.8rem;
+      font-size: 8rem;
+      line-height: 8rem;
       word-break: break-all;
       text-justify: inter-word;
       margin: 0 auto;
@@ -104,13 +103,40 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 992px) {
+@media (min-width: 380px) and (max-width: 768px) {
+  .homewall {
+    padding                 :   15px 0px;
+    h1 {
+      width: 70%;
+      min-height: 15rem;
+      padding                 :   20px 0px;
+      border-width                :   10px;
+      font-weight: 300;
+      letter-spacing: 1.2rem;
+      font-size: 8rem;
+      line-height: 8rem;
+      word-break: break-all;
+      text-justify: inter-word;
+      margin: 0 auto;
+  }
+
+    h2 {
+        margin-top: 0.5rem;
+        font-family: $font-roboto-condens;
+        letter-spacing: 0.4rem;
+        font-weight: 200;
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+    }
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1025px) {
   .homewall {
     h1 {
-    padding                 :   10px 0px;
-    border-style                :   solid;
-    border-width                :   12px;
-    border-color                :   #F7F7F7;
+    padding                 :   1rem 1rem;
+    border-width                :   10px;
     font-size: 8rem;
     line-height: 8rem;
     letter-spacing: 0.8rem;
@@ -125,7 +151,28 @@
   }
 }
 
-@media (min-width: 992px) {
+
+@media (min-width: 1025px) and (max-width: 1366px) {
+  .homewall {
+    h1 {
+    padding                 :   2rem 2rem;
+    border-width                :   12px;
+    font-size: 9rem;
+    line-height: 9rem;
+    letter-spacing: 0.8rem;
+  }
+
+    h2 {
+      margin-top: 1rem;
+      font-family: $font-roboto-condens;
+      font-size: 1.2rem;
+      line-height: 2rem;
+    }
+  }
+}
+
+
+@media (min-width: 1366px) {
   .homewall {
     height: 100vh;
     padding: 0;
@@ -418,7 +465,6 @@ background-size: cover;
 }
 
 .services-section {
-  padding: 10rem 0;
   background: linear-gradient(
           to bottom,
           $primary 0%,
@@ -488,7 +534,7 @@ background-size: cover;
       }
   }
   @media screen and (max-width: 768px) {
-    margin-bottom: -60px;
+    margin-bottom: -4rem;
     a {
       background: none;
       font-size: large;
