@@ -23,19 +23,12 @@ mail_url: "mailto:home-inquiry@pixelabs.net?subject=Pixelabs&nbsp;visitor&nbsp;q
 
 # Build settings
 # whitelist: 
-  # - jekyll-analytics
 plugins:
   - jekyll-feed
   - jekyll-paginate-v2
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-seo-tag
-  # - jekyll-analytics
-
-# Jekyll Analytics Gem
-# jekyll_analytics:
-#   GoogleAnalytics:
-#     id: UA-164926771-3   
 
 # Jekyll 3 Pagination Gem
 permalink: pretty
