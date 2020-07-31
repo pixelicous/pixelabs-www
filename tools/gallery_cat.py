@@ -131,6 +131,7 @@ for root, dirs, files in os.walk(GALLERY_ROOT_PATH):
                 if ENABLE_PHOTO_ORIGINALS_CLEANUP:
                     try:
                         log.info(f"Cleaning up originals before caching: {full_path}")
+                        
                         os.remove(full_path)
                         if not os.path.isfile(full_path):
                             log.debug(f"Cleaned {full_path} successfully")
