@@ -38,6 +38,7 @@ jobs:
     script: "./cicd/ci_build.sh"
     deploy:
       strategy: git
+      repo: pixelicous/pixelabs-www-public
       provider: pages
       local_dir: site/
       target_branch: master
