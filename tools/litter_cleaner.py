@@ -27,15 +27,11 @@ console.setFormatter(formatter)
 log.addHandler(console)
 
 # Root location to run
-GALLERY_ROOT_PATH = "./_site/assets/portfolio"
+GALLERY_ROOT_PATH = "./assets/portfolio"
 
 SIZES_STRING_LIST = ', '.join([size for size in PHOTO_SIZES])
 EXTRA_FOLDERS = ['histogram']
 
-log.debug(f"Histogram enabled: {ENABLE_PHOTO_HISTOGRAM_CREATE}")
-log.debug(f"resize enabled: {ENABLE_PHOTO_RESIZE}")
-log.debug(f"Histogram overwrite yaml: {YAML_OVERWRITE}")
-log.debug(f"Histogram overwrite resize: {RESIZE_OVERWRITE}")
 # Find all main portfolio paths under assets
 portfolio_paths = [f.path for f in os.scandir(GALLERY_ROOT_PATH) if f.is_dir()]
          
@@ -49,7 +45,7 @@ for root, dirs, files in os.walk(GALLERY_ROOT_PATH):
 
         # Don't resize the resized photos
         if directory_name not in PHOTO_SIZES:
-            if 'histogram' not in filename and 'histogram' not in full_path: 
+            if ('histogram' not in filename or 'header' not in filename ) and 'histogram' not in full_path: 
                 try:
                     log.info(f"Cleaning up originals: {full_path}")
                     os.remove(full_path)
