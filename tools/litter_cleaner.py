@@ -39,7 +39,17 @@ EXTRA_FOLDERS = ['histogram']
 
 # Find all main portfolio paths under assets
 portfolio_paths = [f.path for f in os.scandir(GALLERY_ROOT_PATH) if f.is_dir()]
-         
+
+
+def filter_unwanted_images(filename):
+    # Get specific extensions only
+    extensions=['.jpg', '.jpeg', '.gif', '.png']
+
+    # Do not check images in folders of already resized images
+    image_filtered = filename.endswith(tuple(extensions))
+    
+    return image_filtered
+
 log.info(f"## CLEAN UP INITIATED")
 # Resize images into relevant size folders
 for root, dirs, files in os.walk(GALLERY_ROOT_PATH):
@@ -58,7 +68,7 @@ for root, dirs, files in os.walk(GALLERY_ROOT_PATH):
                         log.debug(f"Cleaned {full_path} successfully")
                 except OSError as e: # name the Exception `e`
                     log.debug(f"Clean error: {e.strerror}")
-                    log.debug(f"Error code: {e.code }")
+                    log.debug(f"Error code: {e.code}")
             else:
                 log.debug(f"Ignoring: {full_path}")
 
