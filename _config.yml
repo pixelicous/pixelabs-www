@@ -5,6 +5,18 @@ description: >- # this means to ignore newlines until "baseurl:"
   A collection of art projects, digital illustrations, electronic installations, custom made accessories and more.
 url: "https://www.pixelabs.net" # the base hostname & protocol for your site, e.g. http://example.com
 
+
+# SEO
+facebook:
+  publisher: netzer.rom.designer.shop
+social:
+  name: Pixelabs
+  links:
+    - https://www.instagram.com/netz_designs/
+    - https://www.facebook.com/netzer.rom.designer.shop
+    - https://open.spotify.com/user/pixilicous
+    - https://soundcloud.com/pixelicous
+
 github_username: pixelicous
 twitch_username: pixelicous
 soundcloud_username: pixelicous

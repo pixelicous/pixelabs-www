@@ -254,12 +254,12 @@ def export_photo_histogram(full_path, histo_path, overwrite):
 def export_nice_histogram(full_path, photo_histogram_file):
     image = io.imread(full_path)
 
-    histo = plot.hist(image.ravel(), bins = 256, color = 'grey', alpha = 0.3, histtype='step')
-    histo = plot.hist(image[:, :, 0].ravel(), bins = 256, color = 'red', alpha = 0.5,histtype='step')
-    histo = plot.hist(image[:, :, 1].ravel(), bins = 256, color = 'green', alpha = 0.5,histtype='step')
-    histo = plot.hist(image[:, :, 2].ravel(), bins = 256, color = 'blue', alpha = 0.5,histtype='step')
-    histo = plot.xlabel('Intensity')
-    histo = plot.ylabel('Pixels #')
+    histo = plot.hist(image.ravel(), bins = 256, color = 'darkorange', alpha = 0.2, histtype='stepfilled')
+    histo = plot.hist(image[:, :, 0].ravel(), bins = 256, color = 'red', alpha = 0.5,histtype='stepfilled')
+    histo = plot.hist(image[:, :, 1].ravel(), bins = 256, color = 'green', alpha = 0.5,histtype='stepfilled')
+    histo = plot.hist(image[:, :, 2].ravel(), bins = 256, color = 'blue', alpha = 0.5,histtype='stepfilled')
+    histo = plot.xlabel('Color Intensity')
+    histo = plot.ylabel('Pixels Count')
     histo = plot.legend(['Total', 'Red Channel', 'Green Channel', 'Blue Channel'], loc='upper right')
     plot.savefig(photo_histogram_file, bbox_inches='tight', dpi=75, transparent=False)
     plot.close(photo_histogram_file)
