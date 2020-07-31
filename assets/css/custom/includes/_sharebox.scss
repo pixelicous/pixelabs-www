@@ -1,0 +1,53 @@
+.share-box a {
+    display: inline-block;
+    padding: 5px 9px;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    border-radius: 20%;
+    text-decoration: none; }
+    .share-box a:hover {
+      text-decoration: none;
+      -webkit-transition: background-color 200ms linear;
+      -ms-transition: background-color 200ms linear;
+      transition: background-color 200ms linear; }
+  
+  .f {
+    color: #3b5998; }
+    .f:hover {
+      color: #fff;
+      background-color: #3b5998; }
+  .f {
+    color: #3b5998; }
+    .f:hover {
+      color: #fff;
+      background-color: $primary; }
+  
+  .t {
+    color: #4099FF; }
+    .t:hover {
+      color: #fff;
+      background-color: $primary; }
+  
+  .g {
+    color: #d34836; }
+    .g:hover {
+      color: #fff;
+      background-color: $primary; }
+  
+  .r {
+    color: #ff5700; }
+    .r:hover {
+      color: #fff;
+      background-color: $primary; }
+  
+  .l {
+    color: #0077b5; }
+    .l:hover {
+      color: #fff;
+      background-color: $primary; }
+  
+  .e {
+    color: #444444; }
+    .e:hover {
+      color: #fff;
+      background-color: $primary; }

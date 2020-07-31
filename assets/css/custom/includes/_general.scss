@@ -182,3 +182,31 @@ code {
 //   --underline-color: hsl(0, 0%, 60%);
 //   } 
 // }
+
+.carousel { box-shadow: 0 0 5rem 0.2rem $primary; border-radius: 1.2rem; background-color: $black;}
+.carousel-control-prev { left: -5rem; border-bottom: 0; }
+.carousel-control-next { right: -5rem; border-bottom: 0; }
+.carousel-indicators { bottom: -80px; }
+.carousel-indicators li { width: 16px; height: 16px; margin-left: 5px; margin-right: 5px; border-radius: 50%; }
+
+
+@media (max-width: 768px) {
+  
+  /* ... */
+  
+  .carousel { box-shadow: 0 0 2rem 0 $primary; border-radius: 0.6rem; background-color: $black;}
+  .carousel-indicators li { margin-left: 1px; margin-right: 1px; }
+  .carousel-control-prev { left: -3rem; border-bottom: 0;  }
+  .carousel-control-next { right: -3rem; border-bottom: 0; }
+
+  .video-wrapper iframe {
+    border-radius: 0.6rem; 
+  }
+  /* ... */
+  /*active slide indicator */
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  border-radius: 1.2rem; 
+}

@@ -32,9 +32,11 @@
                   </p>
                  </div>
               </div>
+              
               {%- if post.excerpt -%}
               <div class="card-footer">
-                <a href="{{ post.url | prepend: site.baseurl }}" class="float-right">Read more..</a>
+                <div class="float-left">{% include share_box.html %}</div>
+                <div class="float-right"><a href="{{ post.url | prepend: site.baseurl }}" class="float-right">Read more..</a></div>
               </div>
               {%- endif -%}
             </div>
