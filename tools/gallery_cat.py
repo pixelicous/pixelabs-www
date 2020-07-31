@@ -134,8 +134,10 @@ for root, dirs, files in os.walk(GALLERY_ROOT_PATH):
                         os.remove(full_path)
                         if not os.path.isfile(full_path):
                             log.debug(f"Cleaned {full_path} successfully")
-                    except:
-                        log.debug(f"Clean error: {full_path}")
+                    except OSError as e: # name the Exception `e`
+                        log.debug(f"Clean error: {e.strerror}")
+                        log.debug(f"Error code: {e.code }")
+                        
             else:
                 log.debug(f"Ignoring: {full_path}")
 
