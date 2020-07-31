@@ -132,7 +132,8 @@ for root, dirs, files in os.walk(GALLERY_ROOT_PATH):
                     try:
                         log.info(f"Cleaning up originals before caching: {full_path}")
                         os.remove(full_path)
-                        log.debug(f"Cleaned {full_path} successfully")
+                        if not os.path.isfile(full_path):
+                            log.debug(f"Cleaned {full_path} successfully")
                     except:
                         log.debug(f"Clean error: {full_path}")
             else:
