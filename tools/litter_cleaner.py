@@ -2,8 +2,6 @@
 # A script by Pixel to get photo data and resize images for pixelabs website
 
 import os, logging
-from photo_functions import *
-from PIL import Image
 
 # Logger
 LOG_LEVEL = os.environ.get("GALLERY_RUNNER_LOG_LEVEL", default="INFO").upper()
@@ -15,7 +13,7 @@ PHOTO_SIZES = {
         "md": { "width": "900", "height": "600" },
         "lg": { "width": "1800", "height": "1200" }
         }
-        
+
 if not isinstance(LOG_NUM_LEVEL, int):
     raise ValueError('Invalid log level: %s' % LOG_LEVEL)
 
@@ -34,7 +32,7 @@ console.setFormatter(formatter)
 log.addHandler(console)
 
 # Root location to run
-GALLERY_ROOT_PATH = "./assets/portfolio"
+GALLERY_ROOT_PATH = "./_site/assets/portfolio"
 
 SIZES_STRING_LIST = ', '.join([size for size in PHOTO_SIZES])
 EXTRA_FOLDERS = ['histogram']
