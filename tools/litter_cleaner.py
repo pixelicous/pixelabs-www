@@ -32,7 +32,7 @@ console.setFormatter(formatter)
 log.addHandler(console)
 
 # Root location to run
-GALLERY_ROOT_PATH = "./_site/assets/portfolio"
+GALLERY_ROOT_PATH = "./assets/portfolio"
 
 SIZES_STRING_LIST = ', '.join([size for size in PHOTO_SIZES])
 EXTRA_FOLDERS = ['histogram']
