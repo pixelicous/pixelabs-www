@@ -9,6 +9,13 @@ from PIL import Image
 LOG_LEVEL = os.environ.get("GALLERY_RUNNER_LOG_LEVEL", default="INFO").upper()
 LOG_NUM_LEVEL = getattr(logging, LOG_LEVEL, None)
 
+PHOTO_SIZES = {
+        "thumb": { "width": "300", "height": "200" },
+        "sm": { "width": "450", "height": "300" },
+        "md": { "width": "900", "height": "600" },
+        "lg": { "width": "1800", "height": "1200" }
+        }
+        
 if not isinstance(LOG_NUM_LEVEL, int):
     raise ValueError('Invalid log level: %s' % LOG_LEVEL)
 
