@@ -7,16 +7,17 @@
     <!-- Page Content -->
     <main role="main" class="container container-sm pt-10">
 
-        <!-- Project Item Heading -->
-        <h1 class="ml-2 my-3 text-roboto-300">{{page.short_title | upcase }}<h1>
-        <h2></h2>
-  
-        <!-- Project Item Row -->
-        <div class="row bg-white rounded p-3 shadow-sm mx-1">
-            <div class="col-md-6 my-3">
-              <img class="img-fluid rounded" src="/assets{{page.permalink}}/{{page.project_image}}" alt="project cover">
-            </div>
-
+      
+      <!-- Project Item Row -->
+      <div class="row rounded p-3 mx-1">
+        <div class="col-md-6 my-3">
+          <img class="img-fluid rounded-circle shadow-lg" src="/assets{{page.permalink}}/{{page.project_image}}" alt="project cover">
+        </div>
+        
+            <div class="col-md-6">
+            <!-- Project Item Heading -->
+            <h1 class="my-3 text-roboto-300">{{page.short_title | upcase }}<h1>
+            <h2></h2>
             {{content}}
 
     </main>
