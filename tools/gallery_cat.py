@@ -104,7 +104,7 @@ for root, dirs, files in os.walk(GALLERY_ROOT_PATH):
                 log.warning(f"Error getting image size of {full_path}")
             
             # Don't get information for an histogram photo
-            if 'histogram' not in filename and 'histogram' not in full_path: 
+            if ('histogram' not in full_path) and ('header' not in filename): 
                 # Only generate information for photographs
                 if ENABLE_PHOTO_RESIZE:
                     log.info(f"Legitimate for resizing: {full_path}")

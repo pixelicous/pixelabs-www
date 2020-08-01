@@ -254,14 +254,20 @@ def export_photo_histogram(full_path, histo_path, overwrite):
 def export_nice_histogram(full_path, photo_histogram_file):
     image = io.imread(full_path)
 
-    histo = plot.hist(image.ravel(), bins = 256, color = 'darkorange', alpha = 0.2, histtype='stepfilled')
-    histo = plot.hist(image[:, :, 0].ravel(), bins = 256, color = 'red', alpha = 0.5,histtype='stepfilled')
-    histo = plot.hist(image[:, :, 1].ravel(), bins = 256, color = 'green', alpha = 0.5,histtype='stepfilled')
-    histo = plot.hist(image[:, :, 2].ravel(), bins = 256, color = 'blue', alpha = 0.5,histtype='stepfilled')
+    # nparray = np.array(image)
+    # nparray[nparray == 0] = np.nan
+
+
+
+    histo = plot.hist(image.ravel(), bins = 256, color = 'darkorange', alpha = 0.2, histtype='stepfilled', range=(2, 254))
+    histo = plot.hist(image[:, :, 0].ravel(), bins = 256, color = 'red', alpha = 0.5,histtype='stepfilled', range=(2, 254))
+    histo = plot.hist(image[:, :, 1].ravel(), bins = 256, color = 'green', alpha = 0.5,histtype='stepfilled', range=(2, 254))
+    histo = plot.hist(image[:, :, 2].ravel(), bins = 256, color = 'blue', alpha = 0.5,histtype='stepfilled', range=(2, 254))
+    histo = plot.margins(0)
     histo = plot.xlabel('Color Intensity')
     histo = plot.ylabel('Pixels Count')
     histo = plot.legend(['Total', 'Red Channel', 'Green Channel', 'Blue Channel'], loc='upper right')
-    plot.savefig(photo_histogram_file, bbox_inches='tight', dpi=75, transparent=False)
+    plot.savefig(photo_histogram_file, bbox_inches='tight', transparent=False)
     plot.close(photo_histogram_file)
 
 
