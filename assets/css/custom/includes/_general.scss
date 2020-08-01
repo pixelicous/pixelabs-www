@@ -22,19 +22,14 @@ body {
   body {
     .container {
     font-family: $font-roboto;
-    font-weight: 200;
+    font-weight: 300;
     padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     @media screen and (max-width: 992px) {
       //
     }
   }
-  h1 {
-    font-family: $font-roboto;
-  }
 
-  h2 {
-    font-family: $font-roboto;
-  }
 }
 @media screen and (max-width: 992px) {
     body { padding-top: 0px;
@@ -87,6 +82,9 @@ code {
 }
 
 .about_banner {
+  h1 {
+    font-family: $font-roboto;
+  }
   color: #253d2d;
   min-height: 35rem;
   background: linear-gradient(

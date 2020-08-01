@@ -1,6 +1,6 @@
 ---
 layout: default
-title: PIXELABS | Digital Assets shop
+title: Digital assets shop | Pixelabs
 description: Digital assets from ecommerce software installation automation to illsutration and photography such as presets, brushes and color palletes. 
 permalink: /shop/front/
 ---
@@ -8,7 +8,7 @@ permalink: /shop/front/
 {%- assign shops = site.pages | where: "layout", "shop" -%}
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron justify-content-center">
+<div class="jumbotron justify-content-center shop">
     <div class="row justify-content-center mt-0 pt-0">
         <div class="col-md-4 col-10 mb-3 mt-0 pt-0">
             <img src="{{ 'assets/img/shop_logo.png' | relative_url }}" class="img-fluid" alt="shop logo">
@@ -17,21 +17,22 @@ permalink: /shop/front/
     </div>
         <div class="row justify-content-center">
           <div class="col-lg-8">
-            <p class="text-primary lead text-center">Authentic tangible and digital goods created by me, inspired by Life.</p>
+            <h2 class="text-primary lead text-center">AUTHENTIC TANGIBLE AND DIGITAL GOODS CREATED BY ME</h2>
             <p class="text-dark text-justify">My non digital products shop can be accessed by clicking the logo above or button below. The <strong>Pixelabs</strong> shop offers digital software for download. Aside from my shop you can also find my products in external online platforms, links below.</p>
           </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-md-8 col-8 text-center m-md-0 m-3">
-              <a class="btn btn-lg btn-light w-100" href="https://shop.pixelabs.net/" role="button" target="_blank"><i class="fas fa-store fa-2x" style="vertical-align:middle;"></i>  shop</a>
+            <div class="col-md-8 col-8 text-center m-3">
+              <a class="btn btn-lg btn-light w-100" href="https://shop.pixelabs.net/" role="button" target="_blank">TO MY CLOTHING & ACCESSORIES DESIGNER SHOP</a>
+            </div>
+            
+            <div class="col-12 text-center mt-3">
+              <hr class="my-4" />
+              <h3 class="my-3 text-roboto-300">DIGITAL ASSETS SHOP</h3>
+              <p class="text-primary"><strong>THE PIXELABS DIGITAL SHOP IS CURRENTLY BEING PREPARED. IT WILL OPEN SOON.</strong></p>
+            </div>
           </div>
-          
-          <div class="col-12 text-center mt-3">
-            <p class="text-muted"><strong>Pixelabs' digital software shop is being prepared. It will open soon.</strong></p>
-          </div>
-        </div>
-          <hr>
-        <div class="row justify-content-center mb-2 disabled-area">
+          <div class="row justify-content-center mb-2 disabled-area">
             {%- for shop in shops -%}
             <div class="col-md-3 col-6 my-3">
                 <div class="gallery-item">
@@ -44,8 +45,8 @@ permalink: /shop/front/
             </div>
             {%- endfor -%}
         </div>
-        <hr>
-        <div class="row justify-content-center shop">
+      
+        <div class="row justify-content-center ">
           <div class="col-lg-8 d-flex">
                 <h6 class="lead text-center m-2"><a type="button" class="btn btn-light btn-lg disabled" data-toggle="modal" data-target="#modalShipment" class="text-decoration-none text-muted"><small><i class="fas fa-shipping-fast" style="vertical-align:middle;"></i> Digital Shipping Policy</small></a></h6>
                 <h6 class="lead text-center m-2"><a type="button" class="btn btn-light btn-lg disabled" href="https://gumroad.com/{{ site.gumroad_username }}" target="_blank" class="text-decoration-none text-muted"><small><i class="fas fa-robot" style="vertical-align:middle;"></i> Open in Gumroad</small></a></h6>
@@ -76,6 +77,7 @@ permalink: /shop/front/
                 </div>
               </div>
         </div>
+        <hr class="my-4" />
         <div class="row justify-content-center mt-5">            
             <div class="col-md-3 col-8 text-center m-md-0 m-2">
                 <button class="btn btn-lg btn-light" href="https://{{ site.redbubble_username }}.redbubble.com/" role="button" disabled><i class="fas fa-registered fa-2x" style="vertical-align:middle;"></i>  RedBubble</button>

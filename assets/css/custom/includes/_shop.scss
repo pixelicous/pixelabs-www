@@ -9,6 +9,11 @@
     font-weight: 400;
     color: $info;
   }
+  hr {
+    border-color: $primary;
+    border-width: 0.25rem;
+    width: 3rem;
+}
 }
 
 

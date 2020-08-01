@@ -7,9 +7,9 @@
                 <div class="row">
 
                   <div class="card-title col-md-9 col-7 mb-0"> 
-                    <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+                    <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | upcase}}</a></h2>
                     <p class="text-info lead">
-                      {{ post.date | date: "%b %-d, %Y" }}
+                      {{ post.date | date: "%b %-d, %Y" | upcase }}
                     </p>
                   </div>
                   {%- if post.tags.size > 0 -%}
