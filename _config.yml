@@ -1,12 +1,11 @@
+# SEO
 title: Pixelabs
+tagline: Design studio for art, technology, crafts.
 email: home-inquiry@pixelabs.net
-description: >- # this means to ignore newlines until "baseurl:"
+description: >- # Ignore newlines until "baseurl:"
   Design studio for art, technology, crafts. You can see my portfolio or buy clothing at the shop.
   A collection of art projects, digital illustrations, electronic installations, custom made accessories and more.
-url: "https://www.pixelabs.net" # the base hostname & protocol for your site, e.g. http://example.com
-
-
-# SEO
+url: "https://www.pixelabs.net"
 social:
   name: Pixelabs
   links:
