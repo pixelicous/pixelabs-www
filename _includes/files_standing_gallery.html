@@ -1,5 +1,5 @@
 <h1 class="my-3 text-roboto-300 text-center">{{page.short_title | upcase}}</h1>
-<div class="row">
+<div class="row photo_gallery">
     {%- assign target_path = page.permalink | append: 'thumb' -%}
     {%- for file in site.static_files -%}
         {%- if file.path contains target_path -%}

@@ -2,25 +2,27 @@
 [![License: CC BY-NC-ND 4.0](https://licensebuttons.net/l/by-nc-nd/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/) -->
 
 
-<h1 class="my-4 text-roboto-300 text-center">{{page.short_title | upcase}}</h1>
-  <div class="row text-left pb-5 pl-0 justify-content-center">
-  <label class="custom-switch">
-    <input id="photo_detailed_view" type="checkbox" name="photo_detailed_view" class="custom-switch-input">
-    <span class="custom-switch-indicator"></span>
-    <span class="custom-switch-description">SHOW <a href="https://en.wikipedia.org/wiki/Exif" class="text-decoration-none" target="blank">EXIF DATA</a></span>
-  </label>
-  <label class="custom-switch">
-    <input id="photo_histogram_view" type="checkbox" name="photo_histogram_view" class="custom-switch-input">
-    <span class="custom-switch-indicator"></span>
-    <span class="custom-switch-description">ENABLE COLOR HISTOGRAM</span>
-  </label>
-  <label class="custom-switch">
-    <input id="pschedelic_gallery" type="checkbox" name="pschedelic_gallery" class="custom-switch-input">
-    <span class="custom-switch-indicator"></span>
-    <span class="custom-switch-description">PSYCHEDELIC GALLERY</span>
-  </label>
+<h1 class="my-md-4 my-3 text-roboto-300 text-center">{{page.short_title | upcase}}</h1>
+  <div class="row pb-md-5 pb-3 pl-0 justify-content-center">
+    <div class="text-md-center col-10 mx-auto">
+      <label class="custom-switch">
+        <input id="photo_detailed_view" type="checkbox" name="photo_detailed_view" class="custom-switch-input">
+        <span class="custom-switch-indicator"></span>
+        <span class="custom-switch-description">SHOW EXIF METADATA</span>
+      </label>
+      <label class="custom-switch">
+        <input id="photo_histogram_view" type="checkbox" name="photo_histogram_view" class="custom-switch-input">
+        <span class="custom-switch-indicator"></span>
+        <span class="custom-switch-description">ENABLE COLOR HISTOGRAM</span>
+      </label>
+      <label class="custom-switch">
+        <input id="pschedelic_gallery" type="checkbox" name="pschedelic_gallery" class="custom-switch-input">
+        <span class="custom-switch-indicator"></span>
+        <span class="custom-switch-description">PSYCHEDELIC GALLERY</span>
+      </label>
+   </div>
   </div>
-<div class="row photo_gallery">
+<div class="row">
   {%- assign target_path = page.permalink | append: 'thumb' -%}
  
   {%- for file in site.static_files -%}
