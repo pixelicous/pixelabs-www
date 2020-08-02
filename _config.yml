@@ -7,8 +7,6 @@ url: "https://www.pixelabs.net" # the base hostname & protocol for your site, e.
 
 
 # SEO
-facebook:
-  publisher: netzer.rom.designer.shop
 social:
   name: Pixelabs
   links:
@@ -16,7 +14,7 @@ social:
     - https://www.facebook.com/netzer.rom.designer.shop
     - https://open.spotify.com/user/pixilicous
     - https://soundcloud.com/pixelicous
-
+  
 github_username: pixelicous
 twitch_username: pixelicous
 soundcloud_username: pixelicous

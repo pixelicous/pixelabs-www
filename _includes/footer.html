@@ -28,6 +28,10 @@
 <!-- <script src="{{ 'assets/js/baguetteBox.min.js' | relative_url }}" async></script> -->
 
 
+{%- if page.videos_enabled -%}
+  <script src="{{ 'assets/js/videoCarousel.js' | relative_url }}" async></script>
+{% endif %}
+
 {%- if page.url contains "/portfolio/" -%}
 <script>
   // Load baguette after document has 
