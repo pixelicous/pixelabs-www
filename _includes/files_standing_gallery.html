@@ -1,4 +1,5 @@
-<div class="row photo_gallery">
+<h1 class="my-3 text-roboto-300 text-center">{{page.short_title | upcase}}</h1>
+<div class="row">
     {%- assign target_path = page.permalink | append: 'thumb' -%}
     {%- for file in site.static_files -%}
         {%- if file.path contains target_path -%}
@@ -9,7 +10,7 @@
                 {%- assign sm_size_path = page.permalink | prepend: '/assets' | append: 'sm/' | append: file.name -%}
                 {%- assign md_size_path = page.permalink | prepend: '/assets' | append: 'md/' | append: file.name -%}
                 {%- assign lg_size_path = page.permalink | prepend: '/assets' | append: 'lg/' | append: file.name -%}
-                    <div class="col-lg-4 col-6 gallery-ds" id="sticker-paper">
+                    <div class="col-lg-4 col-6 sticker-paper mt-3">
                         <a href="{{ thumb_size_path }}"
                             data-at-576="{{sm_size_path}}"
                             data-at-768="{{md_size_path}}"
