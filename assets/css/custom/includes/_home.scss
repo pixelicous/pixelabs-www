@@ -396,12 +396,12 @@ background-size: cover;
           border: 0;
       }
   }
-}
+// }
 
-.contact-section {
+// .contact-section {
   padding-top: 2.5rem;
   padding-bottom: 5rem;
-  background: $black;
+  // background: $black;
   .card {
       border: 0;
       border-bottom: 0.25rem solid $primary;
@@ -424,11 +424,12 @@ background-size: cover;
       a {
           margin: 0 0.2rem 0 0.2rem;
           text-align: center;
-          height: 3rem;
-          width: 3rem;
+          font-size: 2rem;
+          height: 5rem;
+          width: 5rem;
           background: fade-out($white, 0.9);
           border-radius: 100%;
-          line-height: 3rem;
+          line-height: 5rem;
           color: fade-out($white, 0.7);
           &:hover {
               color: fade-out($primary, 0.5);
