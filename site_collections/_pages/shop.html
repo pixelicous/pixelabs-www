@@ -25,33 +25,36 @@ permalink: /shop/front/
             <a class="btn btn-lg btn-light w-100" href="https://www.seakota.com/" role="button" target="_blank">TO MY CLOTHING BRAND SHOP</a>
           </div>
           <div class="col-md-8 col-8 text-center m-3">
-            <script type="text/javascript" src="https://www.redbubble.com/assets/external_portfolio.js"></script>
-            <script id="rb-xzfcxvzx" type="text/javascript">new RBExternalPortfolio('www.redbubble.com', 'pixelicous', 3, 3).renderIframe();</script>
+            <a class="btn btn-lg btn-light" href="https://society6.com/pixelabs" type="button" target="_blank">Society 6 Shop</a>
           </div>
+          <div class="col-12 text-center mt-3">
+            <hr class="my-4" />
+          <h3 class="my-3 text-roboto-300">RedBubble</h3>
+            <script class="col-8" type="text/javascript" src="https://www.redbubble.com/assets/external_portfolio.js"></script>
+            <script class="col-8" id="rb-xzfcxvzx" type="text/javascript">new RBExternalPortfolio('www.redbubble.com', 'pixelicous', 3, 3).renderIframe();</script>
           </div>
+        </div>
           
-          <div class="row justify-content-center">
-              <!-- <div class="col-md-3 col-8 text-center m-md-0 m-2">
-                  <a class="btn btn-lg btn-light" href="https://{{ site.redbubble_username }}.redbubble.com/" type="button" target="_blank"><i class="fas fa-registered fa-2x" style="vertical-align:middle;"></i>  RedBubble</a>
-              </div> -->
-            <div class="col-12 text-center mt-3">
-              <hr class="my-4" />
-              <h3 class="my-3 text-roboto-300">DIGITAL ASSETS SHOP</h3>
-              <p class="text-primary"><strong>THE PIXELABS DIGITAL SHOP IS CURRENTLY CLOSED .</strong></p>
-            </div>
+        <div class="row justify-content-center">
+            
+          <div class="col-12 text-center mt-3">
+            <hr class="my-4" />
+            <h3 class="my-3 text-roboto-300">DIGITAL ASSETS SHOP</h3>
+            <p class="text-primary"><strong>THE PIXELABS DIGITAL SHOP IS CURRENTLY CLOSED .</strong></p>
           </div>
-          <div class="row justify-content-center mb-2 disabled-area">
-            {%- for shop in shops -%}
-            <div class="col-md-3 col-6 my-3">
-                <div class="gallery-item">
-                    <img src="/assets/img{{shop.permalink}}{{shop.header_image}}" title="{{shop.title}}" alt="{{shop.title}}" class="w-100 rounded">
-                    <figcaption>
-                        <h2 class="h5 font-weight-bold font-italic">{{shop.title}}</h2>
-                    </figcaption>
-                    <a href="{{ shop.url }}" class=""></a>
-                </div>
-            </div>
-            {%- endfor -%}
+        </div>
+        <div class="row justify-content-center mb-2 disabled-area">
+          {%- for shop in shops -%}
+          <div class="col-md-3 col-6 my-3">
+              <div class="gallery-item">
+                  <img src="/assets/img{{shop.permalink}}{{shop.header_image}}" title="{{shop.title}}" alt="{{shop.title}}" class="w-100 rounded">
+                  <figcaption>
+                      <h2 class="h5 font-weight-bold font-italic">{{shop.title}}</h2>
+                  </figcaption>
+                  <a href="{{ shop.url }}" class=""></a>
+              </div>
+          </div>
+          {%- endfor -%}
         </div>
       
         <div class="row justify-content-center ">
