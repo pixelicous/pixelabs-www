@@ -49,41 +49,12 @@ permalink: /shop/front/
               <div class="gallery-item">
                   <img src="/assets/img{{shop.permalink}}{{shop.header_image}}" title="{{shop.title}}" alt="{{shop.title}}" class="w-100 rounded">
                   <figcaption>
-                      <h2 class="h5 font-weight-bold font-italic">{{shop.title}}</h2>
+                      <h2 class="h5 font-weight-bold font-italic">{{shop.display}}</h2>
                   </figcaption>
                   <a href="{{ shop.url }}" class=""></a>
               </div>
           </div>
           {%- endfor -%}
-        </div>
-      
-        <div class="row justify-content-center ">
-          <div class="d-flex text-center">
-                <!-- <h6 class="lead text-center m-2"><a type="button" class="btn btn-light btn-lg disabled" data-toggle="modal" data-target="#modalShipment" class="text-decoration-none text-muted"><small><i class="fas fa-shipping-fast" style="vertical-align:middle;"></i> Digital Shipping Policy</small></a></h6> -->
-                <h6 class="lead text-center m-2"><a type="button" class="btn btn-light btn-lg disabled" href="https://gumroad.com/{{ site.gumroad_username }}" target="_blank" class="text-decoration-none text-muted"><small><i class="fas fa-robot" style="vertical-align:middle;"></i> Open in Gumroad</small></a></h6>
-                <h6 class="lead text-center m-2">
-                    <a type="button" class="btn btn-light btn-lg" class="text-decoration-none text-muted" href="{{site.mail_url}}" target="_blank">
-                    <small><i class="far fa-comments" style="vertical-align:middle;"></i> Contact (shop form)</small>
-                    </a>
-                </h6>
-<!--                 <div class="modal fade" id="modalShipment" tabindex="-1" role="dialog" aria-labelledby="modalShippingDelivery" aria-hidden="true">
-                    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="" id="modalShippingDelivery"><i class="fas fa-shipping-fast" style="vertical-align:middle;"></i> Shipping Rates & Delivery Times</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                       
-                        <div class="modal-footer">
-                          <button type="button" class="flex-fill btn btn-primary" data-dismiss="modal">Close</button>
-                        </div>
-                      </div>
-                    </div>
-                </div>
--->              
-          </div>
         </div>
         <hr class="my-4" />
 
