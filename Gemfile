@@ -19,7 +19,7 @@ gem "hash-joiner"
 gem 'html-proofer'
 
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.15"
+  gem "jekyll-feed", "~> 0.16"
   gem 'jekyll-sitemap'
   gem 'jekyll-paginate-v2'
   gem 'jekyll-seo-tag', github: 'jekyll/jekyll-seo-tag'
