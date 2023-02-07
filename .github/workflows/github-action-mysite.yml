@@ -46,6 +46,10 @@ jobs:
             ./_data
             ./assets/portfolio/
           key: ${{ runner.os }}
+      - uses: actions/upload-artifact@master
+        with:
+          name: portfolio
+          path: ./assets/portfolio/
 
   build:
     runs-on: ubuntu-latest
@@ -62,6 +66,10 @@ jobs:
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
+      - uses: actions/download-artifact@master
+        with:
+          name: portfolio
+          path: ./assets/portfolio/
 
   # Deployment job
   deploy:
