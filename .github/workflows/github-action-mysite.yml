@@ -24,12 +24,14 @@ jobs:
   # Build job
   prep:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python 3.10
         uses: actions/setup-python@v3
         with:
           python-version: "3.10"
+          cache: 'pip'
       - name: Install dependencies
         run: |
           sudo apt update
@@ -37,6 +39,11 @@ jobs:
           python3 -m pip install -r requirements.txt --cache-dir "$HOME/.cache/pip"
           python3 ./tools/gallery_cat.py
           python3 ./tools/litter_cleaner.py
+      - name: Cache GalleryCat Images
+        uses: actions/cache@v3
+        with:
+          path: |
+            ./_data
 
   build:
     runs-on: ubuntu-latest
