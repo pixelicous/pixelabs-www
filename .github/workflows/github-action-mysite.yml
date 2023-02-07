@@ -39,11 +39,11 @@ jobs:
           python3 -m pip install -r requirements.txt --cache-dir "$HOME/.cache/pip"
           python3 ./tools/gallery_cat.py
           python3 ./tools/litter_cleaner.py
-      - name: Cache GalleryCat Images
-        uses: actions/cache@v3
-        with:
-          path: |
-            ./_data
+      # - name: Cache GalleryCat Images
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: |
+      #       ./_data
 
   build:
     runs-on: ubuntu-latest
