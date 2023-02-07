@@ -1,0 +1,38 @@
+name: Converted Workflow
+on:
+  push:
+    branches:
+      - master
+  # pull_request:
+  #   branches:
+  #     - master
+jobs:
+  build:
+    runs-on: '${{ matrix.os }}'
+    strategy:
+      matrix:
+        ruby-version: [3.1.3]
+        # os:
+        #   - ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: true # runs `bundle install` and caches installed gems automatically
+      - run: bundle exec jekyll build --safe
+      - run: bundle exec htmlproofer _site
+      - name: Install dependencies (Ubuntu)
+        if: runner.os == 'Linux'
+        run: |-
+          sudo apt-get update
+          sudo apt-get install -y libcurl4-openssl-dev
+      # - name: Cache multiple paths
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: |-
+      #       $HOME/.cache/pip
+      #       assets/portfolio/
+      #       _data/
+      #     key: '${{ runner.os }}-${{ hashFiles(''TODO'') }}'
+      # - uses: actions/checkout@v2
