@@ -14,7 +14,6 @@ venv/
 
 # Keep assets tidy - ignore gallery cat crawler folders
 # Portfolio resized photos, Photography Histogram & Exifdata
-_data/
 assets/portfolio/**/thumb
 assets/portfolio/**/sm
 assets/portfolio/**/md
