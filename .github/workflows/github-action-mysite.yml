@@ -23,6 +23,9 @@ concurrency:
 jobs:
   # Build job
   prep:
+    defaults:
+      run:
+        shell: bash -l {0}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -36,7 +39,6 @@ jobs:
         run: |
           sudo apt update
           conda create --name myenv
-          conda init bash
           conda activate myenv
           conda config --env --add channels conda-forge
           conda config --env --add channels fastai
