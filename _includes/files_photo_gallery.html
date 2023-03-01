@@ -22,7 +22,7 @@
       </label>
    </div>
   </div>
-<div class="row">
+<div class="row photo_gallery">
   {%- assign target_path = page.permalink | append: 'thumb' -%}
  
   {%- for file in site.static_files -%}
@@ -45,7 +45,7 @@
                     data-at-768="{{md_size_path}}"
                     data-at-1200="{{lg_size_path}}"
                     class="duotone-wrap stretched-link"
-                    data-caption="Filename: {{filename}}, Year: {{ photo_exif_data.Year }}<br>Camera: {{ photo_exif_data.Camera }}, Model: {{ photo_exif_data.Model }}">
+                    data-caption="{{ photo_exif_data.Year }} :: {{ photo_exif_data.Model }}">
                     <img src="{{ file.path | relative_url }}" alt="{{ filename }}" class="img-fluid rounded">
                   </a>
                   <div class="photo_exif_data row" style="display:none">
