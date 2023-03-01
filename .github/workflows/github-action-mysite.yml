@@ -36,8 +36,9 @@ jobs:
         run: |
           sudo apt update
           conda create --name myenv
-          conda config --name myenv --env --add channels conda-forge
-          conda config --name myenv --env --add channels fastai
+          conda activate myenv
+          conda config --env --add channels conda-forge
+          conda config --env --add channels fastai
           conda install --name myenv --file conda-env.txt
           python3 -m pip install --upgrade pip
           python3 -m pip install -r requirements.txt --cache-dir "$HOME/.cache/pip"
