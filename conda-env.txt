@@ -159,3 +159,4 @@ https://conda.anaconda.org/conda-forge/osx-arm64/opencv-4.7.0-py311ha1ab1f8_1.co
 https://conda.anaconda.org/conda-forge/noarch/pooch-1.7.0-pyhd8ed1ab_0.conda
 https://conda.anaconda.org/conda-forge/osx-arm64/scipy-1.10.1-py311h0bcca16_0.conda
 https://conda.anaconda.org/conda-forge/osx-arm64/scikit-image-0.19.3-py311h4eec4a9_2.tar.bz2
+https://anaconda.org/auto/pyresizeimage/0.9.6/download/linux-64/pyresizeimage-0.9.6-py27_0.tar.bz2
