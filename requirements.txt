@@ -1,9 +1,2 @@
-chardet>=3.0.4
-decorator>=4.4.2
-ExifRead>=2.1.2
-imagecodecs>=2020.5.30
-matplotlib>=3.3.0
 opencv-python>=4.3.0.36
-python-resize-image>=1.1.19
-PyYAML>=5.3.1
-scikit-image>=0.17.2
+python-resize-image>=1.1.20
