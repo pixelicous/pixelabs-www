@@ -32,13 +32,11 @@ jobs:
         with:
           python-version: "3.10"
           cache: 'pip'
-      - name: Conda Init
-        run: |
-          conda init bash
       - name: Install dependencies
         run: |
           sudo apt update
           conda create --name myenv
+          conda init bash
           conda activate myenv
           conda config --env --add channels conda-forge
           conda config --env --add channels fastai
