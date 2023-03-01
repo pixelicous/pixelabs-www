@@ -35,14 +35,19 @@ jobs:
         with:
           python-version: "3.10"
           cache: 'pip'
+      - name: Setup miniconda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-update-conda: true
+          miniforge-variant: Mambaforge
+          channels: conda-forge, fastai
+          python-version: 3.9
+          activate-environment: pixelabs
+          environment-file: conda-env.txt
+          use-mamba: true
       - name: Install dependencies
         run: |
           sudo apt update
-          conda create --name myenv
-          conda activate myenv
-          conda config --env --add channels conda-forge
-          conda config --env --add channels fastai
-          conda install --name myenv --file conda-env.txt -y
           python3 -m pip install --upgrade pip
           python3 -m pip install -r requirements.txt --cache-dir "$HOME/.cache/pip"
           python3 ./tools/gallery_cat.py
@@ -59,38 +64,38 @@ jobs:
           name: portfolio
           path: ./assets/portfolio/
 
-  build:
-    runs-on: ubuntu-latest
-    needs: prep
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - uses: actions/download-artifact@master
-        with:
-          name: portfolio
-          path: ./assets/portfolio/
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+  # build:
+  #   runs-on: ubuntu-latest
+  #   needs: prep
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v3
+  #     - uses: actions/download-artifact@master
+  #       with:
+  #         name: portfolio
+  #         path: ./assets/portfolio/
+  #     - name: Setup Pages
+  #       uses: actions/configure-pages@v3
+  #     - name: Build with Jekyll
+  #       uses: actions/jekyll-build-pages@v1
+  #       with:
+  #         source: ./
+  #         destination: ./_site
+  #     - name: Upload artifact
+  #       uses: actions/upload-pages-artifact@v1
 
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
-        env:
-          fqdn: www.pixelabs.net
-          email: pixelbot@internal.pixelabs.net
-          name: PixelBot
+  # # Deployment job
+  # deploy:
+  #   environment:
+  #     name: github-pages
+  #     url: ${{ steps.deployment.outputs.page_url }}
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   steps:
+  #     - name: Deploy to GitHub Pages
+  #       id: deployment
+  #       uses: actions/deploy-pages@v1
+  #       env:
+  #         fqdn: www.pixelabs.net
+  #         email: pixelbot@internal.pixelabs.net
+  #         name: PixelBot
