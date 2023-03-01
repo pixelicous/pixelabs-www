@@ -23,83 +23,66 @@ concurrency:
 jobs:
   # Build job
   prep:
-    defaults:
-      run:
-        shell: bash -l {0}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v3
-      - name: Set up conda cache
-        uses: actions/cache@v2
-        env:
-          # Increase this value to reset cache if etc/example-environment.yml has not changed
-          CACHE_NUMBER: 0
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
         with:
-          path: ~/conda_pkgs_dir
-          key:
-            ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{hashFiles('conda-env.txt') }}
+          python-version: "3.10"
+          cache: 'pip'
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -r requirements.txt --cache-dir "$HOME/.cache/pip"
+          python3 ./tools/gallery_cat.py
+          python3 ./tools/litter_cleaner.py
       - name: Cache GalleryCat Images
-        env:
-          # Increase this value to reset cache if etc/example-environment.yml has not changed
-          CACHE_NUMBER: 0
         uses: actions/cache@v3
         with:
           path: |
             ./_data
             ./assets/portfolio/
-          key: 
-            ${{ runner.os }}-gallerycat-${{ env.CACHE_NUMBER }}-${{hashFiles('assets/portfolio') }}
-      - name: Setup miniconda
-        uses: conda-incubator/setup-miniconda@v2
-        with:
-          auto-update-conda: true
-          miniforge-variant: Miniforge3
-          channels: conda-forge, fastai, auto
-          activate-environment: pixelabs
-          environment-file: conda-env.txt
-      - name: Run gallery cat
-        run: |
-          python3 ./tools/gallery_cat.py
-          python3 ./tools/litter_cleaner.py
-
+          key: ${{ runner.os }}
       - uses: actions/upload-artifact@master
         with:
           name: portfolio
           path: ./assets/portfolio/
 
-  # build:
-  #   runs-on: ubuntu-latest
-  #   needs: prep
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v3
-  #     - uses: actions/download-artifact@master
-  #       with:
-  #         name: portfolio
-  #         path: ./assets/portfolio/
-  #     - name: Setup Pages
-  #       uses: actions/configure-pages@v3
-  #     - name: Build with Jekyll
-  #       uses: actions/jekyll-build-pages@v1
-  #       with:
-  #         source: ./
-  #         destination: ./_site
-  #     - name: Upload artifact
-  #       uses: actions/upload-pages-artifact@v1
+  build:
+    runs-on: ubuntu-latest
+    needs: prep
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: actions/download-artifact@master
+        with:
+          name: portfolio
+          path: ./assets/portfolio/
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
 
-  # # Deployment job
-  # deploy:
-  #   environment:
-  #     name: github-pages
-  #     url: ${{ steps.deployment.outputs.page_url }}
-  #   runs-on: ubuntu-latest
-  #   needs: build
-  #   steps:
-  #     - name: Deploy to GitHub Pages
-  #       id: deployment
-  #       uses: actions/deploy-pages@v1
-  #       env:
-  #         fqdn: www.pixelabs.net
-  #         email: pixelbot@internal.pixelabs.net
-  #         name: PixelBot
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
+        env:
+          fqdn: www.pixelabs.net
+          email: pixelbot@internal.pixelabs.net
+          name: PixelBot
