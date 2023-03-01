@@ -30,18 +30,37 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v3
-      - name: Set up Python & Conda
+      - name: Set up Python 
         uses: actions/setup-python@v4
         with:
           python-version: "3.10"
           cache: 'pip'
+      - name: Set up conda cache
+        uses: actions/cache@v2
+        env:
+          # Increase this value to reset cache if etc/example-environment.yml has not changed
+          CACHE_NUMBER: 0
+        with:
+          path: ~/conda_pkgs_dir
+          key:
+            ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{hashFiles('conda-env.txt') }}
+      - name: Cache GalleryCat Images
+        env:
+          # Increase this value to reset cache if etc/example-environment.yml has not changed
+          CACHE_NUMBER: 0
+        uses: actions/cache@v3
+        with:
+          path: |
+            ./_data
+            ./assets/portfolio/
+          key: 
+            ${{ runner.os }}-gallerycat-${{ env.CACHE_NUMBER }}-${{hashFiles('assets/portfolio') }}
       - name: Setup miniconda
         uses: conda-incubator/setup-miniconda@v2
         with:
           auto-update-conda: true
           miniforge-variant: Mambaforge
           channels: conda-forge, fastai
-          python-version: 3.10
           activate-environment: pixelabs
           environment-file: conda-env.txt
           use-mamba: true
@@ -52,13 +71,7 @@ jobs:
           python3 -m pip install -r requirements.txt --cache-dir "$HOME/.cache/pip"
           python3 ./tools/gallery_cat.py
           python3 ./tools/litter_cleaner.py
-      - name: Cache GalleryCat Images
-        uses: actions/cache@v3
-        with:
-          path: |
-            ./_data
-            ./assets/portfolio/
-          key: ${{ runner.os }}
+
       - uses: actions/upload-artifact@master
         with:
           name: portfolio
