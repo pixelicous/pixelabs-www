@@ -23,9 +23,6 @@ concurrency:
 jobs:
   # Build job
   prep:
-    defaults:
-      run:
-        shell: bash -l {0}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
