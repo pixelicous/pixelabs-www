@@ -57,7 +57,15 @@ jobs:
           miniforge-variant: Miniforge3
           channels: conda-forge, fastai
           activate-environment: pixelabs
-          environment-file: conda-env.txt, requirements.txt
+          environment-file: conda-env.txt
+      - name: Setup miniconda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-update-conda: true
+          miniforge-variant: Miniforge3
+          channels: conda-forge, fastai
+          activate-environment: pixelabs
+          environment-file: requirements.txt
       - name: Run gallery cat
         run: |
           python3 ./tools/gallery_cat.py
