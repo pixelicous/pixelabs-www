@@ -19,7 +19,6 @@ assets/portfolio/**/thumb
 assets/portfolio/**/sm
 assets/portfolio/**/md
 assets/portfolio/**/lg
-assets/portfolio/**/histogram
 
 # Locally built site
 site/

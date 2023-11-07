@@ -8,11 +8,6 @@
   <span class="custom-switch-description">Show photographs EXIF metadata</span>
 </label>
 <label class="custom-switch col-lg-5 col-12">
-  <input id="photo_histogram_view" type="checkbox" name="photo_histogram_view" class="custom-switch-input">
-  <span class="custom-switch-indicator"></span>
-  <span class="custom-switch-description">Show photographs color histogram</span>
-</label>
-<label class="custom-switch col-lg-5 col-12">
   <input id="pschedelic_gallery" type="checkbox" name="pschedelic_gallery" class="custom-switch-input">
   <span class="custom-switch-indicator"></span>
   <span class="custom-switch-description">Psychedelic Gallery</span>
@@ -45,9 +40,6 @@
                     </div>
                     {%- endfor -%}
                   </div>
-                </div>
-                <div class="photo_histogram_data" style="display:none">
-                  <img src="/assets{{page.permalink}}histogram/{{filename}}.png" alt="{{ filename }} Color Histogram" class="img-fluid img-center rounded">
                 </div>
               </figure>
             </div>
