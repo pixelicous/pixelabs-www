@@ -28,24 +28,18 @@ log.addHandler(console)
 
 # Overwrite variables
 ENABLE_PHOTO_RESIZE = bool(os.environ.get(f"GALLERY_RUNNER_PHOTO_RESIZE", default=True))
-ENABLE_PHOTO_HISTOGRAM_CREATE = bool(os.environ.get(f"GALLERY_RUNNER_PHOTO_HISTORGRAM", default=True))
 YAML_OVERWRITE = bool(os.environ.get(f"GALLERY_RUNNER_OVERWRITE_YAML", default=False))
 RESIZE_OVERWRITE = bool(os.environ.get(f"GALLERY_RUNNER_OVERWRITE_RESIZE", default=False))
-HISTOGRAM_OVERWRITE = bool(os.environ.get(f"GALLERY_RUNNER_OVERWRITE_HISTOGRAM", default=False))
 ENABLE_PHOTO_ORIGINALS_CLEANUP = bool(os.environ.get(f"GALLERY_RUNNER_CLEAN_ORIGINALS", default=False))
 # Root location to run
 GALLERY_ROOT_PATH = "./assets/portfolio"
 SIZES_STRING_LIST = ', '.join([size for size in PHOTO_SIZES])
-EXTRA_FOLDERS = ['histogram']
 
 # Clean resized photos at beginning
 #os.chdir(root_path)
 #print(clean_resized_folders(GALLERY_ROOT_PATH))
 #os.chdir(root_path)
-log.debug(f"Histogram enabled: {ENABLE_PHOTO_HISTOGRAM_CREATE}")
 log.debug(f"resize enabled: {ENABLE_PHOTO_RESIZE}")
-log.debug(f"Histogram overwrite yaml: {YAML_OVERWRITE}")
-log.debug(f"Histogram overwrite resize: {RESIZE_OVERWRITE}")
 # Find all main portfolio paths under assets
 portfolio_paths = [f.path for f in os.scandir(GALLERY_ROOT_PATH) if f.is_dir()]
 
@@ -103,44 +97,33 @@ for root, dirs, files in os.walk(GALLERY_ROOT_PATH):
             else:
                 log.warning(f"Error getting image size of {full_path}")
             
-            # Don't get information for an histogram photo
-            if ('histogram' not in full_path) and ('header' not in filename): 
-                # Only generate information for photographs
-                if ENABLE_PHOTO_RESIZE:
-                    log.info(f"Legitimate for resizing: {full_path}")
-                    log.debug(f"Original size {img.size}")
-                    resize_image(root, full_path, image_alignment, RESIZE_OVERWRITE)
-                if "photography" in full_path:
-                    # Generate other folders not related to sizes (not to mix up lists)
-                    for extra_folder in EXTRA_FOLDERS:
-                        extra_folder_path = os.path.join(directory_path, extra_folder)
-                        if not os.path.isdir(extra_folder_path):
-                            try:
-                                log.debug(f"Creating: {extra_folder_path}")
-                                os.makedirs(extra_folder_path)
-                            except OSError as e:
-                                log.critical(f"Error raised while creating {extra_folder_path} : {e}")
-                        else:
-                            pass     
-                    if ENABLE_PHOTO_HISTOGRAM_CREATE:
-                        log.info(f"Photography file: {full_path} - Exporting image data and histogram")
-                        export_photo_exif_data(img, full_path, YAML_OVERWRITE)
-                        histo_path = os.path.join(directory_path, 'thumb', filename)
-                        export_photo_histogram(full_path, histo_path, HISTOGRAM_OVERWRITE)
-                        
-                if ENABLE_PHOTO_ORIGINALS_CLEANUP:
-                    try:
-                        log.info(f"Cleaning up originals before caching: {full_path}")
-                        
-                        os.remove(full_path)
-                        if not os.path.isfile(full_path):
-                            log.debug(f"Cleaned {full_path} successfully")
-                    except OSError as e: # name the Exception `e`
-                        log.debug(f"Clean error: {e.strerror}")
-                        log.debug(f"Error code: {e.code }")
-                        
-            else:
-                log.debug(f"Ignoring: {full_path}")
-
-
-
+            # Only generate information for photographs
+            if ENABLE_PHOTO_RESIZE:
+                log.info(f"Legitimate for resizing: {full_path}")
+                log.debug(f"Original size {img.size}")
+                resize_image(root, full_path, image_alignment, RESIZE_OVERWRITE)
+            if "photography" in full_path:
+                # Generate other folders not related to sizes (not to mix up lists)
+                for extra_folder in EXTRA_FOLDERS:
+                    extra_folder_path = os.path.join(directory_path, extra_folder)
+                    if not os.path.isdir(extra_folder_path):
+                        try:
+                            log.debug(f"Creating: {extra_folder_path}")
+                            os.makedirs(extra_folder_path)
+                        except OSError as e:
+                            log.critical(f"Error raised while creating {extra_folder_path} : {e}")
+                    else:
+                        pass     
+                    export_photo_exif_data(img, full_path, YAML_OVERWRITE)
+                    histo_path = os.path.join(directory_path, 'thumb', filename)
+                    
+            if ENABLE_PHOTO_ORIGINALS_CLEANUP:
+                try:
+                    log.info(f"Cleaning up originals before caching: {full_path}")
+                    
+                    os.remove(full_path)
+                    if not os.path.isfile(full_path):
+                        log.debug(f"Cleaned {full_path} successfully")
+                except OSError as e: # name the Exception `e`
+                    log.debug(f"Clean error: {e.strerror}")
+                    log.debug(f"Error code: {e.code }")

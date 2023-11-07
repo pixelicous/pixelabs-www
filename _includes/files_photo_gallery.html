@@ -11,11 +11,6 @@
         <span class="custom-switch-description">SHOW EXIF METADATA</span>
       </label>
       <label class="custom-switch">
-        <input id="photo_histogram_view" type="checkbox" name="photo_histogram_view" class="custom-switch-input">
-        <span class="custom-switch-indicator"></span>
-        <span class="custom-switch-description">ENABLE COLOR HISTOGRAM</span>
-      </label>
-      <label class="custom-switch">
         <input id="pschedelic_gallery" type="checkbox" name="pschedelic_gallery" class="custom-switch-input">
         <span class="custom-switch-indicator"></span>
         <span class="custom-switch-description">PSYCHEDELIC GALLERY</span>
@@ -57,9 +52,6 @@
                       <p class="text-small text-primary my-0 py-0"><small>{{eif_data[1]}}</small></p>
                     </div>
                     {%- endfor -%}
-                  </div>
-                  <div class="photo_histogram_data" style="display:none">
-                    <img src="/assets{{page.permalink}}histogram/{{filename}}.png" alt="{{ filename }} Color Histogram" class="img-fluid img-center rounded">
                   </div>
                 </div>
               </figure>
