@@ -13,7 +13,7 @@ if not isinstance(LOG_NUM_LEVEL, int):
     raise ValueError('Invalid log level: %s' % LOG_LEVEL)
 
 logging.basicConfig(level=LOG_NUM_LEVEL)
-
+EXTRA_FOLDERS = ""
 log = logging.getLogger('pixelogger')
 
 # Logger handler setup

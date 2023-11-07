@@ -35,7 +35,6 @@ log.addHandler(console)
 GALLERY_ROOT_PATH = "./assets/portfolio"
 
 SIZES_STRING_LIST = ', '.join([size for size in PHOTO_SIZES])
-EXTRA_FOLDERS = ['histogram']
 
 # Find all main portfolio paths under assets
 portfolio_paths = [f.path for f in os.scandir(GALLERY_ROOT_PATH) if f.is_dir()]
@@ -60,17 +59,14 @@ for root, dirs, files in os.walk(GALLERY_ROOT_PATH):
 
         # Don't resize the resized photos
         if directory_name not in PHOTO_SIZES:
-            if ('histogram' not in full_path) and ('header' not in filename): 
-                try:
-                    log.info(f"Cleaning up originals: {full_path}")
-                    os.remove(full_path)
-                    if not os.path.isfile(full_path):
-                        log.debug(f"Cleaned {full_path} successfully")
-                except OSError as e: # name the Exception `e`
-                    log.debug(f"Clean error: {e.strerror}")
-                    log.debug(f"Error code: {e.code}")
-            else:
-                log.debug(f"Ignoring: {full_path}")
+            try:
+                log.info(f"Cleaning up originals: {full_path}")
+                os.remove(full_path)
+                if not os.path.isfile(full_path):
+                    log.debug(f"Cleaned {full_path} successfully")
+            except OSError as e: # name the Exception `e`
+                log.debug(f"Clean error: {e.strerror}")
+                log.debug(f"Error code: {e.code}")
 
 
 

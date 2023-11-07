@@ -97,7 +97,7 @@ def resize_to_size(alignment, image, resized_photo_path, size):
         
         wpercent = (basewidth/float(image.size[0]))
         hsize = int((float(image.size[1])*float(wpercent)))
-        image = image.resize((basewidth,hsize), Image.ANTIALIAS)
+        image = image.resize((basewidth,hsize), Image.LANCZOS)
     except Exception as e:
         log.warning(f"Output format could not be determined {alignment} photo {image.name}.\r\nError: {e}")
 
@@ -235,25 +235,6 @@ def export_photo_exif_data(img, full_path, overwrite):
         log.debug(f"Error getting exif data {e}")        
 
 
-
-def export_photo_histogram(full_path, histo_path, overwrite):
-    filename = os.path.splitext(os.path.basename(full_path))[0]
-    file_path = os.path.dirname(full_path)
-    photo_histogram_file = f"{file_path}/histogram/{filename}.png"
-    if overwrite:
-        if 'histogram' not in filename:
-            export_nice_histogram(histo_path, photo_histogram_file)
-            log.info(f"Outputing Histogram: {filename}")
-    elif not overwrite:
-        if not os.path.isfile(photo_histogram_file):
-            export_nice_histogram(histo_path, photo_histogram_file)
-            log.info(f"Outputted Histogram: {filename}")
-        else:
-            log.debug(f"Histogram file exists and overwrite is set to false")
-    
-def export_nice_histogram(full_path, photo_histogram_file):
-    image = io.imread(full_path)
-
     # nparray = np.array(image)
     # nparray[nparray == 0] = np.nan
 
@@ -267,25 +248,3 @@ def export_nice_histogram(full_path, photo_histogram_file):
     histo = plot.xlabel('Color Intensity')
     histo = plot.ylabel('Pixels Count')
     histo = plot.legend(['Total', 'Red Channel', 'Green Channel', 'Blue Channel'], loc='upper right')
-    plot.savefig(photo_histogram_file, bbox_inches='tight', transparent=False)
-    plot.close(photo_histogram_file)
-
-
-def export_photo_histogram_simple(full_path):
-    filename = os.path.splitext(os.path.basename(full_path))[0]
-    if 'histogram' not in filename:
-        file_path = os.path.dirname(full_path)
-        photo_histogram_file = f"{file_path}/{filename}_histogram.png"
-        
-        img = cv2.imread(full_path)
-        color = ('b','g','r')
-        plot.figure()
-
-        for i,col in enumerate(color):
-            histr = cv2.calcHist([img],[i],None,[256],[0,256])
-            plot.plot(histr,color = col)
-            plot.fill_between(histr, facecolor=col)
-            plot.xlim([0,256])
-        
-        plot.savefig(photo_histogram_file, bbox_inches='tight', dpi=75, transparent=False)
-        plot.close(photo_histogram_file)
